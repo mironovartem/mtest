@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ЕГЭ по математике</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <div id="navdiv">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home_page' %}"><strong>matangens</strong>.ru </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
+                        <li role="presentation"><a href="#">ОГЭ </a></li>
+                        <li role="presentation"><a href="#">ГДЗ </a></li>
+                        <li role="presentation"><a href="{% url 'login' %}">Вход </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="notice1">
+        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+    </div>
+    <div>
+        <div class="row" id="rw1">
+            <div class="col-md-12">
+                <h2>Тест № 1</h2></div>
+        </div>
+    </div>
+    <div id="ege_test_block">
+        <div class="container-fluid" id="ege_test_container">
+            <div class="row" id="ege_test_row">
+                <div class="col-md-12" id="ege_test_column">
+                    <form action="{% url 'egetest' test_id %}" method="post">
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 1 </h3><img class="img-responsive">
+                                    <p class="ege_test_question">Одна таблетка лекарства весит 20 мг и содержит 6% активного вещества. Ребёнку в возрасте до 6 месяцев врач прописывает 1,2 мг активного вещества на каждый килограмм веса в сутки. Сколько таблеток этого лекарства следует
+                                        дать ребёнку в возрасте четырёх месяцев и весом 8 кг в течение суток? \(sin^2\frac {3π} &nbsp;4\)</p>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span>Ответ 1</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer1}}
+                                    <!input class="form-control" type="text">
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 2 </h3><img class="img-responsive">
+                                    <p class="ege_test_question">Одна таблетка лекарства весит 20 мг и содержит 6% активного вещества. Ребёнку в возрасте до 6 месяцев врач прописывает 1,2 мг активного вещества на каждый килограмм веса в сутки. Сколько таблеток этого лекарства следует
+                                        дать ребёнку в возрасте четырёх месяцев и весом 8 кг в течение суток? \(sin^2\frac {3π} &nbsp;4\)</p>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 2</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer2}}
+                                    <!input class="form-control" type="text">
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="submit_btn">
+                            <button class="btn btn-default" type="submit">ПРОВЕРИТЬ </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <div id="navdiv">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home_page' %}"><strong>matangens</strong>.ru </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
+                        <li role="presentation"><a href="#">ОГЭ </a></li>
+                        <li role="presentation"><a href="#">ГДЗ </a></li>
+                        <li role="presentation"><a href="{% url 'login' %}">Вход </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="notice1">
+        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+    </div>
+    <div id="registration">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h3 class="text-center">Регистрация </h3>
+                    <form  action="{% url 'signup' %}" method="post">
+                        <div class="form-group">
+                          {% csrf_token %}
+                          {{form.username}}
+                           <!input class="form-control" type="text" placeholder=" Имя пользователя ">
+                        </div>
+                        <div class="form-group">
+                          {% csrf_token %}
+                          {{form.password}}
+                            <!input class="form-control" type="text" placeholder=" Пароль ">
+                        </div>
+                        <div class="form-group">
+                          {% csrf_token %}
+                          {{form.email}}
+                            <!input class="form-control" type="email" placeholder=" Укажите ваш реальный e-mail, он пригодится ">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default btn-block" type="submit">ок </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="registration">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <p>Если уже есть аккаунт, то нужно <a href="{% url 'login' %}">Войти </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>

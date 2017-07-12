@@ -1,0 +1,293 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЕГЭ по математике</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <div id="navdiv">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home_page' %}"><strong>matangens</strong>.ru </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
+                        <li role="presentation"><a href="#">ОГЭ </a></li>
+                        <li role="presentation"><a href="#">ГДЗ </a></li>
+                        <li role="presentation"><a href="{% url 'login' %}">Вход </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="notice1">
+        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+    </div>
+    <div class="preim">
+        <div class="row" id="rw1">
+            <div class="col-md-12 bg_preim">
+                <h2>ЕГЭ математика </h2></div>
+        </div>
+        <div id="ln1">
+            <hr>
+        </div>
+        <div class="row" id="egepage">
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-search"></i>
+                <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">тренировка заданий</a>
+                    <div class="collapse" id="collapse-1">
+                        <h3>Тематические задания</h3>
+                        <p> Тренировка опреденного номера из теста ЕГЭ по математике.</p>
+                        <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" role="button" href="#collapse-4">Часть 1</a>
+                            <div class="collapse" id="collapse-4">
+                                <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-1">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="true" href="#accordion-1 .item-1">Задание 1</a></h4></div>
+                                        <div class="panel-collapse collapse in item-1" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-2">Задание 2</a></h4></div>
+                                        <div class="panel-collapse collapse item-2" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-3">Задание 3</a></h4></div>
+                                        <div class="panel-collapse collapse item-3" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-4">Задание 4</a></h4></div>
+                                        <div class="panel-collapse collapse item-4" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-5">Задание 5</a></h4></div>
+                                        <div class="panel-collapse collapse item-5" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-6">Задание 6</a></h4></div>
+                                        <div class="panel-collapse collapse item-6" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-7">Задание 7</a></h4></div>
+                                        <div class="panel-collapse collapse item-7" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-8">Задание 8</a></h4></div>
+                                        <div class="panel-collapse collapse item-8" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-9">Задание 9</a></h4></div>
+                                        <div class="panel-collapse collapse item-9" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-10">Задание 10</a></h4></div>
+                                        <div class="panel-collapse collapse item-10" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-11">Задание 11</a></h4></div>
+                                        <div class="panel-collapse collapse item-11" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-12">Задание 12</a></h4></div>
+                                        <div class="panel-collapse collapse item-12" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" role="button" href="#collapse-5">Часть 2</a>
+                            <div class="collapse" id="collapse-5">
+                                <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="true" href="#accordion-4 .item-1">Задание 13</a></h4></div>
+                                        <div class="panel-collapse collapse in item-1" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-2">Задание 14</a></h4></div>
+                                        <div class="panel-collapse collapse item-2" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-3">Задание 15</a></h4></div>
+                                        <div class="panel-collapse collapse item-3" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-4">Задание 16</a></h4></div>
+                                        <div class="panel-collapse collapse item-4" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-5">Задание 17</a></h4></div>
+                                        <div class="panel-collapse collapse item-5" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-6">Задание 18</a></h4></div>
+                                        <div class="panel-collapse collapse item-6" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-4" aria-expanded="false" href="#accordion-4 .item-7">Задание 19</a></h4></div>
+                                        <div class="panel-collapse collapse item-7" role="tabpanel">
+                                            <div class="panel-body"><span>Item body.</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-cog"></i>
+                <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" role="button" href="#collapse-2">Тесты ЕГЭ</a>
+                    <div class="collapse" id="collapse-2">
+                        <h3 class="text-left">Стандартные как на ЕГЭ и ОГЭ</h3>
+                        <p>Тесты как на экзамене, для проверки своих знаний.</p>
+                        <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-2">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h3 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-2" aria-expanded="true" href="#accordion-2 .item-1">тесты 1 - 10</a></h3></div>
+                                <div class="panel-collapse collapse in item-1" role="tabpanel">
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a href="{% url 'egetest' 1 %}">Тест № 1 </a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 2 %}">Тест № 2</a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 3 %}">Тест № 3 </a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 4 %}">Тест № 4 </a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 5 %}">Тест № 5</a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 6 %}">Тест № 6</a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 7 %}">Тест № 7 </a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 8 %}">Тест № 8</a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 9 %}">Тест № 9</a></li>
+                                            <li class="list-group-item"><a href="{% url 'egetest' 10 %}">Тест № 10</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-2" aria-expanded="false" href="#accordion-2 .item-2">тесты 11 - 20</a></h4></div>
+                                <div class="panel-collapse collapse item-2" role="tabpanel">
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a href="#">Link</a></li>
+                                            <li class="list-group-item"><a href="#">Link</a></li>
+                                            <li class="list-group-item"><a href="#">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-2" aria-expanded="false" href="#accordion-2 .item-3">тесты 21 - 30</a></h4></div>
+                                <div class="panel-collapse collapse item-3" role="tabpanel">
+                                    <div class="panel-body"><span>Item body.</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-signal"></i>
+                <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" role="button" href="#collapse-3">тренировочные тесты</a>
+                    <div class="collapse" id="collapse-3">
+                        <h3 class="text-left">Разные уровни сложности</h3>
+                        <p>Двигайтесь постепенно от легкого уровня к следующим уровням.&nbsp; </p>
+                        <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-3" aria-expanded="true" href="#accordion-3 .item-1">легкий уровень</a></h4></div>
+                                <div class="panel-collapse collapse in item-1" role="tabpanel">
+                                    <div class="panel-body"><span>Item body.</span></div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-3" aria-expanded="false" href="#accordion-3 .item-2">средний уровень</a></h4></div>
+                                <div class="panel-collapse collapse item-2" role="tabpanel">
+                                    <div class="panel-body"><span>Item body.</span></div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-3" aria-expanded="false" href="#accordion-3 .item-3">сложный уровень</a></h4></div>
+                                <div class="panel-collapse collapse item-3" role="tabpanel">
+                                    <div class="panel-body"><span>Item body.</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ln1">
+            <hr>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>

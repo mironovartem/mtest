@@ -1,0 +1,97 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matangens</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <div id="navdiv">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{% url 'home_page' %}"><strong>matangens</strong>.ru </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <p class="navbar-text">Пользователь: {{ user }}</p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
+                        <li role="presentation"><a href="#">ОГЭ </a></li>
+                        <li role="presentation"><a href="#">ГДЗ </a></li>
+                        <li role="presentation"><a href="{% url 'login' %}">Вход </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="notice1">
+        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+    </div>
+    <div id="promo">
+        <div class="jumbotron">
+            <h1>Тесты ЕГЭ и ОГЭ по математике </h1>
+            <p> для самоподготовки с объяснениями </p>
+            <div id="promo1"><a class="btn btn-default" role="button" href="{% url 'signup' %}">Начать</a></div>
+        </div>
+    </div>
+    <div id="ln1">
+        <hr>
+    </div>
+    <div id="tre">
+        <div class="row">
+            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/tim-gouw-68319.jpg' %}">
+                <p class="text-success" id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="{% url 'ege_math' %}"><span>ЕГЭ </span></a></p>
+                <p class="lead text-center" style="margin:10px;">Тесты, объяснения и лекции для подготовки к экзамену ЕГЭ по математике.</p>
+            </div>
+            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/christopher-jolly-132141.jpg' %}">
+                <p id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="#"><span>ОГЭ </span></a></p>
+                <p class="lead text-center" style="padding:0px;margin:10px;">Тесты, объяснения и лекции для подготовки к экзамену ОГЭ по математике.</p>
+            </div>
+            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/ben-white-197668.jpg' %}">
+                <p id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="#"><span>ГДЗ </span></a></p>
+                <p class="lead text-center" style="margin:10px;">Примеры решений задач из учебника по геометрии в видео формате.</p>
+            </div>
+        </div>
+    </div>
+    <div class="preim">
+        <div class="row" id="rw1">
+            <div class="col-md-12 bg_preim">
+                <h2 id="rw1_h1">Содержание </h2></div>
+        </div>
+        <div id="ln1">
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-search"></i>
+                <h3>Тематические задания</h3>
+                <p class="text-left"> Для тренировки опреденного номера из теста ЕГЭ или ОГЭ по математике.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-cog"></i>
+                <h3 class="text-left">Стандартные тесты </h3>
+                <p class="text-left">Тесты как на экзамене для проверки своих знаний.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-signal"></i>
+                <h3 class="text-left">Разные уровни сложности</h3>
+                <p class="text-left">Развивающие упражения. Двигайтесь от легкого уровня к следующим уровням.&nbsp; </p>
+            </div>
+        </div>
+        <div id="ln1">
+            <hr>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
