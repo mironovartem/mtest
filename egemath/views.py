@@ -1,5 +1,4 @@
 from django.shortcuts import render #
-#from django import forms #
 from django.http import HttpResponseRedirect #
 from django.http import HttpResponse # для передачи ответотов типа
 from .forms import TestAnswerForm # импорт формы
