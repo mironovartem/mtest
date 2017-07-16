@@ -25,7 +25,7 @@ SECRET_KEY = 'sj%((#oc79(ig4_==-1-6(y*jhzj)ps6#2c&4@fjylkkkd&d3d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mtest.pythonanywhere.com']
 
 
 # Application definition
