@@ -23,7 +23,7 @@
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <p class="navbar-text">Пользователь: {{ user }}</p>
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
                         <li role="presentation"><a href="#">ОГЭ </a></li>
@@ -52,14 +52,12 @@
                             <div class="thumbnail">
                                 <div class="caption">
                                     <h3>Задание 1 </h3><img class="img-responsive">
-                                    <p class="ege_test_question">Одна таблетка лекарства весит 20 мг и содержит 6% активного вещества. Ребёнку в возрасте до 6 месяцев врач прописывает 1,2 мг активного вещества на каждый килограмм веса в сутки. Сколько таблеток этого лекарства следует
-                                        дать ребёнку в возрасте четырёх месяцев и весом 8 кг в течение суток? \(sin^2\frac {3π} &nbsp;4\)</p>
+                                    <p class="ege_test_question">{{question_text_1}}</p>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon"><span>Ответ 1</span></div>
                                     {% csrf_token %}
                                     {{form.answer1}}
-                                    <!input class="form-control" type="text">
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>
@@ -67,15 +65,13 @@
                         <div class="form-group">
                             <div class="thumbnail">
                                 <div class="caption">
-                                    <h3>Задание 2 </h3><img class="img-responsive">
-                                    <p class="ege_test_question">Одна таблетка лекарства весит 20 мг и содержит 6% активного вещества. Ребёнку в возрасте до 6 месяцев врач прописывает 1,2 мг активного вещества на каждый килограмм веса в сутки. Сколько таблеток этого лекарства следует
-                                        дать ребёнку в возрасте четырёх месяцев и весом 8 кг в течение суток? \(sin^2\frac {3π} &nbsp;4\)</p>
+                                    <h3>Задание 2 </h3><img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_2}}">
+                                    <p class="ege_test_question">{{question_text_2}}</p>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon test_answer"><span>Ответ 2</span></div>
                                     {% csrf_token %}
                                     {{form.answer2}}
-                                    <!input class="form-control" type="text">
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>

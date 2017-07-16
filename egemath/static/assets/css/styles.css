@@ -18,7 +18,7 @@ body {
 #promo {
   text-align:center;
   padding:40px;
-  background:url(../../assets/img/lucas-rosas-98304.jpg) no-repeat;
+  background:url(../../assets/img/homeimage.jpg) no-repeat;
   background-position:center;
   background-size:cover;
   max-width:1200PX;
@@ -180,7 +180,7 @@ body {
   padding:5px;
 }
 
-textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+#ege_test_block textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
   background:#eaebed;
 }
 
@@ -214,7 +214,7 @@ textarea, textarea.form-control, input.form-control, input[type=text], input[typ
   font-size:large;
 }
 
-#registration .h3{
+#registration h3 {
   background-color:#313437;
   color:#ffffff;
 }

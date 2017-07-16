@@ -21,4 +21,4 @@ urlpatterns = [
     url(r'', include('egemath.urls')),
     url('^', include('django.contrib.auth.urls')),
 
-]
+] 

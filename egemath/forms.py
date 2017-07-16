@@ -18,7 +18,11 @@ class TestAnswerForm(forms.Form):
     #answer12 = forms.CharField(label='', max_length=30)
 
 class SignUpForm(forms.Form):
-    username = forms.CharField(label='', help_text = 'Имя пользователя')
+    #required_css_class = 'form-control'
+    username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Имя пользователя'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class' : 'form-control', 'placeholder' : '    Пароль'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class' : 'form-control', 'placeholder' : '    Email'}))
 
-    password = forms.CharField(label='', widget=forms.PasswordInput, help_text="Пароль")
-    email = forms.EmailField()
+class LoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Имя пользователя'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class' : 'form-control', 'placeholder' : '    Пароль'}))

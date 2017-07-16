@@ -23,7 +23,7 @@
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <p class="navbar-text">Пользователь: {{ user }}</p>
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation"><a href="{% url 'ege_math' %}">ЕГЭ </a></li>
                         <li role="presentation"><a href="#">ОГЭ </a></li>
@@ -46,20 +46,20 @@
                         <div class="form-group">
                           {% csrf_token %}
                           {{form.username}}
-                           <!input class="form-control" type="text" placeholder=" Имя пользователя ">
                         </div>
                         <div class="form-group">
+
                           {% csrf_token %}
                           {{form.password}}
-                            <!input class="form-control" type="text" placeholder=" Пароль ">
                         </div>
                         <div class="form-group">
                           {% csrf_token %}
                           {{form.email}}
-                            <!input class="form-control" type="email" placeholder=" Укажите ваш реальный e-mail, он пригодится ">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-default btn-block" type="submit">ок </button>
+                            <p style="text-align: center">
+                            <button class="btn btn-default btn-block" type="submit">ОК</button>
+                            </p>
                         </div>
                     </form>
                 </div>

@@ -24,7 +24,7 @@ class EgeMathTest(models.Model):
     author = models.CharField(max_length=30, blank=True, null=True)
     test_num=models.PositiveIntegerField()
     task_num = models.PositiveIntegerField()
-    question_image = models.ImageField(blank=True, null=True)
+    question_image = models.ImageField(upload_to='egetest', blank=True, null=True)
     question_text = models.TextField(blank=True, null=True)
     correct_answer = models.CharField(max_length=20)
     explanation_video = models.URLField(blank=True, null=True)
