@@ -114,7 +114,8 @@ def signup(request):
 
 
             # redirect to a new URL:
-            return HttpResponseRedirect('login')
+            return redirect('login')
+            #return HttpResponseRedirect('login')
 
     # if a GET (or any other method) we'll create a blank form
     else:
