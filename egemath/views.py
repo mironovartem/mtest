@@ -10,6 +10,7 @@ from django.contrib.auth.models import User, UserManager #нужно для ре
 from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
 from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
+from django.db.utils import IntegrityError
 
 # Create your views here.
 
@@ -60,6 +61,7 @@ def egetest(request, test_id):
         form = TestAnswerForm()
 
         question_text_1 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_text')
+        #question_text_1 = question_text_1.get['question_text'] # так не работает почему?
         question_text_1 = question_text_1[0]
         question_text_1 = question_text_1['question_text']
 
@@ -91,7 +93,7 @@ def egetestanswer(request, test_id):
     answer_2 = answer_2['answer']
 
 
-    return render(request, 'egemath/egetestanswer_1.html', {'answer_1' : answer_1 , 'answer_2' : answer_2})
+    return render(request, 'egemath/egetestanswer.html', {'answer_1' : answer_1 , 'answer_2' : answer_2})
 
 
 def signup(request):
@@ -99,8 +101,6 @@ def signup(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = SignUpForm(request.POST)
-
-
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
@@ -108,10 +108,14 @@ def signup(request):
             username =  form.cleaned_data['username']
             password =  form.cleaned_data['password']
             email =  form.cleaned_data['email']
-            user = User.objects.create_user(username, email, password)
-            user.save()
-
-
+            #  Проверить на уникальность почту
+            #user = User.objects.create_user(username, email, password)
+            #user.save()
+            try: # пробуем получить уникальное имя пользователя
+                user = User.objects.create_user(username, email, password)
+                user.save()
+            except  IntegrityError:
+                return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
 
             # redirect to a new URL:
             return redirect('login')
@@ -120,9 +124,6 @@ def signup(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SignUpForm()
-
-
-
 
     return render(request, 'registration/signup.html', {'form': form})
 
@@ -140,18 +141,20 @@ def log(request):
             username =  form.cleaned_data['username']
             password =  form.cleaned_data['password']
             user = authenticate(username=username, password=password)
-            
+
         if user is not None:
             if user.is_active:
                 login(request, user)
                 # Redirect to a success page.
                 return redirect('home_page')
-                #else:
+            #else:
                     # Return a 'disabled account' error message
                     #...
-            #else:
+                #return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
+        else:
                 # Return an 'invalid login' error message.
                 #...
+            return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
             # redirect to a new URL:
             #return redirect('home_page')
 

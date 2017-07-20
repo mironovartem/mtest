@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЕГЭ по математике</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
@@ -38,7 +38,7 @@
         <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
     </div>
     {% block content %}
-    
+
     {% endblock %}
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
