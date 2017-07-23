@@ -76,14 +76,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'NAME': 'mtest$default',
+    'mysqldb': {
+        'NAME': '',
         'HOST': 'mtest.mysql.pythonanywhere-services.com',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'mtest',
         'PASSWORD': '35043504qw'
     },
-    'default1': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
