@@ -1,11 +1,47 @@
-{% extends 'egemath/base.html' %}
-{% block title %}ЕГЭ по математике - список тестов{% endblock %}
-{% block content %}
-{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maket1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="navdiv">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="home.html"><strong>matangens</strong>.ru </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <p class="navbar-text">Пользователь: Не авторизован</p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="egemath.html">ЕГЭ </a></li>
+                        <li role="presentation"><a href="#">ОГЭ </a></li>
+                        <li role="presentation"><a href="#">ГДЗ </a></li>
+                        <li role="presentation"><a href="login.html">Вход </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="notice1">
+        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+    </div>
     <div class="preim">
         <div class="row" id="rw1">
             <div class="col-md-12 bg_preim">
-                <h2>ЕГЭ математика </h2></div>
+                <h2>Обо мне</h2></div>
         </div>
         <div id="ln1">
             <hr>
@@ -167,7 +203,7 @@
             <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-cog"></i>
                 <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" role="button" href="#collapse-2">Тесты ЕГЭ</a>
                     <div class="collapse" id="collapse-2">
-                        <h3 class="text-left">Типовые тесты как на ЕГЭ</h3>
+                        <h3 class="text-left">Стандартные как на ЕГЭ и ОГЭ</h3>
                         <p>Тесты как на экзамене, для проверки своих знаний.</p>
                         <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-2">
                             <div class="panel panel-default">
@@ -176,16 +212,16 @@
                                 <div class="panel-collapse collapse in item-1" role="tabpanel">
                                     <div class="panel-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item"><a href="{% url 'egetest' 1 %}">Тест № 1 </a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 2 %}">Тест № 2</a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 3 %}">Тест № 3 </a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 4 %}">Тест № 4 </a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 5 %}">Тест № 5</a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 6 %}">Тест № 6</a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 7 %}">Тест № 7 </a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 8 %}">Тест № 8</a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 9 %}">Тест № 9</a></li>
-                                            <li class="list-group-item"><a href="{% url 'egetest' 10 %}">Тест № 10</a></li>
+                                            <li class="list-group-item"><a href="egetest_1.html">Тест № 1 </a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 2</a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 3 </a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 4 </a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 5</a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 6</a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 7 </a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 8</a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 9</a></li>
+                                            <li class="list-group-item"><a href="#">Тест № 10</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -246,6 +282,48 @@
                 </div>
             </div>
         </div>
+        <div id="ln1">
+            <hr>
+        </div>
     </div>
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">Company Name © 2016</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 
-{% endblock content %}
+</html>

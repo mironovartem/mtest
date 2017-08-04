@@ -10,25 +10,31 @@
                     <h3 class="text-center">Регистрация </h3>
                     <form  action="{% url 'signup' %}" method="post">
                       {{ form.non_field_errors }}
-                        <div class="form-group">
-                          {% if username_not_uniq %}
-                          <p style="background-color:#f9bfc1;">Это имя уже занято, придумайте другое</p>
-                          {% endif %}
-                          {% csrf_token %}
-                          {{form.username.errors}}
-                          {{form.username}}
-                        </div>
-                        <div class="form-group">
 
+                      <div class="form-group">
+                        {% if username_not_uniq %}
+                        <p style="background-color:#f9bfc1;">Это имя уже занято, придумайте другое</p>
+                        {% endif %}
+                        {% csrf_token %}
+                        {{form.username.errors}}
+                        {{form.username}}
+                      </div>
+
+                      <div class="form-group">
+                        {% if email_not_uniq %}
+                        <p style="background-color:#f9bfc1;">Email уже зарегистрирован, войдите на сайт, или восстановите доступ по ссылке ниже</p>
+                        {% endif %}
+                        {% csrf_token %}
+                        {{form.email.errors}}
+                        {{form.email}}
+                      </div>
+
+                        <div class="form-group">
                           {% csrf_token %}
                           {{form.password.errors}}
                           {{form.password}}
                         </div>
-                        <div class="form-group">
-                          {% csrf_token %}
-                          {{form.email.errors}}
-                          {{form.email}}
-                        </div>
+
                         <div class="form-group">
                             <p style="text-align: center">
                             <button class="btn btn-default btn-block" type="submit">ОК</button>

@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-Clean.css' %}">
 </head>
 
 <body>
@@ -35,11 +37,50 @@
         </nav>
     </div>
     <div id="notice1">
-        <p class="text-center">Для работы с сайтом необходимо войти на сайт. </p>
+        <p class="text-center">  </p>
     </div>
     {% block content %}
 
     {% endblock %}
+    <div id="ln1">
+        <hr>
+    </div>
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Доп. возможности</h3>
+                        <ul>
+                            <li><a href="#">Для благодарных пользователей </a></li>
+                            <li><a href="#">Помощь проекту</a></li>
+                            <li><a href="#">Конкурсы</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Обо мне</a></li>
+                            <li><a href="#">Новости сайта</a></li>
+                            <li><a href="#">Об авторских правах</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Сотрудничество</h3>
+                        <ul>
+                            <li><a href="#">Репетиторство</a></li>
+                            <li><a href="#">Рекламодателям</a></li>
+                            <li><a href="#">Создание сайтов</a></li>
+                            <li><a href="#">Связаться со мной</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 item social"><a href="#"><i class="icon ion-social-youtube"></i></a><a href="#"><i class="icon ion-social-google"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">matangens © 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>

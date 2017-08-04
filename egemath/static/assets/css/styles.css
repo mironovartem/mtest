@@ -18,7 +18,7 @@ body {
 #promo {
   text-align:center;
   padding:40px;
-  background:url(../../assets/img/homeimage.jpg) no-repeat;
+  background:url(../../assets/img/lucas-rosas-98304.jpg) no-repeat;
   background-position:center;
   background-size:cover;
   max-width:1200PX;
@@ -26,7 +26,7 @@ body {
 }
 
 #promo1 {
-  text-align:left;
+  /*text-align:left;*/
 }
 
 @media (max-width:991px) {
@@ -46,19 +46,13 @@ body {
 #promo .jumbotron h1 {
   font-size:42px;
   font-weight:500;
-  text-align:left;
+  text-align:center;
 }
 
 #promo .jumbotron p {
   font-size:24px;
   font-weight:500;
-  text-align:left;
-}
-
-#promo .jumbotron .btn.btn-default {
-  /*font-size:24px;*/
-  /*font-weight:500;*/
-  /*text-align:left;*/
+  text-align:center;
 }
 
 @media (max-width:991px) {
@@ -149,7 +143,7 @@ body {
 
 #rw2 {
   max-width:1200px;
-  margin:0 auto;
+  margin:10px auto;
 }
 
 #ln1 {
@@ -217,4 +211,20 @@ body {
 #registration h3 {
   background-color:#313437;
   color:#ffffff;
+}
+
+#rw3 {
+  max-width:1200px;
+  margin:10px auto;
+  text-align:center;
+}
+
+#rw3 iframe {
+  width:auto;
+  height:auto;
+}
+
+
+.col-md-12.egetestanswer {
+  margin:5px auto;
 }

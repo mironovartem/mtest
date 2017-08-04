@@ -1,7 +1,7 @@
-from django.shortcuts import render #
+from django.shortcuts import render, render_to_response #
 from django.shortcuts import redirect #
 from django.http import HttpResponseRedirect #
-from django.http import HttpResponse # для передачи ответотов типа
+from django.http import HttpResponse # для передачи ответото
 from .forms import TestAnswerForm # импорт формы
 from .forms import SignUpForm #импорт формы
 from .models import EgeMathTest # импорт модели
@@ -10,7 +10,7 @@ from django.contrib.auth.models import User, UserManager #нужно для ре
 from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
 from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
-from django.db.utils import IntegrityError
+from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
 
 # Create your views here.
 
@@ -20,6 +20,7 @@ def home_page(request):
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
 
+'''
 def egetest(request, test_id):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -80,20 +81,101 @@ def egetest(request, test_id):
     'question_image_2': question_image_2,
     'test_id': test_id})
 
+'''
 
+def egetest(request, test_id):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = TestAnswerForm(request.POST)
+
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            result = 0
+            #username = request.user
+            answer1 =  form.cleaned_data['answer1']
+            answer2 =  form.cleaned_data['answer2']
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer1 = correct_answer['correct_answer']
+            if correct_answer1 == answer1:
+                result = result+1
+                color1 = False
+            else:
+                color1 = True
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer2 = correct_answer['correct_answer']
+            if correct_answer2 == answer2:
+                result = result+1
+                color2 = False
+            else:
+                color2 = True
+
+            # redirect to a new URL:
+            return render(request, 'egemath/egetestanswer.html', {
+            #'test_id': 'test_id',
+            'answer1': answer1,
+            'correct_answer1' : correct_answer1,
+            'color1': color1,
+             'answer2': answer2,
+            'correct_answer2' : correct_answer2,
+            'color2': color2,
+            'result': result
+             })
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = TestAnswerForm()
+
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_text')
+        #question_text_1 = question_text_1.get['question_text'] # так не работает почему?
+        question_text = question_text[0]
+        question_text_1 = question_text['question_text']
+
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_text')
+        question_text = question_text[0]
+        question_text_2 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_image')
+        question_image = question_image[0]
+        question_image_2 = question_image['question_image']
+
+    return render(request, 'egemath/egetest.html', {
+    'form': form,
+    'question_text_1' : question_text_1,
+    'question_text_2' : question_text_2,
+    'question_image_2': question_image_2,
+    'test_id': test_id})
+
+'''
 def egetestanswer(request, test_id):
     username = request.user
 
-    answer_1 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 1).values('answer')
-    answer_1 = answer_1[0]
-    answer_1 = answer_1['answer']
+    #answer_1 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 1).values('answer')
+    #answer_1 = answer_1[0]
+    #answer_1 = answer_1['answer']
 
-    answer_2 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 2).values('answer')
-    answer_2 = answer_2[0]
-    answer_2 = answer_2['answer']
+    #answer_2 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 2).values('answer')
+    #answer_2 = answer_2[0]
+    #answer_2 = answer_2['answer']
 
 
-    return render(request, 'egemath/egetestanswer.html', {'answer_1' : answer_1 , 'answer_2' : answer_2})
+    return render(request, 'egemath/egetestanswer.html', {
+    #'test_id': 'test_id',
+    'answer1': answer1,
+    'correct_answer1' : correct_answer1,
+    'color1': color1,
+     'answer2': answer2,
+    'correct_answer2' : correct_answer2,
+    'color2': color2,
+    'result': result
+     })
+'''
 
 
 def signup(request):
@@ -105,18 +187,23 @@ def signup(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
-            username =  form.cleaned_data['username']
+
             password =  form.cleaned_data['password']
             email =  form.cleaned_data['email']
-            #  Проверить на уникальность почту
-            #user = User.objects.create_user(username, email, password)
-            #user.save()
-            try: # пробуем получить уникальное имя пользователя
-                user = User.objects.create_user(username, email, password)
-                user.save()
-            except  IntegrityError:
-                return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
+            username =  form.cleaned_data['username']
 
+            if not User.objects.filter(email__contains = email): # пробуем получить уникальную почту на имя пользователя
+                try:
+                    user = User.objects.create_user(username, email, password)
+                    user.save()
+                    if user is not None:
+                        if user.is_active:
+                            login(request, user)
+                            return redirect('home_page')
+                except  IntegrityError:
+                    return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
+            else:
+                return render(request, 'registration/signup.html', {'form': form, 'email_not_uniq': True })
             # redirect to a new URL:
             return redirect('login')
             #return HttpResponseRedirect('login')
