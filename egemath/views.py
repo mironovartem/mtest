@@ -97,6 +97,10 @@ def egetest(request, test_id):
             #username = request.user
             answer1 =  form.cleaned_data['answer1']
             answer2 =  form.cleaned_data['answer2']
+            answer3 =  form.cleaned_data['answer3']
+            answer4 =  form.cleaned_data['answer4']
+            answer5 =  form.cleaned_data['answer5']
+            answer6 =  form.cleaned_data['answer6']
 
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('correct_answer')
             correct_answer = correct_answer[0]
@@ -116,15 +120,69 @@ def egetest(request, test_id):
             else:
                 color2 = True
 
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer3 = correct_answer['correct_answer']
+            if correct_answer3 == answer3:
+                result = result+1
+                color3 = False
+            else:
+                color3 = True
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer4 = correct_answer['correct_answer']
+            if correct_answer4 == answer4:
+                result = result+1
+                color4 = False
+            else:
+                color4 = True
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer5 = correct_answer['correct_answer']
+            if correct_answer5 == answer5:
+                result = result+1
+                color5 = False
+            else:
+                color5 = True
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer6 = correct_answer['correct_answer']
+            if correct_answer6 == answer6:
+                result = result+1
+                color6 = False
+            else:
+                color6 = True
+
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
             'answer1': answer1,
             'correct_answer1' : correct_answer1,
             'color1': color1,
-             'answer2': answer2,
+
+            'answer2': answer2,
             'correct_answer2' : correct_answer2,
             'color2': color2,
+
+            'answer3': answer3,
+            'correct_answer3' : correct_answer3,
+            'color3': color3,
+
+            'answer4': answer4,
+            'correct_answer4' : correct_answer4,
+            'color4': color4,
+
+            'answer5': answer5,
+            'correct_answer5' : correct_answer5,
+            'color5': color5,
+
+            'answer6': answer6,
+            'correct_answer6' : correct_answer6,
+            'color6': color6,
+
             'result': result
              })
 
@@ -137,6 +195,11 @@ def egetest(request, test_id):
         question_text = question_text[0]
         question_text_1 = question_text['question_text']
 
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_image')
+        question_image = question_image[0]
+        question_image_1 = question_image['question_image']
+
+
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_text')
         question_text = question_text[0]
         question_text_2 = question_text['question_text']
@@ -145,11 +208,58 @@ def egetest(request, test_id):
         question_image = question_image[0]
         question_image_2 = question_image['question_image']
 
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('question_text')
+        question_text = question_text[0]
+        question_text_3 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('question_image')
+        question_image = question_image[0]
+        question_image_3 = question_image['question_image']
+
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('question_text')
+        question_text = question_text[0]
+        question_text_4 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('question_image')
+        question_image = question_image[0]
+        question_image_4 = question_image['question_image']
+
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('question_text')
+        question_text = question_text[0]
+        question_text_5 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('question_image')
+        question_image = question_image[0]
+        question_image_5 = question_image['question_image']
+
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('question_text')
+        question_text = question_text[0]
+        question_text_6 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('question_image')
+        question_image = question_image[0]
+        question_image_6 = question_image['question_image']
+
     return render(request, 'egemath/egetest.html', {
     'form': form,
     'question_text_1' : question_text_1,
+    'question_image_1': question_image_1,
+
     'question_text_2' : question_text_2,
     'question_image_2': question_image_2,
+
+    'question_text_3' : question_text_3,
+    'question_image_3': question_image_3,
+
+    'question_text_4' : question_text_4,
+    'question_image_4': question_image_4,
+
+    'question_text_5' : question_text_5,
+    'question_image_5': question_image_5,
+
+    'question_text_6' : question_text_6,
+    'question_image_6': question_image_6,
+
     'test_id': test_id})
 
 '''
