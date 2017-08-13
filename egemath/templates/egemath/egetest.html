@@ -20,7 +20,9 @@
                                 <div class="caption">
                                     <h3>Задание 1 </h3>
                                     <p class="ege_test_question">{{question_text_1}}</p>
+                                    {% if question_image_1 %}
                                     <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_1}}">
+                                    {% endif %}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon"><span>Ответ 1</span></div>
