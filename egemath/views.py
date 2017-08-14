@@ -17,6 +17,10 @@ from django.db.utils import IntegrityError #обработка исключен�
 def home_page(request):
     return render(request, 'egemath/home.html', {})
 
+def about(request):
+    return render(request, 'egemath/about.html', {})
+
+
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
 

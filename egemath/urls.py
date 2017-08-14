@@ -9,6 +9,7 @@ urlpatterns = [
     #url(r'^accounts/profile/$', views.home_page, name='home_page'),
     url(r'^egemath/$', views.ege_math, name='ege_math'),
     url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),
+    url(r'^about/$', views.about, name='about'),
     #url(r'^egetest/(?P<test_id>[0-9]+)/egetestanswer$', views.egetestanswer, name='egetestanswer'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^logout/$', views.logout_view, name='logout_view'),
