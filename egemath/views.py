@@ -20,6 +20,8 @@ def home_page(request):
 def about(request):
     return render(request, 'egemath/about.html', {})
 
+def repetitor_math(request):
+    return render(request, 'egemath/repetitor_math.html', {})
 
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
