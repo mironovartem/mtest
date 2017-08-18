@@ -14,80 +14,8 @@ from django.db.utils import IntegrityError #обработка исключен�
 
 # Create your views here.
 
-def home_page(request):
-    return render(request, 'egemath/home.html', {})
-
-def about(request):
-    return render(request, 'egemath/about.html', {})
-
-def repetitor_math(request):
-    return render(request, 'egemath/repetitor_math.html', {})
-
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
-
-'''
-def egetest(request, test_id):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = TestAnswerForm(request.POST)
-
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            username = request.user
-            answer1 =  form.cleaned_data['answer1']
-            answer2 =  form.cleaned_data['answer2']
-
-
-            if UserAnswer.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).filter(author__contains = username):
-                a1 = UserAnswer.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).filter(author__contains = username).get()
-                a1.answer = answer1
-                a1.save()
-            else:
-                a1 = UserAnswer( author = username, test_num = test_id, task_num = 1, answer = answer1)
-                a1.save()
-
-
-            if UserAnswer.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).filter(author__contains = username):
-                a2 = UserAnswer.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).filter(author__contains = username).get()
-                a2.answer = answer2
-                a2.save()
-            else:
-                a2 = UserAnswer( author = username, test_num = test_id, task_num = 2, answer = answer2)
-                a2.save()
-
-            # redirect to a new URL:
-            return HttpResponseRedirect('egetestanswer')
-            #return render(request, 'egetestanswer', {'test_id':test_id})
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = TestAnswerForm()
-
-        question_text_1 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_text')
-        #question_text_1 = question_text_1.get['question_text'] # так не работает почему?
-        question_text_1 = question_text_1[0]
-        question_text_1 = question_text_1['question_text']
-
-        question_text_2 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_text')
-        question_text_2 = question_text_2[0]
-        question_text_2 = question_text_2['question_text']
-
-        question_image_2 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_image')
-        question_image_2 = question_image_2[0]
-        question_image_2 = question_image_2['question_image']
-
-    return render(request, 'egemath/egetest.html', {
-    'form': form,
-    'question_text_1' : question_text_1,
-    'question_text_2' : question_text_2,
-    'question_image_2': question_image_2,
-    'test_id': test_id})
-
-'''
 
 def egetest(request, test_id):
     # if this is a POST request we need to process the form data
@@ -268,32 +196,6 @@ def egetest(request, test_id):
 
     'test_id': test_id})
 
-'''
-def egetestanswer(request, test_id):
-    username = request.user
-
-    #answer_1 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 1).values('answer')
-    #answer_1 = answer_1[0]
-    #answer_1 = answer_1['answer']
-
-    #answer_2 = UserAnswer.objects.filter(author__contains = username).filter(test_num__contains = test_id).filter(task_num__contains = 2).values('answer')
-    #answer_2 = answer_2[0]
-    #answer_2 = answer_2['answer']
-
-
-    return render(request, 'egemath/egetestanswer.html', {
-    #'test_id': 'test_id',
-    'answer1': answer1,
-    'correct_answer1' : correct_answer1,
-    'color1': color1,
-     'answer2': answer2,
-    'correct_answer2' : correct_answer2,
-    'color2': color2,
-    'result': result
-     })
-'''
-
-
 def signup(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -374,3 +276,24 @@ def logout_view(request):
     logout(request)
     # Redirect to a success page.
     return redirect('home_page')
+
+def home_page(request):
+    return render(request, 'egemath/home.html', {})
+
+def about(request):
+    return render(request, 'egemath/about.html', {})
+
+def repetitor_math(request):
+    return render(request, 'egemath/repetitor_math.html', {})
+
+def donate(request):
+    return render(request, 'egemath/donate.html', {})
+
+def copyright(request):
+    return render(request, 'egemath/copyright.html', {})
+
+def advertising(request):
+    return render(request, 'egemath/advertising.html', {})
+
+def website_development(request):
+    return render(request, 'egemath/website_development.html', {})
