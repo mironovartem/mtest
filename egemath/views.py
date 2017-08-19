@@ -300,7 +300,7 @@ def repetitor_math(request):
 
                 if message:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                    send_mail('application', message +', '+'Самара: ' + str(location_samara), 'astruslux@gmail.com', ['creativerror@gmail.com'])
+                    send_mail('Заявка на консультацию', message +', '+'Самара: ' + str(location_samara), 'astruslux@gmail.com', ['creativerror@gmail.com'])
 
 
                 # redirect to a new URL:

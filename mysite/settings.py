@@ -29,11 +29,11 @@ ALLOWED_HOSTS = ['mtest.pythonanywhere.com', '127.0.0.1', 'testege.com', 'www.te
 
 #ADMINS = [('artem', 'creativerror@gmail.com')]
 #EMAIL_HOST = 'www.testege.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT =  587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'astruslux@gmail.com'
-EMAIL_HOST_PASSWORD = '159632qw'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT =  587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
 #DEFAULT_FROM_EMAIL = ''
 
 # Application definition
