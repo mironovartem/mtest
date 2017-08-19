@@ -26,3 +26,7 @@ class SignUpForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Имя пользователя'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class' : 'form-control', 'placeholder' : '    Пароль'}))
+
+class CustomerApplicationForm(forms.Form):
+    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона или email'}))
+    location_samara = forms.BooleanField(required=False, widget=forms.CheckboxInput())

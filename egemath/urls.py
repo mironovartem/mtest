@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^logout/$', views.logout_view, name='logout_view'),
     url(r'^login/$', views.log, name='log'),
+    url(r'^repetitor_math/thanks/$', views.thanks, name='thanks'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

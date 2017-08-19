@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect #
 from django.http import HttpResponse # для передачи ответото
 from .forms import TestAnswerForm # импорт формы
 from .forms import SignUpForm #импорт формы
+from .forms import CustomerApplicationForm #импорт формы
 from .models import EgeMathTest # импорт модели
 from .models import UserAnswer # импорт модели
 from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
@@ -11,6 +12,7 @@ from django.contrib.auth import authenticate, login #нужно для ауте�
 from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
 from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -284,7 +286,33 @@ def about(request):
     return render(request, 'egemath/about.html', {})
 
 def repetitor_math(request):
-    return render(request, 'egemath/repetitor_math.html', {})
+        # if this is a POST request we need to process the form data
+        if request.method == 'POST':
+            # create a form instance and populate it with data from the request:
+            form = CustomerApplicationForm(request.POST)
+            # check whether it's valid:
+            if form.is_valid():
+                # process the data in form.cleaned_data as required
+                # ...
+
+                message =  form.cleaned_data['сontact_details']
+                location_samara =  form.cleaned_data['location_samara']
+
+                if message:
+                    #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
+                    send_mail('application', message +', '+'Самара: ' + str(location_samara), 'astruslux@gmail.com', ['creativerror@gmail.com'])
+
+
+                # redirect to a new URL:
+                return HttpResponseRedirect('thanks')
+
+
+        # if a GET (or any other method) we'll create a blank form
+        else:
+            form = CustomerApplicationForm()
+
+        return render(request, 'egemath/repetitor_math.html', {'form': form})
+
 
 def donate(request):
     return render(request, 'egemath/donate.html', {})
@@ -300,3 +328,6 @@ def website_development(request):
 
 def contacts(request):
     return render(request, 'egemath/contacts.html', {})
+
+def thanks(request):
+    return render(request, 'egemath/thanks.html', {})

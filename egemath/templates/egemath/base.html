@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic,cyrillic-ext,latin-ext">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Social-Icons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Footer-Clean.css' %}">
@@ -71,7 +73,13 @@
                             <li><a href="{% url 'contacts' %}">Связаться со мной</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-3 item social"><a href="https://www.youtube.com/channel/UCMEtyNN8syEEn6z4F8dl_bA"><i class="icon ion-social-youtube"></i></a>
+                    <div class="col-md-3 item social">
+                      <a target="_blank" href="https://www.youtube.com/channel/UCMEtyNN8syEEn6z4F8dl_bA">
+                          <i class="icon ion-social-youtube"></i>
+                      </a>
+                      <a href="{% url 'contacts' %}">
+                          <i class="fa fa-envelope"></i>
+                      </a>
                         <p class="copyright">TestEge.com © 2017</p>
                     </div>
                 </div>
