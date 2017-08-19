@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^copyright/$', views.copyright, name='copyright'),
     url(r'^advertising/$', views.advertising, name='advertising'),
     url(r'^website_development/$', views.website_development, name='website_development'),
+    url(r'^contacts/$', views.contacts, name='contacts'),
     #url(r'^egetest/(?P<test_id>[0-9]+)/egetestanswer$', views.egetestanswer, name='egetestanswer'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^logout/$', views.logout_view, name='logout_view'),

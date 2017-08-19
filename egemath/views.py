@@ -297,3 +297,6 @@ def advertising(request):
 
 def website_development(request):
     return render(request, 'egemath/website_development.html', {})
+
+def contacts(request):
+    return render(request, 'egemath/contacts.html', {})
