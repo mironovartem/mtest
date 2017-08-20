@@ -20,8 +20,8 @@
                   и с видео объяснениями к неправильно решенным заданиям.</p>
 
                 <p class="lead">Преимущество такого подхода заключается в том, что информация остается у ученика в наглядной и доступной форме, а не уходит вместе с репетитором.
-                  И все что остается это просто регулярно повторять самостоятельно то, что один раз понято.
-                  Затем продвигайтесь по online уроку до тех пор пока снова не потребуется моя помощь. </p>
+                  Если что-то забудется можно будет повторить.
+                   И конечно можно самостоятельно  продвигаться дальше по online уроку до тех пор, пока снова не потребуется моя помощь.</p>
 
                 <p class="lead">Чтобы понять, что я вам предлагаю в разделе ЕГЭ есть доступные занятия начните пользоваться, оцените качество,
                   и примите решение. Может случится так, что ученику и не потребуется помощь репетитора,
@@ -40,8 +40,10 @@
                 <p class="lead"> Так выглядит <a target="_blank" href="{% url 'egetest' 1 %}"> тест ЕГЭ по математике</a> </p>
 
                 <p class="lead">Я провожу индивидуальные консультации в городе Самаре с выездом к ученику, или online в формате переписки вопрос ответ.</p>
+                <p class="lead">Стоимость занятий оговаривается индивидуально.</p>
+                <p class="lead">Количество мест ограничено.</p>
 
-                <p class="lead">Заполните форму и я с вами свяжусь.</p>
+                <p class="lead">Оставьте заявку и свяжусь с вами в ближайшее время.</p>
 
                 <div id="registration">
                     <div class="container">
@@ -58,11 +60,24 @@
                                   </div>
 
                                   <div class="form-group">
+                                    {% csrf_token %}
+                                    {{form.сontact_name.errors}}
+                                    {{form.сontact_name}}
+                                  </div>
+                                  <div class="form-group">
                                     <div class="checkbox">
                                          <label class="control-label">
                                            {% csrf_token %}
                                            {{form.location_samara.errors}}
                                            {{form.location_samara}}<span class="lead"> Самара </span></label>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="checkbox">
+                                         <label class="control-label">
+                                           {% csrf_token %}
+                                           {{form.location_online.errors}}
+                                           {{form.location_online}}<span class="lead"> Online </span></label>
                                     </div>
                                   </div>
 
@@ -80,12 +95,12 @@
 
 
 
-                <p class="lead"></p>
+                <p class="lead">Узнать обо мне можно <a href="{% url 'about_me' %}">здесь</a></p>
 
-                <p class="lead"></p>
+
 
                 <h4></h4>
-                <p class="lead"></p>
+
                 <p class="lead"> </p>
                 <p class="lead"></p>
 

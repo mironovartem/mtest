@@ -219,7 +219,7 @@ def signup(request):
                     if user is not None:
                         if user.is_active:
                             login(request, user)
-                            return redirect('home_page')
+                            return redirect('donate')
                 except  IntegrityError:
                     return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
             else:
@@ -284,6 +284,8 @@ def home_page(request):
 
 def about(request):
     return render(request, 'egemath/about.html', {})
+def about_me(request):
+    return render(request, 'egemath/about_me.html', {})
 
 def repetitor_math(request):
         # if this is a POST request we need to process the form data
@@ -296,11 +298,14 @@ def repetitor_math(request):
                 # ...
 
                 message =  form.cleaned_data['сontact_details']
+                сontact_name =  form.cleaned_data['сontact_name']
                 location_samara =  form.cleaned_data['location_samara']
+                location_online =  form.cleaned_data['location_online']
+
 
                 if message:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                    send_mail('Заявка на консультацию', message +', '+'Самара: ' + str(location_samara), 'admin@testege.com', ['creativerror@gmail.com'] )
+                    send_mail('Заявка на консультацию', 'Контактные данные:  ' + message +', '+ 'Имя: '+ сontact_name+','+' Самара: ' + str(location_samara) + ', '+' Online: ' + str(location_online), 'astruslux@gmail.com', ['creativerror@gmail.com'] )
 
 
                 # redirect to a new URL:

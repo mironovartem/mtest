@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^egemath/$', views.ege_math, name='ege_math'),
     url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),
     url(r'^about/$', views.about, name='about'),
+    url(r'^about_me/$', views.about_me, name='about_me'),
     url(r'^repetitor_math/$', views.repetitor_math, name='repetitor_math'),
     url(r'^donate/$', views.donate, name='donate'),
     url(r'^copyright/$', views.copyright, name='copyright'),
