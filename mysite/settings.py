@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
             'default':{
                 'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': 'db.sqlite3'
+                'NAME': 'db.sqlite3',
                 'HOST': '',
                 'USER': '',
-                'PASSWORD': ''               
+                'PASSWORD': ''
                },
 
 }
