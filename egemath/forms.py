@@ -32,3 +32,8 @@ class CustomerApplicationForm(forms.Form):
     сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
     location_samara = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     location_online = forms.BooleanField(required=False, widget=forms.CheckboxInput())
+
+class ContactsForm(forms.Form):
+    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона или email'}))
+    сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
+    сontact_question = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваш вопрос'}))
