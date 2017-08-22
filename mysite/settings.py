@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+from local_settings import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,14 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['mtest.pythonanywhere.com', '127.0.0.1', 'testege.com', 'www.testege.com']
 
-#ADMINS = [('admin', 'admin@testege.com')]
-EMAIL_HOST = 'mail.smtp2go.com' # для сервера
-#EMAIL_HOST = 'smtp.gmail.com' # для теста
+#ADMINS = [('admin', 'some@mail.com')]
+#EMAIL_HOST = 'mail.smtp2go.com' # для сервера
+#EMAIL_HOST = 'smtp-relay.sendinblue.com'
+EMAIL_HOST = 'smtp.gmail.com' # для теста
 EMAIL_PORT =  587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'astruslux@gmail.com'
-EMAIL_HOST_PASSWORD = 'z71iifngra1o' # для сервера
-#DEFAULT_FROM_EMAIL = 'admin@testege.com'
+
+#DEFAULT_FROM_EMAIL = 'some@mail.com'
 
 # Application definition
 
