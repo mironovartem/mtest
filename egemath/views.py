@@ -336,3 +336,9 @@ def contacts(request):
 
 def thanks(request):
     return render(request, 'egemath/thanks.html', {})
+
+def egetaskanswer(request):
+    return render(request, 'egemath/egetaskanswer.html', {})
+
+def egetask(request):
+    return render(request, 'egemath/egetask.html', {})

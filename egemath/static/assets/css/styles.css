@@ -235,3 +235,9 @@ body {
     width:auto;
   }
 }
+
+#nav_task {
+  max-width:1200px;
+  margin:0 auto;
+  text-align:center;
+}

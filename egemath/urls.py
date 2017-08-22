@@ -22,5 +22,7 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view, name='logout_view'),
     url(r'^login/$', views.log, name='log'),
     url(r'^repetitor_math/thanks/$', views.thanks, name='thanks'),
+    url(r'^egetaskanswer/$', views.egetaskanswer, name='egetaskanswer'),
+    url(r'^egetask/$', views.egetask, name='egetask'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

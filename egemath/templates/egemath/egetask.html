@@ -1,0 +1,68 @@
+{% extends 'egemath/base.html' %}
+{% block title %}ЕГЭ по математике - тест {% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+    <div>
+        <div class="row" id="rw1">
+            <div class="col-md-12">
+                <h2>Тест ЕГЭ по математике № 1</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="nav_task">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <ul class="pagination">
+                            <li><a aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li><a>1</a></li>
+                            <li><a>2</a></li>
+                            <li><a>3</a></li>
+                            <li><a>4</a></li>
+                            <li><a>5</a></li>
+                            <li><a aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ege_test_block">
+        <div class="container-fluid" id="ege_test_container">
+            <div class="row" id="ege_test_row">
+                <div class="col-md-12" id="ege_test_column">
+                    <form action="{% url 'egetask'  %}" method="post">
+
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 1 </h3>
+                                    <p class="ege_test_question">{{question_text_1}}</p>
+                                    {% if question_image_1 %}
+                                    <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_1}}">
+                                    {% endif %}
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span>Ответ 1</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer1}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" id="submit_btn">
+                            <button class="btn btn-default" type="submit">ПРОВЕРИТЬ </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -32,8 +32,6 @@ ALLOWED_HOSTS = ['mtest.pythonanywhere.com', '127.0.0.1', 'testege.com', 'www.te
 #ADMINS = [('admin', 'some@mail.com')]
 EMAIL_HOST = 'mail.smtp2go.com' # для сервера
 #EMAIL_HOST = 'smtp.gmail.com' # для теста
-#EMAIL_PORT =  587
-#EMAIL_USE_TLS = True
 EMAIL_PORT =  587
 EMAIL_USE_TLS = True
 
