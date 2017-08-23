@@ -30,8 +30,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALLOWED_HOSTS = ['mtest.pythonanywhere.com', '127.0.0.1', 'testege.com', 'www.testege.com']
 
 #ADMINS = [('admin', 'some@mail.com')]
-EMAIL_HOST = 'mail.smtp2go.com' # для сервера
-#EMAIL_HOST = 'smtp.gmail.com' # для теста
+#EMAIL_HOST = 'mail.smtp2go.com' # для сервера
+EMAIL_HOST = 'smtp.gmail.com' # для теста
 EMAIL_PORT =  587
 EMAIL_USE_TLS = True
 
