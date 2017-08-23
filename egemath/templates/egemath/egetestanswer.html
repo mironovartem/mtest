@@ -16,9 +16,12 @@
                       {% if color1 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Объяснение к заданию № 1 </a>
                           <div class="collapse" id="collapse-1">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к первому заданию.</p>
+                              {% if explanation_text1 %}
+                                <p class="lead text-center">{{explanation_text1}}</p>
+                              {% endif %}
+                              <br>
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                                <iframe width="" height="" allowfullscreen="" frameborder="0" src=""></iframe>
                               </div>
                           </div>
                       </div>{% endif %}
@@ -28,9 +31,12 @@
                       {% if color2 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" role="button" href="#collapse-2">Объяснение к заданию № 2 </a>
                           <div class="collapse" id="collapse-2">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к заданию.</p>
+                              {% if explanation_text2 %}
+                                <p class="lead text-center">{{explanation_text2}}</p>
+                              {% endif %}
+                              <br>
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                                <iframe width="" height="" allowfullscreen="" frameborder="0" src=""></iframe>
                               </div>
                           </div>
                       </div>{% endif %}
@@ -40,9 +46,12 @@
                       {% if color3 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" role="button" href="#collapse-3">Объяснение к заданию № 3 </a>
                           <div class="collapse" id="collapse-3">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к заданию.</p>
+                              {% if explanation_text3 %}
+                                <p class="lead text-center">{{explanation_text3}}</p>
+                              {% endif %}
+                              <br>
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                                <iframe width="" height="" allowfullscreen="" frameborder="0" src=""></iframe>
                               </div>
                           </div>
                       </div>{% endif %}
@@ -52,9 +61,12 @@
                       {% if color4 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" role="button" href="#collapse-4">Объяснение к заданию № 4 </a>
                           <div class="collapse" id="collapse-4">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к заданию.</p>
+                              {% if explanation_text4 %}
+                                <p class="lead text-center">{{explanation_text4}}</p>
+                              {% endif %}
+                              <br>
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
                               </div>
                           </div>
                       </div>{% endif %}
@@ -64,9 +76,12 @@
                       {% if color5 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" role="button" href="#collapse-5">Объяснение к заданию № 5 </a>
                           <div class="collapse" id="collapse-5">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к заданию.</p>
+                              {% if explanation_text5 %}
+                                <p class="lead text-center">{{explanation_text5}}</p>
+                              {% endif %}
+                              <br>
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                                <iframe width="" height="" allowfullscreen="" frameborder="0" src=""></iframe>
                               </div>
                           </div>
                       </div>{% endif %}
@@ -76,10 +91,15 @@
                       {% if color6 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-6" role="button" href="#collapse-6">Объяснение к заданию № 6 </a>
                           <div class="collapse" id="collapse-6">
-                              <p class="lead text-center">Здесь можно будет увидеть объяснение к заданию.</p>
+                              {% if explanation_text6 %}
+                                <p class="lead text-center">{{explanation_text6}}</p>
+                              {% endif %}                              
+                              <br>
+                              {% if explanation_video6 %}
                               <div class="text-center">
-                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/4wmErWZTEnk?showinfo=0&amp;rel=0"></iframe>
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video6}}"></iframe>
                               </div>
+                              {% endif %}
                           </div>
                       </div>{% endif %}
                     </li>

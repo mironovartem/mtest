@@ -37,87 +37,145 @@ def egetest(request, test_id):
             answer4 =  form.cleaned_data['answer4']
             answer5 =  form.cleaned_data['answer5']
             answer6 =  form.cleaned_data['answer6']
-
+###############################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer1 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text1 = explanation_text['explanation_text']
+            if not explanation_text1:
+                explanation_text1 = ''
+
             if correct_answer1 == answer1:
                 result = result+1
                 color1 = False
             else:
                 color1 = True
-
+###################################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer2 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text2 = explanation_text['explanation_text']
+            if not explanation_text2:
+                explanation_text2 = ''
+
             if correct_answer2 == answer2:
                 result = result+1
                 color2 = False
             else:
                 color2 = True
-
+#####################################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer3 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text3 = explanation_text['explanation_text']
+            if not explanation_text3:
+                explanation_text3 = ''
+
             if correct_answer3 == answer3:
                 result = result+1
                 color3 = False
             else:
                 color3 = True
-
+######################################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer4 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text4 = explanation_text['explanation_text']
+            if not explanation_text4:
+                explanation_text4 = ''
+
             if correct_answer4 == answer4:
                 result = result+1
                 color4 = False
             else:
                 color4 = True
-
+#######################################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer5 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text5 = explanation_text['explanation_text']
+            if not explanation_text5:
+                explanation_text5 = ''
+
             if correct_answer5 == answer5:
                 result = result+1
                 color5 = False
             else:
                 color5 = True
-
+#########################################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer6 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text6 = explanation_text['explanation_text']
+            if not explanation_text6:
+                explanation_text6 = ''
+
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video6 = explanation_video['explanation_video']
+
+            if not explanation_video6:
+                explanation_video6 = ''
+                if not explanation_text6:
+                    explanation_text6 = ''
+
             if correct_answer6 == answer6:
                 result = result+1
                 color6 = False
             else:
                 color6 = True
-
+##########################################
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
             'answer1': answer1,
             'correct_answer1' : correct_answer1,
-            'color1': color1,
+            'color1' : color1,
+            'explanation_text1' : explanation_text1,
 
-            'answer2': answer2,
+            'answer2' : answer2,
             'correct_answer2' : correct_answer2,
             'color2': color2,
+            'explanation_text2' : explanation_text2,
 
             'answer3': answer3,
             'correct_answer3' : correct_answer3,
             'color3': color3,
+            'explanation_text3' : explanation_text3,
 
             'answer4': answer4,
             'correct_answer4' : correct_answer4,
             'color4': color4,
+            'explanation_text4' : explanation_text4,
 
             'answer5': answer5,
             'correct_answer5' : correct_answer5,
             'color5': color5,
+            'explanation_text5' : explanation_text5,
 
             'answer6': answer6,
             'correct_answer6' : correct_answer6,
             'color6': color6,
+            'explanation_text6' : explanation_text6,
+            'explanation_video6' : explanation_video6,
 
             'result': result
              })
