@@ -37,6 +37,9 @@ def egetest(request, test_id):
             answer4 =  form.cleaned_data['answer4']
             answer5 =  form.cleaned_data['answer5']
             answer6 =  form.cleaned_data['answer6']
+            answer7 =  form.cleaned_data['answer7']
+            answer8 =  form.cleaned_data['answer8']
+
 ###############################
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('correct_answer')
             correct_answer = correct_answer[0]
@@ -47,6 +50,15 @@ def egetest(request, test_id):
             explanation_text1 = explanation_text['explanation_text']
             if not explanation_text1:
                 explanation_text1 = ''
+
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video1 = explanation_video['explanation_video']
+
+            if not explanation_video1:
+                explanation_video1 = ''
+                if not explanation_text1:
+                    explanation_text1 = ''
 
             if correct_answer1 == answer1:
                 result = result+1
@@ -64,6 +76,15 @@ def egetest(request, test_id):
             if not explanation_text2:
                 explanation_text2 = ''
 
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video2 = explanation_video['explanation_video']
+
+            if not explanation_video2:
+                explanation_video2 = ''
+                if not explanation_text2:
+                    explanation_text2 = ''
+
             if correct_answer2 == answer2:
                 result = result+1
                 color2 = False
@@ -79,6 +100,15 @@ def egetest(request, test_id):
             explanation_text3 = explanation_text['explanation_text']
             if not explanation_text3:
                 explanation_text3 = ''
+
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video3 = explanation_video['explanation_video']
+
+            if not explanation_video3:
+                explanation_video3 = ''
+                if not explanation_text3:
+                    explanation_text3 = ''
 
             if correct_answer3 == answer3:
                 result = result+1
@@ -96,12 +126,23 @@ def egetest(request, test_id):
             if not explanation_text4:
                 explanation_text4 = ''
 
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video4 = explanation_video['explanation_video']
+
+            if not explanation_video4:
+                explanation_video4 = ''
+                if not explanation_text4:
+                    explanation_text4 = ''
+
             if correct_answer4 == answer4:
                 result = result+1
                 color4 = False
             else:
                 color4 = True
+
 #######################################
+
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer5 = correct_answer['correct_answer']
@@ -112,12 +153,23 @@ def egetest(request, test_id):
             if not explanation_text5:
                 explanation_text5 = ''
 
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video5 = explanation_video['explanation_video']
+
+            if not explanation_video5:
+                explanation_video5 = ''
+                if not explanation_text5:
+                    explanation_text5 = ''
+
             if correct_answer5 == answer5:
                 result = result+1
                 color5 = False
             else:
                 color5 = True
+
 #########################################
+
             correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('correct_answer')
             correct_answer = correct_answer[0]
             correct_answer6 = correct_answer['correct_answer']
@@ -142,7 +194,65 @@ def egetest(request, test_id):
                 color6 = False
             else:
                 color6 = True
+
 ##########################################
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 7).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer7 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 7).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text7 = explanation_text['explanation_text']
+            if not explanation_text7:
+                explanation_text7 = ''
+
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 7).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video7 = explanation_video['explanation_video']
+
+            if not explanation_video7:
+                explanation_video7 = ''
+                if not explanation_text7:
+                    explanation_text7 = ''
+
+            if correct_answer7 == answer7:
+                result = result+1
+                color7 = False
+            else:
+                color7 = True
+
+##########################################
+
+
+            correct_answer = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 8).values('correct_answer')
+            correct_answer = correct_answer[0]
+            correct_answer8 = correct_answer['correct_answer']
+
+            explanation_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 8).values('explanation_text')
+            explanation_text = explanation_text[0]
+            explanation_text8 = explanation_text['explanation_text']
+            if not explanation_text8:
+                explanation_text8 = ''
+
+            explanation_video = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 8).values('explanation_video')
+            explanation_video = explanation_video[0]
+            explanation_video8 = explanation_video['explanation_video']
+
+            if not explanation_video8:
+                explanation_video8 = ''
+                if not explanation_text8:
+                    explanation_text8 = ''
+
+            if correct_answer8 == answer8:
+                result = result+1
+                color8 = False
+            else:
+                color8 = True
+
+##########################################
+
+
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
@@ -150,26 +260,31 @@ def egetest(request, test_id):
             'correct_answer1' : correct_answer1,
             'color1' : color1,
             'explanation_text1' : explanation_text1,
+            'explanation_video1' : explanation_video1,
 
             'answer2' : answer2,
             'correct_answer2' : correct_answer2,
             'color2': color2,
             'explanation_text2' : explanation_text2,
+            'explanation_video2' : explanation_video2,
 
             'answer3': answer3,
             'correct_answer3' : correct_answer3,
             'color3': color3,
             'explanation_text3' : explanation_text3,
+            'explanation_video3' : explanation_video3,
 
             'answer4': answer4,
             'correct_answer4' : correct_answer4,
             'color4': color4,
             'explanation_text4' : explanation_text4,
+            'explanation_video4' : explanation_video4,
 
             'answer5': answer5,
             'correct_answer5' : correct_answer5,
             'color5': color5,
             'explanation_text5' : explanation_text5,
+            'explanation_video5' : explanation_video5,
 
             'answer6': answer6,
             'correct_answer6' : correct_answer6,
@@ -177,13 +292,25 @@ def egetest(request, test_id):
             'explanation_text6' : explanation_text6,
             'explanation_video6' : explanation_video6,
 
+            'answer7': answer7,
+            'correct_answer7' : correct_answer7,
+            'color7': color7,
+            'explanation_text7' : explanation_text7,
+            'explanation_video7' : explanation_video7,
+
+            'answer8': answer8,
+            'correct_answer8' : correct_answer8,
+            'color8': color8,
+            'explanation_text8' : explanation_text8,
+            'explanation_video8' : explanation_video8,
+
             'result': result
              })
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = TestAnswerForm()
-
+#################################
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_text')
         #question_text_1 = question_text_1.get['question_text'] # так не работает почему?
         question_text = question_text[0]
@@ -192,7 +319,7 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 1).values('question_image')
         question_image = question_image[0]
         question_image_1 = question_image['question_image']
-
+#####################################
 
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_text')
         question_text = question_text[0]
@@ -201,6 +328,7 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 2).values('question_image')
         question_image = question_image[0]
         question_image_2 = question_image['question_image']
+##################################
 
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('question_text')
         question_text = question_text[0]
@@ -209,7 +337,7 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 3).values('question_image')
         question_image = question_image[0]
         question_image_3 = question_image['question_image']
-
+#############################
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('question_text')
         question_text = question_text[0]
         question_text_4 = question_text['question_text']
@@ -217,7 +345,7 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 4).values('question_image')
         question_image = question_image[0]
         question_image_4 = question_image['question_image']
-
+###############################
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('question_text')
         question_text = question_text[0]
         question_text_5 = question_text['question_text']
@@ -225,7 +353,7 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 5).values('question_image')
         question_image = question_image[0]
         question_image_5 = question_image['question_image']
-
+############################
         question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('question_text')
         question_text = question_text[0]
         question_text_6 = question_text['question_text']
@@ -233,6 +361,23 @@ def egetest(request, test_id):
         question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 6).values('question_image')
         question_image = question_image[0]
         question_image_6 = question_image['question_image']
+#############################
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 7).values('question_text')
+        question_text = question_text[0]
+        question_text_7 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 7).values('question_image')
+        question_image = question_image[0]
+        question_image_7 = question_image['question_image']
+
+#############################
+        question_text = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 8).values('question_text')
+        question_text = question_text[0]
+        question_text_8 = question_text['question_text']
+
+        question_image = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = 8).values('question_image')
+        question_image = question_image[0]
+        question_image_8 = question_image['question_image']
 
     return render(request, 'egemath/egetest.html', {
     'form': form,
@@ -253,6 +398,12 @@ def egetest(request, test_id):
 
     'question_text_6' : question_text_6,
     'question_image_6': question_image_6,
+
+    'question_text_7' : question_text_7,
+    'question_image_7': question_image_7,
+
+    'question_text_8' : question_text_8,
+    'question_image_8': question_image_8,
 
     'test_id': test_id})
 

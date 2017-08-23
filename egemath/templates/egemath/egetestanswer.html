@@ -93,11 +93,45 @@
                           <div class="collapse" id="collapse-6">
                               {% if explanation_text6 %}
                                 <p class="lead text-center">{{explanation_text6}}</p>
-                              {% endif %}                              
+                              {% endif %}
                               <br>
                               {% if explanation_video6 %}
                               <div class="text-center">
                               <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video6}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
+                    <li class="list-group-item" {% if color7 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">7 задание - правильный ответ: {{correct_answer7}} Ваш ответ: {{answer7}} </p>
+                      {% if color7 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-7" role="button" href="#collapse-7">Объяснение к заданию № 7 </a>
+                          <div class="collapse" id="collapse-7">
+                              {% if explanation_text7 %}
+                                <p class="lead text-center">{{explanation_text7}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video7 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video7}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
+                    <li class="list-group-item" {% if color8 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">8 задание - правильный ответ: {{correct_answer8}} Ваш ответ: {{answer8}} </p>
+                      {% if color8 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-8" role="button" href="#collapse-8">Объяснение к заданию № 8 </a>
+                          <div class="collapse" id="collapse-8">
+                              {% if explanation_text8 %}
+                                <p class="lead text-center">{{explanation_text8}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video8 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video8}}"></iframe>
                               </div>
                               {% endif %}
                           </div>
