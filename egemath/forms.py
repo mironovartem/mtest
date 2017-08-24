@@ -12,8 +12,8 @@ class TestAnswerForm(forms.Form):
     answer6 = forms.CharField(label='', max_length=30)
     answer7 = forms.CharField(label='', max_length=30)
     answer8 = forms.CharField(label='', max_length=30)
-    #answer9 = forms.CharField(label='', max_length=30)
-    #answer10 = forms.CharField(label='', max_length=30)
+    answer9 = forms.CharField(label='', max_length=30)
+    answer10 = forms.CharField(label='', max_length=30)
     #answer11 = forms.CharField(label='', max_length=30)
     #answer12 = forms.CharField(label='', max_length=30)
 

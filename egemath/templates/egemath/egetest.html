@@ -160,7 +160,41 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 9 </h3>
+                                    <p class="ege_test_question">{{question_text_9}}</p>
+                                    {% if question_image_9 %}
+                                    <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_9}}">
+                                    {% endif %}
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 9</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer9}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 10 </h3>
+                                    <p class="ege_test_question">{{question_text_10}}</p>
+                                    {% if question_image_10 %}
+                                    <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_10}}">
+                                    {% endif %}
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 10</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer10}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group" id="submit_btn">
                             <button class="btn btn-default" type="submit">ПРОВЕРИТЬ </button>
