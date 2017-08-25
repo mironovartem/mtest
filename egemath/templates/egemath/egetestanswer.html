@@ -180,7 +180,41 @@
                               {% endif %}
                           </div>
                       </div>{% endif %}
-                    </li
+                    </li>
+
+                    <li class="list-group-item" {% if color11 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">11 задание - правильный ответ: {{correct_answer11}} Ваш ответ: {{answer11}} </p>
+                      {% if color11 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-11" role="button" href="#collapse-11">Объяснение к заданию № 11 </a>
+                          <div class="collapse" id="collapse-11">
+                              {% if explanation_text11 %}
+                                <p class="lead text-center">{{explanation_text11}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video11 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video11}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
+                    <li class="list-group-item" {% if color12 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">12 задание - правильный ответ: {{correct_answer12}} Ваш ответ: {{answer12}} </p>
+                      {% if color12 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-12" role="button" href="#collapse-12">Объяснение к заданию № 12 </a>
+                          <div class="collapse" id="collapse-12">
+                              {% if explanation_text12 %}
+                                <p class="lead text-center">{{explanation_text12}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video12 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video12}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
 
                     <li class="list-group-item"><p class="lead text-center" >Правильных ответов {{result}}</p></li>
                 </ul>

@@ -14,8 +14,8 @@ class TestAnswerForm(forms.Form):
     answer8 = forms.CharField(label='', max_length=30)
     answer9 = forms.CharField(label='', max_length=30)
     answer10 = forms.CharField(label='', max_length=30)
-    #answer11 = forms.CharField(label='', max_length=30)
-    #answer12 = forms.CharField(label='', max_length=30)
+    answer11 = forms.CharField(label='', max_length=30)
+    answer12 = forms.CharField(label='', max_length=30)
 
 class SignUpForm(forms.Form):
     #required_css_class = 'form-control'
