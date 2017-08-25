@@ -416,15 +416,20 @@ def repetitor_math(request):
                 # process the data in form.cleaned_data as required
                 # ...
 
-                message =  form.cleaned_data['сontact_details']
-                сontact_name =  form.cleaned_data['сontact_name']
-                location_samara =  form.cleaned_data['location_samara']
-                location_online =  form.cleaned_data['location_online']
+                contact_phone = form.cleaned_data['сontact_phone']
+                сontact_email = form.cleaned_data['сontact_email']
+                сontact_name = form.cleaned_data['сontact_name']
+                location_samara = form.cleaned_data['location_samara']
+                location_online = form.cleaned_data['location_online']
+                email_subscribe = form.cleaned_data['email_subscribe']
 
 
-                if message:
+                if сontact_email or contact_phone:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                    send_mail('Заявка на консультацию', 'Контактные данные:  ' + message +', '+ 'Имя: '+ сontact_name+','+' Самара: ' + str(location_samara) + ', '+' Online: ' + str(location_online), 'astruslux@gmail.com', ['creativerror@gmail.com'] )
+                    send_mail('Заявка на консультацию',
+                    'Телефон :  ' + contact_phone +', '+ 'Email: ' + сontact_email + ', '+ 'Имя: '+ сontact_name+','+' Самара: ' + str(location_samara) + ', '+' Online: ' + str(location_online)+ ', '+' Subscribe: ' + str(email_subscribe), 
+                    'astruslux@gmail.com',
+                     ['creativerror@gmail.com'] )
 
 
                 # redirect to a new URL:

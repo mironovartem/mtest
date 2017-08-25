@@ -28,12 +28,15 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class' : 'form-control', 'placeholder' : '    Пароль'}))
 
 class CustomerApplicationForm(forms.Form):
-    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона или email'}))
-    сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
+    сontact_phone = forms.CharField(required=False, widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона'}))
+    сontact_email = forms.EmailField(required=False, widget=forms.EmailInput(attrs={'class' : 'form-control', 'placeholder' : '    email'}))
+    #сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона и/или email'}))
+    сontact_name = forms.CharField(required=False, widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
     location_samara = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     location_online = forms.BooleanField(required=False, widget=forms.CheckboxInput())
+    email_subscribe = forms.BooleanField(required=False, widget=forms.CheckboxInput(), initial=True)
 
 class ContactsForm(forms.Form):
-    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона или email'}))
+    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона и/или email'}))
     сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
     сontact_question = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваш вопрос'}))
