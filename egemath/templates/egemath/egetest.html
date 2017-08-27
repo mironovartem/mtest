@@ -14,6 +14,7 @@
         <div class="container-fluid" id="ege_test_container">
             <div class="row" id="ege_test_row">
                 <div class="col-md-12" id="ege_test_column">
+
                     <form action="{% url 'egetest' test_id %}" method="post">
 
                         <div class="form-group">
@@ -25,12 +26,14 @@
                                     <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_1}}">
                                     {% endif %}
                                 </div>
+
                                 <div class="input-group">
                                     <div class="input-group-addon"><span>Ответ 1</span></div>
                                     {% csrf_token %}
                                     {{form.answer1}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -49,6 +52,7 @@
                                     {{form.answer2}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -67,6 +71,7 @@
                                     {{form.answer3}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -85,6 +90,7 @@
                                     {{form.answer4}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -103,6 +109,7 @@
                                     {{form.answer5}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -121,6 +128,7 @@
                                     {{form.answer6}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -139,6 +147,7 @@
                                     {{form.answer7}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -157,6 +166,7 @@
                                     {{form.answer8}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -175,6 +185,7 @@
                                     {{form.answer9}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -193,6 +204,7 @@
                                     {{form.answer10}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -211,6 +223,7 @@
                                     {{form.answer11}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
 
@@ -220,7 +233,7 @@
                                     <h3>Задание 12 </h3>
                                     <p class="ege_test_question">{{question_text_12}}</p>
                                     {% if question_image_12 %}
-                                    <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_12}}">
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_12}}">
                                     {% endif %}
                                 </div>
                                 <div class="input-group">
@@ -229,8 +242,49 @@
                                     {{form.answer12}}
                                     <div class="input-group-addon"></div>
                                 </div>
+                                <p>В ответ запишите целое число или десятичное с запятой.</p>
                             </div>
                         </div>
+
+                        <br>
+                        <p class="lead">Внимание!!! В заданиях 13 - 19 требуется оформление решения.</p>
+                        <p class="lead">Для удобства проверки просто выберете наиболее подходищий вариант ответа.</p>
+                        <p class="lead">Если не знаете правильного ответа укажите любое число.</p>
+                        <br>
+
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 13 </h3>
+                                    <p class="ege_test_question">{{question_text_13}}</p>
+                                    {% if question_text_1_13 %}
+                                      <p class="ege_test_question">{{question_text_1_13}}</p>
+                                    {% endif %}
+                                    {% if question_image_13 %}
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_13}}">
+                                    {% endif %}
+
+                                    <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Варианты ответов</a>
+                                        <div class="collapse" id="collapse-1">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><span>1) </span></li>
+                                                <li class="list-group-item"><span>2) </span></li>
+                                                <li class="list-group-item"><span>3) </span></li>
+                                                <li class="list-group-item"><span>4) </span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 13</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer13}}
+                                    <div class="input-group-addon"></div>
+                                </div>                                
+                            </div>
+                        </div>
+
 
 
                         <div class="form-group" id="submit_btn">

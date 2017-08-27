@@ -216,6 +216,23 @@
                       </div>{% endif %}
                     </li>
 
+                    <li class="list-group-item" {% if color13 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">13 задание - правильный ответ: {{correct_answer13}} Ваш ответ: {{answer13}} </p>
+                      {% if color13 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-13" role="button" href="#collapse-13">Объяснение к заданию № 13 </a>
+                          <div class="collapse" id="collapse-13">
+                              {% if explanation_text13 %}
+                                <p class="lead text-center">{{explanation_text13}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video13 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video13}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
                     <li class="list-group-item"><p class="lead text-center" >Правильных ответов {{result}}</p></li>
                 </ul>
             </div>

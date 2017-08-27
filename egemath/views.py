@@ -38,14 +38,31 @@ def expl(test_id, num):
     return  x, y
 
 def quest(test_id, num):
-    x= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text')
-    x = x[0]
-    x = x['question_text']
+    if num >=13:
 
-    y = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_image')
-    y = y[0]
-    y = y['question_image']
-    return  x, y
+        x= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text')
+        x = x[0]
+        x = x['question_text']
+
+        x1= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text1')
+        x1 = x1[0]
+        x1 = x1['question_text1']
+        if not x1:
+            x1 = ''
+
+        y = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_image')
+        y = y[0]
+        y = y['question_image']
+        return  x, y, x1
+    else:
+        x= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text')
+        x = x[0]
+        x = x['question_text']
+
+        y = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_image')
+        y = y[0]
+        y = y['question_image']
+        return  x, y
 
 def egetest(request, test_id):
     # if this is a POST request we need to process the form data
@@ -71,6 +88,7 @@ def egetest(request, test_id):
             answer10 =  form.cleaned_data['answer10']
             answer11 =  form.cleaned_data['answer11']
             answer12 =  form.cleaned_data['answer12']
+            answer13 =  form.cleaned_data['answer13']
 
 ###############################
             correct_answer1 = cor_answ(test_id, 1)
@@ -181,6 +199,15 @@ def egetest(request, test_id):
             else:
                 color12 = True
 ##########################################
+            correct_answer13 = cor_answ(test_id, 13)
+            explanation_text13, explanation_video13 =expl(test_id, 13)
+
+            if correct_answer13 == answer13:
+                result = result+1
+                color13 = False
+            else:
+                color13 = True
+##########################################
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
@@ -256,6 +283,12 @@ def egetest(request, test_id):
             'explanation_text12' : explanation_text12,
             'explanation_video12' : explanation_video12,
 
+            'answer13': answer13,
+            'correct_answer13' : correct_answer13,
+            'color13': color13,
+            'explanation_text13' : explanation_text13,
+            'explanation_video13' : explanation_video13,
+
             'result': result
              })
 
@@ -275,6 +308,7 @@ def egetest(request, test_id):
         question_text_10, question_image_10 = quest(test_id, 10)
         question_text_11, question_image_11 = quest(test_id, 11)
         question_text_12, question_image_12 = quest(test_id, 12)
+        question_text_13, question_image_13, question_text_1_13 = quest(test_id, 13)
 
 #####################################
     return render(request, 'egemath/egetest.html', {
@@ -314,6 +348,10 @@ def egetest(request, test_id):
 
     'question_text_12' : question_text_12,
     'question_image_12': question_image_12,
+
+    'question_text_13' : question_text_13,
+    'question_text_1_13' : question_text_1_13,
+    'question_image_13': question_image_13,
 
     'test_id': test_id})
 

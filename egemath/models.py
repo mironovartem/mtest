@@ -26,10 +26,18 @@ class EgeMathTest(models.Model):
     task_num = models.PositiveIntegerField()
     question_image = models.ImageField(upload_to='egetest', blank=True, null=True)
     question_text = models.TextField(blank=True, null=True)
+    question_text1 = models.TextField(blank=True, null=True)
+    question_text2 = models.TextField(blank=True, null=True)
+    question_text3 = models.TextField(blank=True, null=True)
     answer_text = models.TextField(blank=True, null=True)
+    answer_text1 = models.TextField(blank=True, null=True)
+    answer_text2 = models.TextField(blank=True, null=True)
+    answer_text3 = models.TextField(blank=True, null=True)
+    answer_text4 = models.TextField(blank=True, null=True)
     correct_answer = models.CharField(max_length=20)
     explanation_video = models.URLField(blank=True, null=True)
     explanation_text = models.TextField(blank=True, null=True)
+    access_level = models.TextField(blank=True, null=True)
 
     def publish(self):
         self.save()
