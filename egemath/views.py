@@ -39,7 +39,6 @@ def expl(test_id, num):
 
 def quest(test_id, num):
     if num >=13:
-
         x= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text')
         x = x[0]
         x = x['question_text']
@@ -63,6 +62,25 @@ def quest(test_id, num):
         y = y[0]
         y = y['question_image']
         return  x, y
+
+def aswertext(test_id, num):
+    x1 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('answer_text1')
+    x1 = x1[0]
+    x1 = x1['answer_text1']
+
+    x2 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('answer_text2')
+    x2 = x2[0]
+    x2 = x2['answer_text2']
+
+    x3 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('answer_text3')
+    x3 = x3[0]
+    x3 = x3['answer_text3']
+
+    x4 = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('answer_text4')
+    x4 = x4[0]
+    x4 = x4['answer_text4']
+    return x1, x2, x3, x4
+
 
 def egetest(request, test_id):
     # if this is a POST request we need to process the form data
@@ -309,6 +327,7 @@ def egetest(request, test_id):
         question_text_11, question_image_11 = quest(test_id, 11)
         question_text_12, question_image_12 = quest(test_id, 12)
         question_text_13, question_image_13, question_text_1_13 = quest(test_id, 13)
+        answer_text_1_13, answer_text_2_13, answer_text_3_13, answer_text_4_13 = aswertext(test_id, 13)
 
 #####################################
     return render(request, 'egemath/egetest.html', {
@@ -352,6 +371,11 @@ def egetest(request, test_id):
     'question_text_13' : question_text_13,
     'question_text_1_13' : question_text_1_13,
     'question_image_13': question_image_13,
+    'answer_text_1_13' : answer_text_1_13,
+    'answer_text_2_13' : answer_text_2_13,
+    'answer_text_3_13' : answer_text_3_13,
+    'answer_text_4_13' : answer_text_4_13,
+
 
     'test_id': test_id})
 

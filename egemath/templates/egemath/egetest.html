@@ -247,8 +247,8 @@
                         </div>
 
                         <br>
-                        <p class="lead">Внимание!!! В заданиях 13 - 19 требуется оформление решения.</p>
-                        <p class="lead">Для удобства проверки просто выберете наиболее подходищий вариант ответа.</p>
+                        <p class="lead">В заданиях 13 - 19 требуется оформление решения.</p>
+                        <p class="lead">Для удобства проверки выберете наиболее подходищий вариант ответа из раскрывающего списка.</p>
                         <p class="lead">Если не знаете правильного ответа укажите любое число.</p>
                         <br>
 
@@ -267,10 +267,10 @@
                                     <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Варианты ответов</a>
                                         <div class="collapse" id="collapse-1">
                                             <ul class="list-group">
-                                                <li class="list-group-item"><span>1) </span></li>
-                                                <li class="list-group-item"><span>2) </span></li>
-                                                <li class="list-group-item"><span>3) </span></li>
-                                                <li class="list-group-item"><span>4) </span></li>
+                                                <li class="list-group-item"><span>1) {{answer_text_1_13}} </span></li>
+                                                <li class="list-group-item"><span>2) {{answer_text_2_13}} </span></li>
+                                                <li class="list-group-item"><span>3) {{answer_text_3_13}}</span></li>
+                                                <li class="list-group-item"><span>4) {{answer_text_4_13}}</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -281,10 +281,9 @@
                                     {% csrf_token %}
                                     {{form.answer13}}
                                     <div class="input-group-addon"></div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
-
 
 
                         <div class="form-group" id="submit_btn">
