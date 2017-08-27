@@ -233,6 +233,40 @@
                       </div>{% endif %}
                     </li>
 
+                    <li class="list-group-item" {% if color14 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">14 задание - правильный ответ: {{correct_answer14}} Ваш ответ: {{answer14}} </p>
+                      {% if color14 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-14" role="button" href="#collapse-14">Объяснение к заданию № 14 </a>
+                          <div class="collapse" id="collapse-14">
+                              {% if explanation_text14 %}
+                                <p class="lead text-center">{{explanation_text14}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video14 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video14}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
+                    <li class="list-group-item" {% if color15 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">15 задание - правильный ответ: {{correct_answer15}} Ваш ответ: {{answer15}} </p>
+                      {% if color15 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-15" role="button" href="#collapse-15">Объяснение к заданию № 15 </a>
+                          <div class="collapse" id="collapse-15">
+                              {% if explanation_text15 %}
+                                <p class="lead text-center">{{explanation_text15}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video15 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video15}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
                     <li class="list-group-item"><p class="lead text-center">Правильных ответов {{result}}</p></li>
                 </ul>
             </div>
@@ -248,13 +282,13 @@
 
                     <p class="lead">Для этого необходимо зарегистрироваться на сайте.</p>
 
-                    <p class="lead">Обязательно укажите "email", который вы использовали при регистрации.</p>
+                    <p class="lead">При оформлении перевода  укажите "email", который вы использовали при регистрации.</p>
 
-                      <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%B4%D0%BB%D1%8F%20TestEge.com&targets-hint=&default-sum=199&button-text=14&payment-type-choice=on&mobile-payment-type-choice=on&mail=on&hint=&successURL=www.testege.com&quickpay=shop&account=410011504795471" width="450" height="198" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+                      <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%B4%D0%BB%D1%8F%20TestEge.com&targets-hint=&default-sum=199&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&mail=on&hint=&successURL=www.testege.com&quickpay=shop&account=410011504795471" width="450" height="198" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 
                     <p class="lead">После осуществления перевода вам придет уведомление на email, что доступ ко всем объяснениям активирован.</p>
 
-                    <p class="lead">На активацию требуется некоторе время, пока я не проверю перевод, если в течении суток уведомление не пришло <a href="{% url 'contacts' %}">свяжитесь со мной</a></p>
+                    <p class="lead">На активацию требуется некоторе время, пока проверяется перевод, если в течении суток уведомление не пришло <a href="{% url 'contacts' %}">свяжитесь со мной</a></p>
 
                     <p class="lead">Этот бонус сохраняется вплоть до сдачи экзаменов.</p>
 

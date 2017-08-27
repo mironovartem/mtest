@@ -107,6 +107,8 @@ def egetest(request, test_id):
             answer11 =  form.cleaned_data['answer11']
             answer12 =  form.cleaned_data['answer12']
             answer13 =  form.cleaned_data['answer13']
+            answer14 =  form.cleaned_data['answer14']
+            answer15 =  form.cleaned_data['answer15']
 
 ###############################
             correct_answer1 = cor_answ(test_id, 1)
@@ -226,6 +228,24 @@ def egetest(request, test_id):
             else:
                 color13 = True
 ##########################################
+            correct_answer14 = cor_answ(test_id, 14)
+            explanation_text14, explanation_video14 =expl(test_id, 14)
+
+            if correct_answer14 == answer14:
+                result = result+1
+                color14 = False
+            else:
+                color14 = True
+##########################################
+            correct_answer15 = cor_answ(test_id, 15)
+            explanation_text15, explanation_video15 =expl(test_id, 15)
+
+            if correct_answer15 == answer15:
+                result = result+1
+                color15 = False
+            else:
+                color15 = True
+##########################################
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
@@ -307,6 +327,18 @@ def egetest(request, test_id):
             'explanation_text13' : explanation_text13,
             'explanation_video13' : explanation_video13,
 
+            'answer14': answer14,
+            'correct_answer14' : correct_answer14,
+            'color14': color14,
+            'explanation_text14' : explanation_text14,
+            'explanation_video14' : explanation_video14,
+
+            'answer15': answer15,
+            'correct_answer15' : correct_answer15,
+            'color15': color15,
+            'explanation_text15' : explanation_text15,
+            'explanation_video15' : explanation_video15,
+
             'result': result
              })
 
@@ -328,6 +360,10 @@ def egetest(request, test_id):
         question_text_12, question_image_12 = quest(test_id, 12)
         question_text_13, question_image_13, question_text_1_13 = quest(test_id, 13)
         answer_text_1_13, answer_text_2_13, answer_text_3_13, answer_text_4_13 = aswertext(test_id, 13)
+        question_text_14, question_image_14, question_text_1_14 = quest(test_id, 14)
+        answer_text_1_14, answer_text_2_14, answer_text_3_14, answer_text_4_14 = aswertext(test_id, 14)
+        question_text_15, question_image_15, question_text_1_15 = quest(test_id, 15)
+        answer_text_1_15, answer_text_2_15, answer_text_3_15, answer_text_4_15 = aswertext(test_id, 15)
 
 #####################################
     return render(request, 'egemath/egetest.html', {
@@ -375,6 +411,22 @@ def egetest(request, test_id):
     'answer_text_2_13' : answer_text_2_13,
     'answer_text_3_13' : answer_text_3_13,
     'answer_text_4_13' : answer_text_4_13,
+
+    'question_text_14' : question_text_14,
+    'question_text_1_14' : question_text_1_14,
+    'question_image_14': question_image_14,
+    'answer_text_1_14' : answer_text_1_14,
+    'answer_text_2_14' : answer_text_2_14,
+    'answer_text_3_14' : answer_text_3_14,
+    'answer_text_4_14' : answer_text_4_14,
+
+    'question_text_15' : question_text_15,
+    'question_text_1_15' : question_text_1_15,
+    'question_image_15': question_image_15,
+    'answer_text_1_15' : answer_text_1_15,
+    'answer_text_2_15' : answer_text_2_15,
+    'answer_text_3_15' : answer_text_3_15,
+    'answer_text_4_15' : answer_text_4_15,
 
 
     'test_id': test_id})
