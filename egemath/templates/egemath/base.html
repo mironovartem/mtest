@@ -53,6 +53,10 @@
         <p class="text-center">  </p>
     </div>
     <div id="ln1">
+
+      <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+      <script src="//yastatic.net/share2/share.js"></script>
+      <div style="text-align : right" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp,telegram"></div>
       <hr>
     </div>
     {% block content %}
@@ -62,18 +66,12 @@
 
 
     <div id="ln1">
+
+        <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+        <script src="//yastatic.net/share2/share.js"></script>
+        <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp,telegram"></div>
         <hr>
-        <div >
-          <script type="text/javascript"><!--
-      document.write(VK.Share.button(false,{type: "round", text: "Сохранить"}));
-      --></script>
-        </div>
-
-      <div class="fb-share-button" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Поделиться</a></div>
-
-
     </div>
-
 
 
     <div class="footer-clean">
@@ -120,6 +118,8 @@
             </div>
         </footer>
     </div>
+
+
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>

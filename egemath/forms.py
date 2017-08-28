@@ -17,6 +17,8 @@ class TestAnswerForm(forms.Form):
     answer13 = forms.CharField(required=False, label='', max_length=30)
     answer14 = forms.CharField(required=False, label='', max_length=30)
     answer15 = forms.CharField(required=False, label='', max_length=30)
+    answer16 = forms.CharField(required=False, label='', max_length=30)
+    answer17 = forms.CharField(required=False, label='', max_length=30)
 
 class SignUpForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Имя пользователя'}))

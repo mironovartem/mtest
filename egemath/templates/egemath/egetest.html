@@ -247,7 +247,7 @@
                         </div>
 
                         <br>
-                        <p class="lead">В заданиях 13 - 19 требуется оформление решения.</p>
+                        <p class="lead">В заданиях 13 - 19 на экзамене требуется оформление решения.</p>
                         <p class="lead">Для удобства проверки выберете наиболее подходищий вариант ответа из раскрывающего списка.</p>
                         <br>
 
@@ -258,6 +258,12 @@
                                     <p class="ege_test_question">{{question_text_13}}</p>
                                     {% if question_text_1_13 %}
                                       <p class="ege_test_question">{{question_text_1_13}}</p>
+                                    {% endif %}
+                                    {% if question_text_2_13 %}
+                                      <p class="ege_test_question">{{question_text_2_13}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_13 %}
+                                      <p class="ege_test_question">{{question_text_3_13}}</p>
                                     {% endif %}
                                     {% if question_image_13 %}
                                       <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_13}}">
@@ -292,6 +298,12 @@
                                     {% if question_text_1_14 %}
                                       <p class="ege_test_question">{{question_text_1_14}}</p>
                                     {% endif %}
+                                    {% if question_text_2_14 %}
+                                      <p class="ege_test_question">{{question_text_2_14}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_14 %}
+                                      <p class="ege_test_question">{{question_text_3_14}}</p>
+                                    {% endif %}
                                     {% if question_image_14 %}
                                       <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_14}}">
                                     {% endif %}
@@ -325,6 +337,12 @@
                                     {% if question_text_1_15 %}
                                       <p class="ege_test_question">{{question_text_1_15}}</p>
                                     {% endif %}
+                                    {% if question_text_2_15 %}
+                                      <p class="ege_test_question">{{question_text_2_15}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_15 %}
+                                      <p class="ege_test_question">{{question_text_3_15}}</p>
+                                    {% endif %}
                                     {% if question_image_15 %}
                                       <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_15}}">
                                     {% endif %}
@@ -345,6 +363,85 @@
                                     <div class="input-group-addon test_answer"><span>Ответ 15</span></div>
                                     {% csrf_token %}
                                     {{form.answer15}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 16 </h3>
+                                    <p class="ege_test_question">{{question_text_16}}</p>
+                                    {% if question_text_1_16 %}
+                                      <p class="ege_test_question">{{question_text_1_16}}</p>
+                                    {% endif %}
+                                    {% if question_text_2_16 %}
+                                      <p class="ege_test_question">{{question_text_2_16}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_16 %}
+                                      <p class="ege_test_question">{{question_text_3_16}}</p>
+                                    {% endif %}
+                                    {% if question_image_16 %}
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_16}}">
+                                    {% endif %}
+
+                                    <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-16" role="button" href="#collapse-16">Варианты ответов</a>
+                                        <div class="collapse" id="collapse-16">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><span>1) {{answer_text_1_16}} </span></li>
+                                                <li class="list-group-item"><span>2) {{answer_text_2_16}} </span></li>
+                                                <li class="list-group-item"><span>3) {{answer_text_3_16}}</span></li>
+                                                <li class="list-group-item"><span>4) {{answer_text_4_16}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 16</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer16}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 17 </h3>
+                                    <p class="ege_test_question">{{question_text_17}}</p>
+                                    {% if question_text_1_17 %}
+                                      <p class="ege_test_question">{{question_text_1_17}}</p>
+                                    {% endif %}
+                                    {% if question_text_2_17 %}
+                                      <p class="ege_test_question">{{question_text_2_17}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_17 %}
+                                      <p class="ege_test_question">{{question_text_3_17}}</p>
+                                    {% endif %}
+                                    {% if question_image_17 %}
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_17}}">
+                                    {% endif %}
+
+                                    <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-17" role="button" href="#collapse-17">Варианты ответов</a>
+                                        <div class="collapse" id="collapse-17">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><span>1) {{answer_text_1_17}} </span></li>
+                                                <li class="list-group-item"><span>2) {{answer_text_2_17}} </span></li>
+                                                <li class="list-group-item"><span>3) {{answer_text_3_17}}</span></li>
+                                                <li class="list-group-item"><span>4) {{answer_text_4_17}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 17</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer17}}
                                     <div class="input-group-addon"></div>
                                 </div>
                             </div>
