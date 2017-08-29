@@ -18,7 +18,6 @@ from django.core.mail import send_mail
 # Create your views here.
 
 
-
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
 
@@ -714,8 +713,6 @@ def repetitor_math(request):
                 location_samara = form.cleaned_data['location_samara']
                 location_online = form.cleaned_data['location_online']
                 email_subscribe = form.cleaned_data['email_subscribe']
-
-
 
                 if сontact_email or contact_phone:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
