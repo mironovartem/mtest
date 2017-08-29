@@ -301,6 +301,40 @@
                       </div>{% endif %}
                     </li>
 
+                    <li class="list-group-item" {% if color18 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">18 задание - правильный ответ: {{correct_answer18}} Ваш ответ: {{answer18}} </p>
+                      {% if color18 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-18" role="button" href="#collapse-18">Объяснение к заданию № 18</a>
+                          <div class="collapse" id="collapse-18">
+                              {% if explanation_text18 %}
+                                <p class="lead text-center">{{explanation_text18}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video18 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video18}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
+                    <li class="list-group-item" {% if color19 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">19 задание - правильный ответ: {{correct_answer19}} Ваш ответ: {{answer19}} </p>
+                      {% if color19 %}
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-19" role="button" href="#collapse-19">Объяснение к заданию № 19</a>
+                          <div class="collapse" id="collapse-19">
+                              {% if explanation_text19 %}
+                                <p class="lead text-center">{{explanation_text19}}</p>
+                              {% endif %}
+                              <br>
+                              {% if explanation_video19 %}
+                              <div class="text-center">
+                              <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video19}}"></iframe>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>{% endif %}
+                    </li>
+
                     <li class="list-group-item"><p class="lead text-center">Правильных ответов {{result}}</p></li>
                 </ul>
             </div>
@@ -318,7 +352,7 @@
 
                     <p class="lead">При оформлении перевода  укажите "email", который вы использовали при регистрации.</p>
 
-                      <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%B4%D0%BB%D1%8F%20TestEge.com&targets-hint=&default-sum=199&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&mail=on&hint=&successURL=www.testege.com&quickpay=shop&account=410011504795471" width="450" height="198" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+                      <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%B4%D0%BB%D1%8F%20TestEge.com&targets-hint=&default-sum=99&button-text=12&payment-type-choice=on&mobile-payment-type-choice=on&mail=on&hint=&successURL=www.testege.com&quickpay=shop&account=410011504795471" width="450" height="198" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 
                     <p class="lead">После осуществления перевода вам придет уведомление на email, что доступ ко всем объяснениям активирован.</p>
 

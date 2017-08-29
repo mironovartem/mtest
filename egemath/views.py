@@ -1,7 +1,8 @@
-from django.shortcuts import render, render_to_response #
+from django.shortcuts import get_object_or_404, render, render_to_response #
 from django.shortcuts import redirect #
+from django.http import Http404
 from django.http import HttpResponseRedirect #
-from django.http import HttpResponse # для передачи ответото
+from django.http import HttpResponse, HttpResponseServerError # для передачи ответото
 from .forms import TestAnswerForm # импорт формы
 from .forms import SignUpForm #импорт формы
 from .forms import CustomerApplicationForm #импорт формы
@@ -16,11 +17,14 @@ from django.core.mail import send_mail
 
 # Create your views here.
 
+
+
 def ege_math(request):
     return render(request, 'egemath/egemath.html', {})
 
 def cor_answ(test_id, num): # находит правильный ответ
     x = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('correct_answer')
+    #x = get_object_or_404(EgeMathTest, test_num = test_id)  .objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('correct_answer')
     x = x[0]
     return  x['correct_answer']
 
@@ -40,6 +44,7 @@ def expl(test_id, num):
 def quest(test_id, num):
     if num >=13:
         x= EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('question_text')
+        #x = get_object_or_404(EgeMathTest, test_num = test_id, task_num = num).question_text
         x = x[0]
         x = x['question_text']
 
@@ -123,6 +128,8 @@ def egetest(request, test_id):
             answer15 =  form.cleaned_data['answer15']
             answer16 =  form.cleaned_data['answer16']
             answer17 =  form.cleaned_data['answer17']
+            answer18 =  form.cleaned_data['answer18']
+            answer19 =  form.cleaned_data['answer19']
 
 ###############################
             correct_answer1 = cor_answ(test_id, 1)
@@ -278,6 +285,24 @@ def egetest(request, test_id):
             else:
                 color17 = True
 ##########################################
+            correct_answer18 = cor_answ(test_id, 18)
+            explanation_text18, explanation_video18 =expl(test_id, 18)
+
+            if correct_answer18 == answer18:
+                result = result+1
+                color18 = False
+            else:
+                color18 = True
+##########################################
+            correct_answer19 = cor_answ(test_id, 19)
+            explanation_text19, explanation_video19 =expl(test_id, 19)
+
+            if correct_answer19 == answer19:
+                result = result+1
+                color19 = False
+            else:
+                color19 = True
+##########################################
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
@@ -383,6 +408,18 @@ def egetest(request, test_id):
             'explanation_text17' : explanation_text17,
             'explanation_video17' : explanation_video17,
 
+            'answer18': answer18,
+            'correct_answer18' : correct_answer18,
+            'color18': color18,
+            'explanation_text18' : explanation_text18,
+            'explanation_video18' : explanation_video18,
+
+            'answer19': answer19,
+            'correct_answer19' : correct_answer19,
+            'color19': color19,
+            'explanation_text19' : explanation_text19,
+            'explanation_video19' : explanation_video19,
+
             'result': result
              })
 
@@ -417,6 +454,13 @@ def egetest(request, test_id):
 
         question_text_17, question_image_17, question_text_1_17, question_text_2_17, question_text_3_17 = quest(test_id, 17)
         answer_text_1_17, answer_text_2_17, answer_text_3_17, answer_text_4_17 = aswertext(test_id, 17)
+
+        question_text_18, question_image_18, question_text_1_18, question_text_2_18, question_text_3_18 = quest(test_id, 18)
+        answer_text_1_18, answer_text_2_18, answer_text_3_18, answer_text_4_18 = aswertext(test_id, 18)
+
+        question_text_19, question_image_19, question_text_1_19, question_text_2_19, question_text_3_19 = quest(test_id, 19)
+        answer_text_1_19, answer_text_2_19, answer_text_3_19, answer_text_4_19 = aswertext(test_id, 19)
+
 
 #####################################
     return render(request, 'egemath/egetest.html', {
@@ -507,6 +551,26 @@ def egetest(request, test_id):
     'answer_text_3_17' : answer_text_3_17,
     'answer_text_4_17' : answer_text_4_17,
 
+    'question_text_18' : question_text_18,
+    'question_text_1_18' : question_text_1_18,
+    'question_text_2_18' : question_text_2_18,
+    'question_text_3_18' : question_text_3_18,
+    'question_image_18': question_image_18,
+    'answer_text_1_18' : answer_text_1_18,
+    'answer_text_2_18' : answer_text_2_18,
+    'answer_text_3_18' : answer_text_3_18,
+    'answer_text_4_18' : answer_text_4_18,
+
+    'question_text_19' : question_text_19,
+    'question_text_1_19' : question_text_1_19,
+    'question_text_2_19' : question_text_2_19,
+    'question_text_3_19' : question_text_3_19,
+    'question_image_19': question_image_19,
+    'answer_text_1_19' : answer_text_1_19,
+    'answer_text_2_19' : answer_text_2_19,
+    'answer_text_3_19' : answer_text_3_19,
+    'answer_text_4_19' : answer_text_4_19,
+
 
     'test_id': test_id})
 
@@ -596,9 +660,11 @@ def home_page(request):
 
 def about(request):
             # if this is a POST request we need to process the form data
+
             if request.method == 'POST':
                 # create a form instance and populate it with data from the request:
                 form = CustomerApplicationForm(request.POST)
+
                 # check whether it's valid:
                 if form.is_valid():
                     # process the data in form.cleaned_data as required
@@ -608,9 +674,10 @@ def about(request):
                     сontact_name = form.cleaned_data['сontact_name']
                     email_subscribe = form.cleaned_data['email_subscribe']
 
+
                     if сontact_email or contact_phone:
                         #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                        send_mail('Заявка на подписку',
+                        send_mail('Заявка',
                         ' Email: ' + сontact_email + ', '+ ' Имя: '+ сontact_name+','+' Subscribe: ' + str(email_subscribe),
                         'astruslux@gmail.com',
                          ['creativerror@gmail.com'] )
@@ -632,6 +699,7 @@ def about_me(request):
 
 def repetitor_math(request):
         # if this is a POST request we need to process the form data
+
         if request.method == 'POST':
             # create a form instance and populate it with data from the request:
             form = CustomerApplicationForm(request.POST)
@@ -648,15 +716,17 @@ def repetitor_math(request):
                 email_subscribe = form.cleaned_data['email_subscribe']
 
 
+
                 if сontact_email or contact_phone:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                    send_mail('Заявка на консультацию',
+                    send_mail('Заявка',
                     'Телефон :  ' + contact_phone +', '+ 'Email: ' + сontact_email + ', '+ 'Имя: '+ сontact_name+','+' Самара: ' + str(location_samara) + ', '+' Online: ' + str(location_online)+ ', '+' Subscribe: ' + str(email_subscribe),
                     'astruslux@gmail.com',
                      ['creativerror@gmail.com'] )
 
 
                 # redirect to a new URL:
+                #subject_mail = ''
                 return HttpResponseRedirect('thanks')
 
 
@@ -667,11 +737,49 @@ def repetitor_math(request):
         return render(request, 'egemath/repetitor_math.html', {'form': form})
 
 
+def subscribe(request):
+            # if this is a POST request we need to process the form data
+            #subject_mail = 'Заявка на подписку'
+            if request.method == 'POST':
+                # create a form instance and populate it with data from the request:
+                form = CustomerApplicationForm(request.POST)
+                # check whether it's valid:
+                if form.is_valid():
+                    # process the data in form.cleaned_data as required
+                    # ...
+
+                    сontact_email = form.cleaned_data['сontact_email']
+                    сontact_name = form.cleaned_data['сontact_name']
+                    email_subscribe = form.cleaned_data['email_subscribe']
+
+
+                    if сontact_email or contact_phone:
+                        #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
+                        send_mail('Заявка',
+                        ' Email: ' + сontact_email + ', '+ ' Имя: '+ сontact_name+','+' Subscribe: ' + str(email_subscribe),
+                        'astruslux@gmail.com',
+                         ['creativerror@gmail.com'] )
+
+
+                    # redirect to a new URL:
+                    return HttpResponseRedirect('thanks')
+
+
+            # if a GET (or any other method) we'll create a blank form
+            else:
+                form = CustomerApplicationForm()
+
+            return render(request, 'egemath/subscribe.html', {'form': form})
+
 def donate(request):
     return render(request, 'egemath/donate.html', {})
 
 def copyright(request):
     return render(request, 'egemath/copyright.html', {})
+
+def todo(request):
+    return render(request, 'egemath/todo.html', {})
+
 
 def advertising(request):
     return render(request, 'egemath/advertising.html', {})

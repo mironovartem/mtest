@@ -447,6 +447,84 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 18 </h3>
+                                    <p class="ege_test_question">{{question_text_18}}</p>
+                                    {% if question_text_1_18 %}
+                                      <p class="ege_test_question">{{question_text_1_18}}</p>
+                                    {% endif %}
+                                    {% if question_text_2_18 %}
+                                      <p class="ege_test_question">{{question_text_2_18}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_18 %}
+                                      <p class="ege_test_question">{{question_text_3_18}}</p>
+                                    {% endif %}
+                                    {% if question_image_18 %}
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_18}}">
+                                    {% endif %}
+
+                                    <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-18" role="button" href="#collapse-18">Варианты ответов</a>
+                                        <div class="collapse" id="collapse-18">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><span>1) {{answer_text_1_18}} </span></li>
+                                                <li class="list-group-item"><span>2) {{answer_text_2_18}} </span></li>
+                                                <li class="list-group-item"><span>3) {{answer_text_3_18}}</span></li>
+                                                <li class="list-group-item"><span>4) {{answer_text_4_18}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 18</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer18}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Задание 19 </h3>
+                                    <p class="ege_test_question">{{question_text_19}}</p>
+                                    {% if question_text_1_19 %}
+                                      <p class="ege_test_question">{{question_text_1_19}}</p>
+                                    {% endif %}
+                                    {% if question_text_2_19 %}
+                                      <p class="ege_test_question">{{question_text_2_19}}</p>
+                                    {% endif %}
+                                    {% if question_text_3_19 %}
+                                      <p class="ege_test_question">{{question_text_3_19}}</p>
+                                    {% endif %}
+                                    {% if question_image_19 %}
+                                      <img class="img-responsive"  src="{{MEDIA_URL}}{{question_image_19}}">
+                                    {% endif %}
+
+                                    <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-19" role="button" href="#collapse-19">Варианты ответов</a>
+                                        <div class="collapse" id="collapse-19">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><span>1) {{answer_text_1_19}} </span></li>
+                                                <li class="list-group-item"><span>2) {{answer_text_2_19}} </span></li>
+                                                <li class="list-group-item"><span>3) {{answer_text_3_19}}</span></li>
+                                                <li class="list-group-item"><span>4) {{answer_text_4_19}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon test_answer"><span>Ответ 19</span></div>
+                                    {% csrf_token %}
+                                    {{form.answer19}}
+                                    <div class="input-group-addon"></div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group" id="submit_btn">
                             <button class="btn btn-default" type="submit">ПРОВЕРИТЬ </button>

@@ -1,0 +1,21 @@
+{% extends 'egemath/base.html' %}
+{% block title %}"Эта страница еще не готова"{% endblock %}
+{% block content %}
+{% load staticfiles %}
+<div class="preim">
+    <div class="row" id="rw1">
+        <div class="col-md-12 bg_preim">
+            <h2>Эта страница еще не готова.</h2>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+              <p class="lead">А пока вы можете подписаться на бесплатную рассылку
+                обновленных материалов по подготовке к экзамену ЕГЭ по математике по этой <a href="{% url 'subscribe' %}">ссылке</a></p>
+    </div>
+</div>
+{% endblock content %}
