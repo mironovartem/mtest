@@ -142,6 +142,9 @@ ADMINS = [('artem', 'creativerror@gmail.com')]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if database:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+else:
+    MEDIA_URL = 'http://media.testege.com/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
