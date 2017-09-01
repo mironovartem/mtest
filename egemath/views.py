@@ -302,6 +302,7 @@ def egetest(request, test_id):
             else:
                 color19 = True
 ##########################################
+
             # redirect to a new URL:
             return render(request, 'egemath/egetestanswer.html', {
             #'test_id': 'test_id',
@@ -419,7 +420,7 @@ def egetest(request, test_id):
             'explanation_text19' : explanation_text19,
             'explanation_video19' : explanation_video19,
 
-            'result': result
+            'result': result,            
              })
 
     # if a GET (or any other method) we'll create a blank form
