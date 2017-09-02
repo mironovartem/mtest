@@ -38,15 +38,17 @@
             </div>
         </nav>
     </div>
-    <div id="notice1">
-        <p class="text-center">  </p>
-    </div>
+
     <div id="ln1">
 
       <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
       <script src="//yastatic.net/share2/share.js"></script>
       <div style="text-align : right; margin-right: 30px" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp,telegram"></div>
       <hr>
+    </div>
+
+    <div id="notice1">
+        <p class="text-center"> В настоящее время сайт заполняется. Готовы тесты ЕГЭ номер 1, 2, 3. </p>
     </div>
     {% block content %}
 
@@ -79,7 +81,6 @@
                         <h3>Информация</h3>
                         <ul>
                             <li><a href="{% url 'about' %}">О проекте</a></li>
-                            <li><a href="{% url 'about_me' %}">Обо мне</a></li>
                             <li><a href="{% url 'subscribe' %}">Подписка на обновления</a></li>
                             <li><a href="{% url 'copyright' %}">Об авторских правах</a></li>
                         </ul>
