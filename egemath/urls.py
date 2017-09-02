@@ -4,9 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', views.home_page, name='home_page'),
+    #url(r'^$', views.home_page, name='home_page'),
     #url(r'^home/$', views.home_page, name='home_page'),
     #url(r'^accounts/profile/$', views.home_page, name='home_page'),
+    url(r'^$', views.ege_math, name='ege_math'),
     url(r'^egemath/$', views.ege_math, name='ege_math'),
     url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),
     url(r'^about/$', views.about, name='about'),
