@@ -10,32 +10,37 @@
     </div>
 </div>
 
+
 <div>
     <div class="container">
-      <div class="row">
-                <div style="padding: 5px" class="col-lg-6 col-md-6 col-sm-6"><img src="{% static 'assets/img/my-photo-sumi.jpg' %}"></div>
-                <div style="padding: 5px" class="col-lg-6 col-md-6 col-sm-6"><img src="{% static 'assets/img/diplom.jpg' %}"></div>
+
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Приветсвую вас на сайте TestEge.com</h3>
+          <div class="col-lg-6 col-md-6 col-sm-6"><img class="img-responsive" src="{% static 'assets/img/my-photo-sumi.jpg' %}" width="400"></div>
+          <div class="col-lg-6 col-md-6 col-sm-6"><img class="img-responsive" src="{% static 'assets/img/diplom.jpg' %}" width="400"></div>
+          <p class="lead text-center">Меня зовут Артём Сергеевич, я репетитор по математике с 2010 года и разработчик этого сайта.</p>
+          <p class="lead text-center">На моём счету более 100 учеников, которые успешно сдали выпускные экзамены.</p>
+
+          <div id="promo">
+            <div class="jumbotron" style="background-color:rgba(255,255,255,0.9);">
+            <h1>Подготовка к экзамену ЕГЭ с репетитором от 1000 рублей в месяц.</h1>
+            <p>Включает в себя 10 практических занятий с решением типовых экзаменационных тестов ЕГЭ. </p>
             </div>
-        <div class="row">
-            <div class="col-md-12">
-              <br>
-              <p class="lead">Приветсвую вас на сайте TestEge.com</p>
-              <p class="lead">Меня зовут Артём Сергеевич, я разработчик этого сайта.</p>
-              <p class="lead">Репетитор по математике с 2010 года. </p>
-              <p class="lead">Имею два высших образования. Закончил педагогической университет с отличием, по специальности учитель информатики.</p>
+          </div>
 
-                <p class="lead">Если вас интересует подготовка к экзаменам ЕГЭ (11 класс) или ОГЭ ( 9 класс) по математике,
-                   или вам просто нужно повысить успеваемость, или консультация, то вы можете связаться со мной позвонив по телефону </p>
-                   <p class="lead text-center"><strong><a href="tel:+79179551760">+7 917 955 17 60</a></strong>.</p>
+        </div>
+      </div>
 
-                  <p class="lead"> Или заполните форму ниже, я вам обязательно перезвоню или напишу.</p>
+      <div class="row">
+          <div class="col-md-12">
+              <p class="lead">Предложение действует только до конца месяца. Подробности по телефону <strong><a href="tel:+79179551760">+7 917 955 17 60</a></strong>.</p>
 
-                <p class="lead">Я провожу занятия в городе Самара с выездом к ученику.
-                   Стоимость и продолжительность занятий определяется индивидуально.</p>
+              <p class="lead"> Или заполните форму ниже и я вами свяжусь.</p>
 
-                <p class="lead">Для моих учеников на сайте TestEge.com я размещаю материалы для самостоятельного повторения и изучения. </p>
+              <p class="lead"> Задания которые мы будем решать выглядят вот так: <a target="_blank" href="{% url 'egetest' 1 %}"> тест ЕГЭ по математике</a> </p>
 
-                <p class="lead">Вот так примерно выглядят объяснения:</p>
+              <p class="lead">Объяснения выглядят вот так:</p>
 
                 <div><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Посмотреть пример</a>
                     <div class="collapse" id="collapse-1">
@@ -45,18 +50,14 @@
                 </div>
                 <br>
 
-                <p class="lead"> Так выглядит <a target="_blank" href="{% url 'egetest' 1 %}"> тест ЕГЭ по математике</a> </p>
+
 
                 <p class="lead"><strong>И ещё у меня есть для вас отличное предложение.</strong></p>
-                <p class="lead"><em><strong>Подпишитесь  на бесплатную рассылку обновленных материалов по подготовке к экзамену ЕГЭ по математике и готовьтесь самостоятельно.</strong></em></p>
-                <p class="lead">Впишите ниже ваш email и проверьте стоит ли галочка в поле “Подписка на новинки ЕГЭ”.
-                   Как только у меня появиться что-то новое и интересное (уроки, тесты, объяснения) вы это не пропустите.</p>
-                <p class="lead ">Также за новостями сайта  можно следить на моём канале в <a target="_blank" href="https://t.me/testege">Telegram</a> <i class="fa fa-telegram"></i></p>
+                <p class="lead"><em><strong>Подпишитесь  на бесплатную рассылку обновленных материалов по подготовке к экзамену ЕГЭ по математике.</strong></em></p>
+                <p class="lead">Как только у меня появиться что-то новое и интересное (уроки, тесты, объяснения) вы это не пропустите.</p>
+                <p class="lead">Или следите за новостями сайта на моём канале в <a target="_blank" href="https://t.me/testege">Telegram</a> <i class="fa fa-telegram"></i></p>
 
-                <p class="lead">Поставьте галочку Самара, если вам нужен репетитор в Самаре</p>
-                <p class="lead">Если нужна online консультация, поставьте галочку online. </p>
-
-                <div id="registration">
+                  <div id="registration">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
@@ -86,15 +87,11 @@
                                     <div class="checkbox">
                                          <label class="control-label">
                                            {% csrf_token %}
-                                           {{form.location_samara.errors}}
-                                           {{form.location_samara}}<span class="lead"> Самара </span></label>
-                                           &nbsp;&nbsp;&nbsp;
-                                           <label class="control-label">
-                                             {% csrf_token %}
-                                             {{form.location_online.errors}}
-                                             {{form.location_online}}<span class="lead"> Online </span></label>
+                                           {{form.offer_accepted.errors}}
+                                           {{form.offer_accepted}}<span class="lead"> Хочу заниматься</span></label>
                                     </div>
                                   </div>
+
                                   <div class="form-group">
                                     <div class="checkbox">
                                          <label class="control-label">

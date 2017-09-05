@@ -38,6 +38,7 @@ class CustomerApplicationForm(forms.Form):
     location_samara = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     location_online = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     email_subscribe = forms.BooleanField(required=False, widget=forms.CheckboxInput(), initial=True)
+    offer_accepted = forms.BooleanField(required=False, widget=forms.CheckboxInput(), initial=True)
 
 #class ContactsForm(forms.Form):
 #    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона и/или email'}))

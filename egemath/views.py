@@ -420,7 +420,7 @@ def egetest(request, test_id):
             'explanation_text19' : explanation_text19,
             'explanation_video19' : explanation_video19,
 
-            'result': result,            
+            'result': result,
              })
 
     # if a GET (or any other method) we'll create a blank form
@@ -711,14 +711,13 @@ def repetitor_math(request):
                 contact_phone = form.cleaned_data['сontact_phone']
                 сontact_email = form.cleaned_data['сontact_email']
                 сontact_name = form.cleaned_data['сontact_name']
-                location_samara = form.cleaned_data['location_samara']
-                location_online = form.cleaned_data['location_online']
+                offer_accepted = form.cleaned_data['offer_accepted']
                 email_subscribe = form.cleaned_data['email_subscribe']
 
                 if сontact_email or contact_phone:
                     #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
                     send_mail('Заявка',
-                    'Телефон :  ' + contact_phone +', '+ 'Email: ' + сontact_email + ', '+ 'Имя: '+ сontact_name+','+' Самара: ' + str(location_samara) + ', '+' Online: ' + str(location_online)+ ', '+' Subscribe: ' + str(email_subscribe),
+                    'Телефон :  ' + contact_phone +', '+ 'Email: ' + сontact_email + ', '+ 'Имя: '+ сontact_name+','+' Хочу начать заниматься: ' + str(offer_accepted) + ' Subscribe: ' + str(email_subscribe),
                     'astruslux@gmail.com',
                      ['creativerror@gmail.com'] )
 
@@ -776,6 +775,37 @@ def copyright(request):
     return render(request, 'egemath/copyright.html', {})
 
 def todo(request):
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = CustomerApplicationForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+
+            сontact_email = form.cleaned_data['сontact_email']
+            сontact_name = form.cleaned_data['сontact_name']
+            email_subscribe = form.cleaned_data['email_subscribe']
+
+
+            if сontact_email or contact_phone:
+                #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
+                send_mail('Заявка',
+                ' Email: ' + сontact_email + ', '+ ' Имя: '+ сontact_name+','+' Subscribe: ' + str(email_subscribe),
+                'astruslux@gmail.com',
+                 ['creativerror@gmail.com'] )
+
+
+            # redirect to a new URL:
+            return HttpResponseRedirect('thanks')
+
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = CustomerApplicationForm()
+
+    return render(request, 'egemath/todo.html', {'form': form})
+
     return render(request, 'egemath/todo.html', {})
 
 
