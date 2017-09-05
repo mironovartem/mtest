@@ -33,7 +33,7 @@ class LoginForm(forms.Form):
 
 class CustomerApplicationForm(forms.Form):
     сontact_phone = forms.CharField(required=False, widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона'}))
-    сontact_email = forms.EmailField(required=False, widget=forms.EmailInput(attrs={'class' : 'form-control', 'placeholder' : '    email'}))
+    сontact_email = forms.EmailField(required=False, widget=forms.EmailInput(attrs={'class' : 'form-control', 'placeholder' : '    email (если есть)'}))
     сontact_name = forms.CharField(required=False, widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
     location_samara = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     location_online = forms.BooleanField(required=False, widget=forms.CheckboxInput())
