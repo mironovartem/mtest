@@ -653,7 +653,7 @@ def log(request):
 def logout_view(request):
     logout(request)
     # Redirect to a success page.
-    return redirect('home_page')
+    return redirect('ege_math')
 
 def home_page(request):
     return render(request, 'egemath/home.html', {})
