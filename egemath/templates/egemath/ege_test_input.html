@@ -1,0 +1,67 @@
+{% extends 'egemath/base.html' %}
+{% block title %}ЕГЭ по математике - результат{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center">Тест номер задание номер</p>
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" type="number" placeholder="номер теста">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="number" placeholder="номер задания">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вопрос"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вопрос 1"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Вопрос 2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Вопрос 3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вариант ответа 1"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вариант ответа 2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вариант ответа 3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="вариант ответа 4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="правильный ответ">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="ссылка на видео с объяснением">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="текст объяснения"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="уровень доступа">
+                    </div>
+                    <div class="form-group">
+                        <p class="text-center">
+                            <button class="btn btn-default" type="submit">SAVE </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

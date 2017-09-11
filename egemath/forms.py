@@ -40,7 +40,7 @@ class CustomerApplicationForm(forms.Form):
     email_subscribe = forms.BooleanField(required=False, widget=forms.CheckboxInput(), initial=True)
     offer_accepted = forms.BooleanField(required=False, widget=forms.CheckboxInput(), initial=True)
 
-#class ContactsForm(forms.Form):
+#class EgeTestInput(forms.Form):
 #    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона и/или email'}))
 #    сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
 #    сontact_question = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваш вопрос'}))
