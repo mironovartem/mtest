@@ -55,7 +55,7 @@ class EgeTestInputForm(ModelForm):
         #'test_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер теста test_num'}),
         #'task_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер задания task_num'}),
         #'question_image': ImageField(attrs={'class' : 'form-control', 'placeholder' : '     question_text1'}),
-        'question_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '     question_text'}),
+        'question_text': Textarea(attrs={'rows': 6, 'class' : 'form-control', 'placeholder' : '     question_text'}),
         'question_text1': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text1'}),
         'question_text2': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text2'}),
         'question_text3': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text3'}),
@@ -67,24 +67,4 @@ class EgeTestInputForm(ModelForm):
         'explanation_video': TextInput(attrs={'class' : 'form-control', 'placeholder' : '   Видео с объяснением explanation_video'}),
         'explanation_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  explanation_text'}),
         'access_level': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Уровень доступа access_level'}),
-
         }
-    #'test_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер теста test_num'}),
-    #'task_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер задания task_num'}),
-    #'question_image': ImageField(attrs={'class' : 'form-control', 'placeholder' : '     question_text1'}),
-    #'question_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '     question_text'}),
-    #'question_text1': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text1'}),
-    #'question_text2': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text2'}),
-    #'question_text3': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '    question_text3'}),
-    #'answer_text1': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  1 Вариант ответа answer_text1'}),
-    #'answer_text2': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  2 Вариант ответа answer_text2'}),
-    #'answer_text3': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  3 Вариант ответа answer_text3'}),
-    #'answer_text4': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  4 Вариант ответа answer_text4'}),
-    #'correct_answer': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Правильный ответ correct_answer'}),
-    #'explanation_video': TextInput(attrs={'class' : 'form-control', 'placeholder' : '   Видео с объяснением explanation_video'}),
-    #'explanation_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  explanation_text'}),
-    #'access_level': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Уровень доступа access_level'}),
-
-#    сontact_details = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    номер телефона и/или email'}))
-#    сontact_name = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваше имя'}))
-#    сontact_question = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Ваш вопрос'}))
