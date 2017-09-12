@@ -7,51 +7,68 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="text-center">Тест номер задание номер</p>
-                <form>
+              
+
+        <form enctype="multipart/form-data" action="{% url 'ege_test_input' test_num task_num %}" method="post">
                     <div class="form-group">
-                        <input class="form-control" type="number" placeholder="номер теста">
+                        {% csrf_token %}
+                        {{ form.test_num }}
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="number" placeholder="номер задания">
+                      {% csrf_token %}
+                      {{ form.task_num }}
                     </div>
                     <div class="form-group">
-                        <input type="file" accept="image/*">
+                      {% csrf_token %}
+                      {{ form.question_image }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вопрос"></textarea>
+                      {% csrf_token %}
+                      {{ form.question_text }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вопрос 1"></textarea>
+                        {% csrf_token %}
+                        {{ form.question_text1 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Вопрос 2"></textarea>
+                      {% csrf_token %}
+                      {{ form.question_text2 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Вопрос 3"></textarea>
+                      {% csrf_token %}
+                      {{ form.question_text3 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вариант ответа 1"></textarea>
+                      {% csrf_token %}
+                      {{ form.answer_text1 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вариант ответа 2"></textarea>
+                      {% csrf_token %}
+                      {{ form.answer_text2 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вариант ответа 3"></textarea>
+                      {% csrf_token %}
+                      {{ form.answer_text3 }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="вариант ответа 4"></textarea>
+                      {% csrf_token %}
+                      {{ form.answer_text4 }}
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="правильный ответ">
+                      {% csrf_token %}
+                      {{ form.correct_answer }}
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="ссылка на видео с объяснением">
+                      {% csrf_token %}
+                      {{ form.explanation_video }}
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="текст объяснения"></textarea>
+                      {% csrf_token %}
+                      {{ form.explanation_text }}
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="уровень доступа">
+                      {% csrf_token %}
+                      {{ form.access_level }}
                     </div>
                     <div class="form-group">
                         <p class="text-center">

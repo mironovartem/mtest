@@ -6,8 +6,11 @@ from django.http import HttpResponse, HttpResponseServerError # для пере�
 from .forms import TestAnswerForm # импорт формы
 from .forms import SignUpForm #импорт формы
 from .forms import CustomerApplicationForm #импорт формы
+from .forms import EgeTestInputForm #импорт формы
+from django.forms import ModelForm
 from .models import EgeMathTest # импорт модели
 from .models import UserAnswer # импорт модели
+from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
 from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
 from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
 from .forms import LoginForm #форма для авторизации
@@ -15,11 +18,15 @@ from django.contrib.auth import logout
 from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
 from django.core.mail import send_mail
 
+
+
 # Create your views here.
 
 
 def ege_math(request):
-    return render(request, 'egemath/egemath.html', {})
+    #username = request.user
+
+    return render(request, 'egemath/egemath.html') #, {'username': username}
 
 def cor_answ(test_id, num): # находит правильный ответ
     x = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('correct_answer')
@@ -629,7 +636,7 @@ def log(request):
             if user.is_active:
                 login(request, user)
                 # Redirect to a success page.
-                return redirect('home_page')
+                return redirect('ege_math')
             #else:
                     # Return a 'disabled account' error message
                     #...
@@ -806,7 +813,46 @@ def todo(request):
 
     return render(request, 'egemath/todo.html', {'form': form})
 
-    return render(request, 'egemath/todo.html', {})
+
+
+
+def ege_test_input(request, test_num, task_num):
+
+    if str(request.user) == 'artem':
+    # if this is a POST request we need to process the form data
+        if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+             #
+             instance_data = EgeMathTest.objects.filter(test_num__contains = test_num).filter(task_num__contains = task_num).first()
+             if instance_data:
+                 form = EgeTestInputForm(request.POST, request.FILES, instance = instance_data)
+                 # check whether it's valid:
+                 if form.is_valid():
+                # process the data in form.cleaned_data as required
+                # ...
+                    form.save()
+                    return redirect('ege_math')
+            #else:
+                #return redirect('ege_math')
+             else:
+
+                 form = EgeTestInputForm(request.POST, request.FILES)
+                 if form.is_valid():
+
+                # process the data in form.cleaned_data as required
+                # ...
+                     form.save()
+                     return redirect('ege_math')
+
+
+
+    # if a GET (or any other method) we'll create a blank form
+        else:
+            instance_data = EgeMathTest.objects.filter(test_num__contains = test_num).filter(task_num__contains = task_num).first()
+            form = EgeTestInputForm(instance = instance_data)
+            return render(request, 'egemath/ege_test_input.html', {'form': form, 'test_num' : test_num, 'task_num' : task_num})
+    else:
+        return redirect('ege_math')
 
 
 def advertising(request):

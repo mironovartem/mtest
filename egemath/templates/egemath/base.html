@@ -74,6 +74,9 @@
                         <ul>
                             <li><a href="{% url 'repetitor_math' %}">Репетитор</a></li>
                             <li><a href="{% url 'website_development' %}">Создание сайтов</a></li>
+                            {% if  user.username == "artem" %}
+                            <li><a href="{% url 'ege_test_input' 1 1 %}">заполнить тест егэ</a></li>
+                            {% endif %}
 
                         </ul>
                     </div>
@@ -83,6 +86,7 @@
                             <li><a href="{% url 'about' %}">О проекте</a></li>
                             <li><a href="{% url 'subscribe' %}">Подписка на обновления</a></li>
                             <li><a href="{% url 'copyright' %}">Об авторских правах</a></li>
+
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 col-sm-3 item">

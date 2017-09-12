@@ -22,7 +22,7 @@ class UserAnswer(models.Model):
 class EgeMathTest(models.Model):
     """Модель таблицы с тестами егэ математика"""
     #author = models.CharField(max_length=30, blank=True, null=True)
-    test_num=models.PositiveIntegerField()
+    test_num = models.PositiveIntegerField()
     task_num = models.PositiveIntegerField()
     question_image = models.ImageField(upload_to='egetest', blank=True, null=True)
     question_text = models.TextField(blank=True, null=True)
