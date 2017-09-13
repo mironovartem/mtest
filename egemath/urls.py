@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^advertising/$', views.advertising, name='advertising'),
     url(r'^website_development/$', views.website_development, name='website_development'),
     url(r'^contacts/$', views.contacts, name='contacts'),
+    url(r'^administrator/$', views.administrator, name='administrator'),
     url(r'^ege_test_input/(?P<test_num>[0-9]+)/(?P<task_num>[0-9]+)/$', views.ege_test_input, name='ege_test_input'),
     #url(r'^egetest/(?P<test_id>[0-9]+)/egetestanswer$', views.egetestanswer, name='egetestanswer'),
     url(r'^signup/$', views.signup, name='signup'),

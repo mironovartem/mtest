@@ -75,7 +75,7 @@
                             <li><a href="{% url 'repetitor_math' %}">Репетитор</a></li>
                             <li><a href="{% url 'website_development' %}">Создание сайтов</a></li>
                             {% if  user.username == "artem" %}
-                            <li><a href="{% url 'ege_test_input' 1 1 %}">заполнить тест егэ</a></li>
+                            <li><a href="{% url 'administrator' %}">Администратор</a></li>
                             {% endif %}
 
                         </ul>

@@ -7,6 +7,7 @@ from .forms import TestAnswerForm # импорт формы
 from .forms import SignUpForm #импорт формы
 from .forms import CustomerApplicationForm #импорт формы
 from .forms import EgeTestInputForm #импорт формы
+from .forms import AdmistratorForm #импорт формы
 from django.forms import ModelForm
 from .models import EgeMathTest # импорт модели
 from .models import UserAnswer # импорт модели
@@ -813,6 +814,33 @@ def todo(request):
 
     return render(request, 'egemath/todo.html', {'form': form})
 
+def administrator(request):
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = AdmistratorForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+
+            test_num = form.cleaned_data['test_num']
+            task_num = form.cleaned_data['task_num']
+
+
+                #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
+
+
+
+            # redirect to a new URL:
+            return redirect('ege_test_input', test_num = test_num, task_num = task_num)
+
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = AdmistratorForm()
+
+    return render(request, 'egemath/admistrator.html', {'form': form})
+
 
 
 
@@ -831,7 +859,7 @@ def ege_test_input(request, test_num, task_num):
                 # process the data in form.cleaned_data as required
                 # ...
                     form.save()
-                    return redirect('ege_math')
+                    return redirect('administrator')
             #else:
                 #return redirect('ege_math')
              else:
@@ -842,7 +870,7 @@ def ege_test_input(request, test_num, task_num):
                 # process the data in form.cleaned_data as required
                 # ...
                      form.save()
-                     return redirect('ege_math')
+                     return redirect('administrator')
 
 
 

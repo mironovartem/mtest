@@ -1,0 +1,33 @@
+{% extends 'egemath/base.html' %}
+{% block title %}ЕГЭ по математике - результат{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center">Администратор</p>
+
+
+        <form  action="{% url 'administrator' %}" method="post">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ form.test_num }}
+                    </div>
+                    <div class="form-group">
+                      {% csrf_token %}
+                      {{ form.task_num }}
+                    </div>
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            <button class="btn btn-default" type="submit">SAVE </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

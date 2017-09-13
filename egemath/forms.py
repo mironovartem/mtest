@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, Textarea, IntegerField, TextInput, ImageField
+from django.forms import ModelForm, Textarea, TextInput
 from egemath.models import EgeMathTest
 
 class TestAnswerForm(forms.Form):
@@ -68,3 +68,7 @@ class EgeTestInputForm(ModelForm):
         'explanation_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  explanation_text'}),
         'access_level': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Уровень доступа access_level'}),
         }
+
+class AdmistratorForm(forms.Form):
+    test_num = forms.IntegerField(widget = forms.NumberInput(attrs={'class' : 'form-control', 'placeholder' : '    Номер теста егэ'}))
+    task_num = forms.IntegerField(widget = forms.NumberInput(attrs={'class' : 'form-control', 'placeholder' : '    Номер задания'}))
