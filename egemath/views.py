@@ -10,7 +10,7 @@ from .forms import EgeTestInputForm #импорт формы
 from .forms import AdmistratorForm #импорт формы
 from django.forms import ModelForm
 from .models import EgeMathTest # импорт модели
-from .models import UserAnswer # импорт модели
+from .models import UserAccessLevel # импорт модели
 from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
 from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
 from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
@@ -18,6 +18,11 @@ from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
 from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
 from django.core.mail import send_mail
+import urllib
+
+import json
+from local_settings import GOOGLE_RECAPTCHA_SECRET_KEY
+from django.contrib import messages
 
 
 
@@ -111,6 +116,13 @@ def egetest(request, test_id):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = TestAnswerForm(request.POST)
+        username = request.user
+        if not request.user.is_authenticated(): # == 'AnonymousUser':
+            user_access_level = 'zero'
+        else:
+            username = request.user
+            user_access_level = request.user #UserAccessLevel.objects.filter(user__contains = username).values('user_access_level').first()
+
 
         # check whether it's valid:
         if form.is_valid():
@@ -429,6 +441,8 @@ def egetest(request, test_id):
             'explanation_video19' : explanation_video19,
 
             'result': result,
+            'user_access_level' : user_access_level,
+
              })
 
     # if a GET (or any other method) we'll create a blank form
@@ -592,6 +606,27 @@ def signup(request):
             # process the data in form.cleaned_data as required
             # ...
 
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req =  urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' End reCAPTCHA validation '''
+
+            if result['success']:
+
+                messages.success(request, 'New comment added with success!')
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+
+            return redirect('signup')
+
             password =  form.cleaned_data['password']
             email =  form.cleaned_data['email']
             username =  form.cleaned_data['username']
@@ -629,6 +664,28 @@ def log(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
+
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req =  urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' End reCAPTCHA validation '''
+
+            if result['success']:
+
+                messages.success(request, 'New comment added with success!')
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+
+            return redirect('log')
+
             username =  form.cleaned_data['username']
             password =  form.cleaned_data['password']
             user = authenticate(username=username, password=password)

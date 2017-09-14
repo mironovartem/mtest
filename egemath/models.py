@@ -1,23 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 # Create your models here.
-
-
-class UserAnswer(models.Model):
-    """Модель описывает таблицу в которой сохраняются значения
-    ответов на стандартный тест егэ по математике,
-    введеные авторизованным или нет пользователем"""
-    author = models.CharField(max_length=30)
-    test_num=models.PositiveIntegerField()
-    task_num = models.PositiveIntegerField()
-    answer= models.CharField(max_length=20, blank=True, null=True)
-
-    def check_it(self):
-        self.save()
-
-    #def __str__(self):
-        #return self.title
 
 class EgeMathTest(models.Model):
     """Модель таблицы с тестами егэ математика"""
@@ -40,4 +25,14 @@ class EgeMathTest(models.Model):
     access_level = models.TextField(blank=True, null=True)
 
     def publish(self):
+        self.save()
+
+class UserAccessLevel(models.Model):
+    """Модель уровень доступа юзера к дополнительному контенту"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_access_level = models.TextField(blank=True, null=True)
+
+
+
+    def check_it(self):
         self.save()
