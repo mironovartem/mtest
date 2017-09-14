@@ -23,7 +23,7 @@ from django.db.utils import IntegrityError #обработка исключен�
 from django.core.mail import send_mail
 
 from local_settings import GOOGLE_RECAPTCHA_SECRET_KEY
-from django.contrib import messages
+#from django.contrib import messages
 
 
 
@@ -117,12 +117,24 @@ def egetest(request, test_id):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = TestAnswerForm(request.POST)
-        username = request.user
-        if not request.user.is_authenticated(): # == 'AnonymousUser':
-            user_access_level = 'zero'
+
+        username = request.user #определение уровня доступа пользователя
+        if request.user.is_authenticated():
+            #user_access_level = User.objects.filter(username__contains = username).values('useraccesslevel').first()
+            user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
+            user_access_level = user_access_level['user_access_level']
+            if user_access_level == None:
+                user_access_level = 0
+
         else:
-            username = request.user
-            user_access_level = request.user #UserAccessLevel.objects.filter(user__contains = username).values('user_access_level').first()
+            user_access_level = 0
+        test_id = int(test_id)
+
+        if test_id == 1:
+            user_access_level = 1
+
+
+
 
 
         # check whether it's valid:
@@ -130,7 +142,6 @@ def egetest(request, test_id):
             # process the data in form.cleaned_data as required
             # ...
             result = 0
-            #username = request.user
             answer1 =  form.cleaned_data['answer1']
             answer2 =  form.cleaned_data['answer2']
             answer3 =  form.cleaned_data['answer3']
@@ -443,6 +454,7 @@ def egetest(request, test_id):
 
             'result': result,
             'user_access_level' : user_access_level,
+            'test_id' : test_id,
 
              })
 

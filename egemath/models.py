@@ -30,7 +30,7 @@ class EgeMathTest(models.Model):
 class UserAccessLevel(models.Model):
     """Модель уровень доступа юзера к дополнительному контенту"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_access_level = models.TextField(blank=True, null=True)
+    user_access_level = models.PositiveIntegerField(blank=True, null=True)
 
 
 
