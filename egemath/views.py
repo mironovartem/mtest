@@ -680,9 +680,11 @@ def log(request):
 
             if result['success']:
 
-                messages.success(request, 'New comment added with success!')
+                pass
+            #messages.success(request, 'New comment added with success!')
             else:
-                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+                pass
+                #messages.error(request, 'Invalid reCAPTCHA. Please try again.')
 
             return redirect('log')
 
