@@ -680,8 +680,29 @@ def log(request):
             ''' End reCAPTCHA validation '''
 
             if result['success']:
+                username =  form.cleaned_data['username']
+                password =  form.cleaned_data['password']
+                user = authenticate(username=username, password=password)
 
-                pass
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                        # Redirect to a success page.
+                        return redirect('ege_math')
+                    #else:
+                            # Return a 'disabled account' error message
+                            #...
+                            #return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
+                else:
+                        # Return an 'invalid login' error message.
+                        #...
+                    return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
+                    # redirect to a new URL:
+                    #return redirect('home_page')
+
+
+
+
             #messages.success(request, 'New comment added with success!')
             else:
                 pass
@@ -689,23 +710,23 @@ def log(request):
 
             return redirect('log')
 
-            username =  form.cleaned_data['username']
-            password =  form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
+        #    username =  form.cleaned_data['username']
+        #    password =  form.cleaned_data['password']
+        #    user = authenticate(username=username, password=password)
 
-        if user is not None:
+        #if user is not None:
             if user.is_active:
-                login(request, user)
-                # Redirect to a success page.
+        #        login(request, user)
+        #        # Redirect to a success page.
                 return redirect('ege_math')
             #else:
                     # Return a 'disabled account' error message
                     #...
                 #return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
-        else:
+        #else:
                 # Return an 'invalid login' error message.
                 #...
-            return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
+        #    return render(request, 'registration/login.html', {'form': form, 'password_not_correct': True})
             # redirect to a new URL:
             #return redirect('home_page')
 
