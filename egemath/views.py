@@ -621,31 +621,46 @@ def signup(request):
             ''' End reCAPTCHA validation '''
 
             if result['success']:
-
-                messages.success(request, 'New comment added with success!')
+                password =  form.cleaned_data['password']
+                email =  form.cleaned_data['email']
+                username =  form.cleaned_data['username']
+                if not User.objects.filter(email__contains = email): # пробуем получить уникальную почту на имя пользователя
+                    try:
+                        user = User.objects.create_user(username, email, password)
+                        user.save()
+                        if user is not None:
+                            if user.is_active:
+                                login(request, user)
+                                return redirect('donate')
+                    except  IntegrityError:
+                        return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
+                else:
+                    return render(request, 'registration/signup.html', {'form': form, 'email_not_uniq': True })
+                # redirect to a new URL:
+                return redirect('login')
             else:
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')
 
             return redirect('signup')
 
-            password =  form.cleaned_data['password']
-            email =  form.cleaned_data['email']
-            username =  form.cleaned_data['username']
+            #password =  form.cleaned_data['password']
+            #email =  form.cleaned_data['email']
+            #username =  form.cleaned_data['username']
 
-            if not User.objects.filter(email__contains = email): # пробуем получить уникальную почту на имя пользователя
-                try:
-                    user = User.objects.create_user(username, email, password)
-                    user.save()
-                    if user is not None:
-                        if user.is_active:
-                            login(request, user)
-                            return redirect('donate')
-                except  IntegrityError:
-                    return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
-            else:
-                return render(request, 'registration/signup.html', {'form': form, 'email_not_uniq': True })
+            #if not User.objects.filter(email__contains = email): # пробуем получить уникальную почту на имя пользователя
+            #    try:
+            #        user = User.objects.create_user(username, email, password)
+            #        user.save()
+            #        if user is not None:
+            #            if user.is_active:
+            #                login(request, user)
+            #                return redirect('donate')
+            #    except  IntegrityError:
+            #        return render(request, 'registration/signup.html', {'form': form, 'username_not_uniq': True })
+            #else:
+            #    return render(request, 'registration/signup.html', {'form': form, 'email_not_uniq': True })
             # redirect to a new URL:
-            return redirect('login')
+            #return redirect('login')
             #return HttpResponseRedirect('login')
 
     # if a GET (or any other method) we'll create a blank form
@@ -715,10 +730,10 @@ def log(request):
         #    user = authenticate(username=username, password=password)
 
         #if user is not None:
-            if user.is_active:
+        #    if user.is_active:
         #        login(request, user)
         #        # Redirect to a success page.
-                return redirect('ege_math')
+        #        return redirect('ege_math')
             #else:
                     # Return a 'disabled account' error message
                     #...
