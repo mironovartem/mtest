@@ -1,3 +1,5 @@
+import urllib
+import json
 from django.shortcuts import get_object_or_404, render, render_to_response #
 from django.shortcuts import redirect #
 from django.http import Http404
@@ -18,9 +20,7 @@ from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
 from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
 from django.core.mail import send_mail
-import urllib
 
-import json
 from local_settings import GOOGLE_RECAPTCHA_SECRET_KEY
 from django.contrib import messages
 
