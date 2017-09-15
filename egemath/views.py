@@ -121,8 +121,13 @@ def egetest(request, test_id):
         username = request.user #определение уровня доступа пользователя
         if request.user.is_authenticated():
             #user_access_level = User.objects.filter(username__contains = username).values('useraccesslevel').first()
-            user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
-            user_access_level = user_access_level['user_access_level']
+            try:
+                user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
+            #user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
+                user_access_level = user_access_level['user_access_level']
+            except:
+                user_access_level = 0
+
             if user_access_level == None:
                 user_access_level = 0
 
