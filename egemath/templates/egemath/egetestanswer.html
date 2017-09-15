@@ -16,21 +16,24 @@
                       {% if color1 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Объяснение к заданию № 1 </a>
                           <div class="collapse" id="collapse-1">
-                              {% if explanation_text1 %}
-                                <p class="lead text-center">{{explanation_text1}}</p>
-                              {% endif %}
-                              <br>
-                              {% if explanation_video1 %}
-                              <div class="text-center">
 
-                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video1}}"></iframe>
-                              </div>
-                              {% endif %}
-                              {% if not explanation_video1 %}
+                            {% if explanation_video1 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                  <div class="text-center">
+                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video1}}"></iframe>
+                                  </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
+                                {% endif %}
 
+                            {% else %}
+                              <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
-
-                              {% endif %}
+                              </div>
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -40,20 +43,25 @@
                       {% if color2 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" role="button" href="#collapse-2">Объяснение к заданию № 2 </a>
                           <div class="collapse" id="collapse-2">
-                              {% if explanation_text2 %}
-                                <p class="lead text-center">{{explanation_text2}}</p>
-                              {% endif %}
-                              <br>
-                              {% if explanation_video2 %}
-                              <div class="text-center">
-                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video2}}"></iframe>
-                              </div>
-                              {% endif %}
-                              {% if not explanation_video2 %}
+
+                            {% if explanation_video2 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                  <div class="text-center">
+                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video2}}"></iframe>
+                                  </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
+                            {% endif %}
+
                           </div>
                       </div>
                       {% endif %}
@@ -63,20 +71,24 @@
                       {% if color3 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" role="button" href="#collapse-3">Объяснение к заданию № 3 </a>
                           <div class="collapse" id="collapse-3">
-                              {% if explanation_text3 %}
-                                <p class="lead text-center">{{explanation_text3}}</p>
-                              {% endif %}
-                              <br>
-                              {% if explanation_video3 %}
-                              <div class="text-center">
-                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video3}}"></iframe>
-                              </div>
-                              {% endif %}
-                              {% if not explanation_video3 %}
+
+                            {% if explanation_video3 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                  <div class="text-center">
+                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video3}}"></iframe>
+                                  </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -86,20 +98,23 @@
                       {% if color4 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" role="button" href="#collapse-4">Объяснение к заданию № 4 </a>
                           <div class="collapse" id="collapse-4">
-                              {% if explanation_text4 %}
-                                <p class="lead text-center">{{explanation_text4}}</p>
-                              {% endif %}
-                              <br>
-                              {% if explanation_video4 %}
-                              <div class="text-center">
-                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video4}}"></iframe>
-                              </div>
-                              {% endif %}
-                              {% if not explanation_video4 %}
+                            {% if explanation_video4 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                  <div class="text-center">
+                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video4}}"></iframe>
+                                  </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -109,20 +124,23 @@
                       {% if color5 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" role="button" href="#collapse-5">Объяснение к заданию № 5 </a>
                           <div class="collapse" id="collapse-5">
-                              {% if explanation_text5 %}
-                                <p class="lead text-center">{{explanation_text5}}</p>
-                              {% endif %}
-                              <br>
-                              {% if explanation_video5 %}
-                              <div class="text-center">
-                                <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video5}}"></iframe>
-                              </div>
-                              {% endif %}
-                              {% if not explanation_video5 %}
+                            {% if explanation_video5 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                  <div class="text-center">
+                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video5}}"></iframe>
+                                  </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -132,29 +150,24 @@
                       {% if color6 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-6" role="button" href="#collapse-6">Объяснение к заданию № 6 </a>
                           <div class="collapse" id="collapse-6">
-                              {% if explanation_text6 %}
-                                <p class="lead text-center">{{explanation_text6}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video6 %}
+
+                            {% if explanation_video6 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video6}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video6 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
-
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -164,29 +177,25 @@
                       {% if color7 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-7" role="button" href="#collapse-7">Объяснение к заданию № 7 </a>
                           <div class="collapse" id="collapse-7">
-                              {% if explanation_text7 %}
-                                <p class="lead text-center">{{explanation_text7}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video7 %}
+
+                            {% if explanation_video7 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video7}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video7 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -196,29 +205,24 @@
                       {% if color8 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-8" role="button" href="#collapse-8">Объяснение к заданию № 8 </a>
                           <div class="collapse" id="collapse-8">
-                              {% if explanation_text8 %}
-                                <p class="lead text-center">{{explanation_text8}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video8 %}
+
+                            {% if explanation_video8 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video8}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video8 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
-
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -228,29 +232,25 @@
                       {% if color9 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-9" role="button" href="#collapse-9">Объяснение к заданию № 9 </a>
                           <div class="collapse" id="collapse-9">
-                              {% if explanation_text9 %}
-                                <p class="lead text-center">{{explanation_text9}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video9 %}
+
+                            {% if explanation_video9 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video9}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video9 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -260,29 +260,25 @@
                       {% if color10 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-10" role="button" href="#collapse-10">Объяснение к заданию № 10 </a>
                           <div class="collapse" id="collapse-10">
-                              {% if explanation_text10 %}
-                                <p class="lead text-center">{{explanation_text10}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video10 %}
+
+                            {% if explanation_video10 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video10}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video10 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -292,29 +288,25 @@
                       {% if color11 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-11" role="button" href="#collapse-11">Объяснение к заданию № 11 </a>
                           <div class="collapse" id="collapse-11">
-                              {% if explanation_text11 %}
-                                <p class="lead text-center">{{explanation_text11}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video11 %}
+
+                            {% if explanation_video11 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video11}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video11 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -324,29 +316,25 @@
                       {% if color12 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-12" role="button" href="#collapse-12">Объяснение к заданию № 12 </a>
                           <div class="collapse" id="collapse-12">
-                              {% if explanation_text12 %}
-                                <p class="lead text-center">{{explanation_text12}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video12 %}
+
+                            {% if explanation_video12 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video12}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video12 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -356,29 +344,24 @@
                       {% if color13 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-13" role="button" href="#collapse-13">Объяснение к заданию № 13 </a>
                           <div class="collapse" id="collapse-13">
-                              {% if explanation_text13 %}
-                                <p class="lead text-center">{{explanation_text13}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video13 %}
+
+                            {% if explanation_video13 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video13}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video13 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
-
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>{% endif %}
                     </li>
@@ -387,29 +370,24 @@
                       {% if color14 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-14" role="button" href="#collapse-14">Объяснение к заданию № 14 </a>
                           <div class="collapse" id="collapse-14">
-                              {% if explanation_text14 %}
-                                <p class="lead text-center">{{explanation_text14}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video14 %}
+
+                            {% if explanation_video14 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video14}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video14 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
-
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
+                            {% endif %}
                           </div>
                       </div>{% endif %}
                     </li>
@@ -418,29 +396,25 @@
                       {% if color15 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-15" role="button" href="#collapse-15">Объяснение к заданию № 15 </a>
                           <div class="collapse" id="collapse-15">
-                              {% if explanation_text15 %}
-                                <p class="lead text-center">{{explanation_text15}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video15 %}
+
+                            {% if explanation_video15 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video15}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video15 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -450,29 +424,25 @@
                       {% if color16 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-16" role="button" href="#collapse-16">Объяснение к заданию № 16 </a>
                           <div class="collapse" id="collapse-16">
-                              {% if explanation_text16 %}
-                                <p class="lead text-center">{{explanation_text16}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video16 %}
+
+                            {% if explanation_video16 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video16}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video16 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -482,29 +452,25 @@
                       {% if color17 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-17" role="button" href="#collapse-17">Объяснение к заданию № 17</a>
                           <div class="collapse" id="collapse-17">
-                              {% if explanation_text17 %}
-                                <p class="lead text-center">{{explanation_text17}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video17 %}
+
+                            {% if explanation_video17 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video17}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video17 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -514,29 +480,25 @@
                       {% if color18 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-18" role="button" href="#collapse-18">Объяснение к заданию № 18</a>
                           <div class="collapse" id="collapse-18">
-                              {% if explanation_text18 %}
-                                <p class="lead text-center">{{explanation_text18}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video18 %}
+
+                            {% if explanation_video18 %}
+                                {% if user_access_level == 1 or user_access_level == 100 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video18}}"></iframe>
                                   </div>
+                                {% else %}
+                                  <div>
+                                    <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                      <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                    </div>
                                 {% endif %}
 
-                              {% if not explanation_video18 %}
+                            {% else %}
                               <div>
                                 <p class="lead text-center"><em>Объяснение скоро появится</em></p>
                               </div>
-                              {% endif %}
-                              {% endif %}
+                            {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}
@@ -546,29 +508,26 @@
                       {% if color19 %}
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-19" role="button" href="#collapse-19">Объяснение к заданию № 19</a>
                           <div class="collapse" id="collapse-19">
-                              {% if explanation_text19 %}
-                                <p class="lead text-center">{{explanation_text19}}</p>
-                              {% endif %}
-                              <br>
-                              {% if user_access_level > 0 %}
-                                {% if explanation_video19 %}
-                                  <div class="text-center">
-                                      <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video19}}"></iframe>
-                                  </div>
-                                {% endif %}
 
-                              {% if not explanation_video19 %}
-                              <div>
-                                <p class="lead text-center"><em>Объяснение скоро появится</em></p>
-                              </div>
-                              {% endif %}
+
+                              {% if explanation_video19 %}
+                                  {% if user_access_level == 1 or user_access_level == 100 %}
+                                    <div class="text-center">
+                                        <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video19}}"></iframe>
+                                    </div>
+                                  {% else %}
+                                    <div>
+                                      <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно повысить
+                                        <br><a href="{% url 'donate' %}">уровень доступа</a></em></p>
+                                      </div>
+                                  {% endif %}
+
+                              {% else %}
+                                <div>
+                                  <p class="lead text-center"><em>Объяснение скоро появится</em></p>
+                                </div>
                               {% endif %}
 
-                              {% if user_access_level == 0 %}
-                              <div>
-                                <p class="lead text-center"><em>Чтобы посмотреть объясненение нужно <a href="{% url 'donate' %}">повысить уровень</a></em></p>
-                              </div>
-                              {% endif %}
                           </div>
                       </div>
                       {% endif %}

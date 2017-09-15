@@ -128,7 +128,7 @@ def egetest(request, test_id):
             except:
                 user_access_level = 0
 
-            if user_access_level == None:
+            else: 
                 user_access_level = 0
 
         else:
