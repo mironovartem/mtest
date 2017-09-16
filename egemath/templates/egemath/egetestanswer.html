@@ -17,9 +17,11 @@
                       <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Объяснение к заданию № 1 </a>
                           <div class="collapse" id="collapse-1">
                             <br>
+                            <p class="lead text-center"> уровень доступа юзера {{user_access_level_ege}}</p>
+                            <p class="lead text-center"> уровень доступа задания {{access_level1}}</p>
 
                             {% if explanation_video1 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level1 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video1}}"></iframe>
                                   </div>
@@ -47,7 +49,7 @@
                             <br>
 
                             {% if explanation_video2 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level2 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video2}}"></iframe>
                                   </div>
@@ -76,7 +78,7 @@
                             <br>
 
                             {% if explanation_video3 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level3 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video3}}"></iframe>
                                   </div>
@@ -105,7 +107,7 @@
                             <br>
 
                             {% if explanation_video4 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege  >= access_level4 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video4}}"></iframe>
                                   </div>
@@ -134,7 +136,7 @@
                             <br>
 
                             {% if explanation_video5 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level5 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video5}}"></iframe>
                                   </div>
@@ -162,7 +164,7 @@
                             <br>
 
                             {% if explanation_video6 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level6 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video6}}"></iframe>
                                   </div>
@@ -190,7 +192,7 @@
                             <br>
 
                             {% if explanation_video7 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level7 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video7}}"></iframe>
                                   </div>
@@ -219,7 +221,7 @@
                             <br>
 
                             {% if explanation_video8 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level8 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video8}}"></iframe>
                                   </div>
@@ -247,7 +249,7 @@
                             <br>
 
                             {% if explanation_video9 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level9 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video9}}"></iframe>
                                   </div>
@@ -276,7 +278,7 @@
                             <br>
 
                             {% if explanation_video10 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level10 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video10}}"></iframe>
                                   </div>
@@ -305,7 +307,7 @@
                             <br>
 
                             {% if explanation_video11 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level11 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video11}}"></iframe>
                                   </div>
@@ -334,7 +336,7 @@
                             <br>
 
                             {% if explanation_video12 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level12 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video12}}"></iframe>
                                   </div>
@@ -363,7 +365,7 @@
                             <br>
 
                             {% if explanation_video13 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level13 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video13}}"></iframe>
                                   </div>
@@ -390,7 +392,7 @@
                             <br>
 
                             {% if explanation_video14 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level14 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video14}}"></iframe>
                                   </div>
@@ -417,7 +419,7 @@
                             <br>
 
                             {% if explanation_video15 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level15 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video15}}"></iframe>
                                   </div>
@@ -446,7 +448,7 @@
                             <br>
 
                             {% if explanation_video16 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level16 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video16}}"></iframe>
                                   </div>
@@ -475,7 +477,7 @@
                             <br>
 
                             {% if explanation_video17 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level17 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video17}}"></iframe>
                                   </div>
@@ -504,7 +506,7 @@
                             <br>
 
                             {% if explanation_video18 %}
-                                {% if user_access_level == 1 or user_access_level == 100 %}
+                                {% if user_access_level_ege >= access_level18 %}
                                   <div class="text-center">
                                       <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video18}}"></iframe>
                                   </div>
@@ -534,7 +536,7 @@
 
 
                               {% if explanation_video19 %}
-                                  {% if user_access_level == 1 or user_access_level == 100 %}
+                                  {% if user_access_level_ege >= access_level19 %}
                                     <div class="text-center">
                                         <iframe width="" height="" allowfullscreen="" frameborder="0" src="{{explanation_video19}}"></iframe>
                                     </div>

@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, Textarea, TextInput
+from django.forms import ModelForm, Textarea, TextInput, NumberInput
 from egemath.models import EgeMathTest
 
 class TestAnswerForm(forms.Form):
@@ -50,7 +50,7 @@ class EgeTestInputForm(ModelForm):
         'test_num', 'task_num', 'question_image', 'question_text',
         'question_text1', 'question_text2', 'question_text3', 'answer_text1',
         'answer_text2', 'answer_text3', 'answer_text4', 'correct_answer',
-        'explanation_video', 'explanation_text', 'access_level',]
+        'explanation_video', 'access_level',]
         widgets = {
         #'test_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер теста test_num'}),
         #'task_num': IntegerField(attrs={'class' : 'form-control', 'placeholder' : '     Номер задания task_num'}),
@@ -65,8 +65,7 @@ class EgeTestInputForm(ModelForm):
         'answer_text4': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  4 Вариант ответа answer_text4'}),
         'correct_answer': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Правильный ответ correct_answer'}),
         'explanation_video': TextInput(attrs={'class' : 'form-control', 'placeholder' : '   Видео с объяснением explanation_video'}),
-        'explanation_text': Textarea(attrs={'rows': 3, 'class' : 'form-control', 'placeholder' : '  explanation_text'}),
-        'access_level': TextInput(attrs={'class' : 'form-control', 'placeholder' : '    Уровень доступа access_level'}),
+        'access_level': NumberInput(attrs={'class' : 'form-control', 'placeholder' : '    Уровень доступа access_level'}),
         }
 
 class AdmistratorForm(forms.Form):

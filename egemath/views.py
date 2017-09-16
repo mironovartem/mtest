@@ -42,16 +42,18 @@ def cor_answ(test_id, num): # находит правильный ответ
     return  x['correct_answer']
 
 def expl(test_id, num):
-    x = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('explanation_text')
-    x = x[0]
-    x= x['explanation_text']
-    if not x:
-        x = ''
+    try:
+        x = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('access_level')
+        x = x[0]
+        x= x['access_level']
+    except:
+        x = 0
+    if x == None:
+        x =0
     y = EgeMathTest.objects.filter(test_num__contains = test_id).filter(task_num__contains = num).values('explanation_video')
     y = y[0]
     y = y['explanation_video']
-    if y:
-        x = ''
+
     return  x, y
 
 def quest(test_id, num):
@@ -120,27 +122,19 @@ def egetest(request, test_id):
 
         username = request.user #определение уровня доступа пользователя
         if request.user.is_authenticated():
-            #user_access_level = User.objects.filter(username__contains = username).values('useraccesslevel').first()
+            #user_access_level_ege = User.objects.filter(username__contains = username).values('useraccesslevel').first()
             try:
-                user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
-            #user_access_level = UserAccessLevel.objects.filter(user = username).values('user_access_level').first()
-                user_access_level = user_access_level['user_access_level']
+                user_access_level_ege = UserAccessLevel.objects.filter(user = username).values('user_access_level_ege').first()
+            #user_access_level_ege = UserAccessLevel.objects.filter(user = username).values('user_access_level_ege').first()
+                user_access_level_ege = user_access_level_ege['user_access_level_ege']
             except:
-                user_access_level = 0
+                user_access_level_ege = 0
+            if user_access_level_ege == None:
+                user_access_level_ege = 0
 
-            else: 
-                user_access_level = 0
 
         else:
-            user_access_level = 0
-        test_id = int(test_id)
-
-        if test_id == 1:
-            user_access_level = 1
-
-
-
-
+            user_access_level_ege = 0
 
         # check whether it's valid:
         if form.is_valid():
@@ -169,7 +163,7 @@ def egetest(request, test_id):
 
 ###############################
             correct_answer1 = cor_answ(test_id, 1)
-            explanation_text1, explanation_video1 =expl(test_id, 1)
+            access_level1, explanation_video1 =expl(test_id, 1)
 
             if correct_answer1 == answer1:
                 result = result+1
@@ -178,7 +172,7 @@ def egetest(request, test_id):
                 color1 = True
 ###################################
             correct_answer2 = cor_answ(test_id, 2)
-            explanation_text2, explanation_video2 =expl(test_id, 2)
+            access_level2, explanation_video2 =expl(test_id, 2)
 
             if correct_answer2 == answer2:
                 result = result+1
@@ -187,7 +181,7 @@ def egetest(request, test_id):
                 color2 = True
 #####################################
             correct_answer3 = cor_answ(test_id, 3)
-            explanation_text3, explanation_video3 =expl(test_id, 3)
+            access_level3, explanation_video3 =expl(test_id, 3)
 
             if correct_answer3 == answer3:
                 result = result+1
@@ -196,7 +190,7 @@ def egetest(request, test_id):
                 color3 = True
 ######################################
             correct_answer4 = cor_answ(test_id, 4)
-            explanation_text4, explanation_video4 =expl(test_id, 4)
+            access_level4, explanation_video4 =expl(test_id, 4)
 
             if correct_answer4 == answer4:
                 result = result+1
@@ -205,7 +199,7 @@ def egetest(request, test_id):
                 color4 = True
 #######################################
             correct_answer5 = cor_answ(test_id, 5)
-            explanation_text5, explanation_video5 =expl(test_id, 5)
+            access_level5, explanation_video5 =expl(test_id, 5)
 
             if correct_answer5 == answer5:
                 result = result+1
@@ -214,7 +208,7 @@ def egetest(request, test_id):
                 color5 = True
 #########################################
             correct_answer6 = cor_answ(test_id, 6)
-            explanation_text6, explanation_video6 =expl(test_id, 6)
+            access_level6, explanation_video6 =expl(test_id, 6)
 
             if correct_answer6 == answer6:
                 result = result+1
@@ -223,7 +217,7 @@ def egetest(request, test_id):
                 color6 = True
 ##########################################
             correct_answer7 = cor_answ(test_id, 7)
-            explanation_text7, explanation_video7 =expl(test_id, 7)
+            access_level7, explanation_video7 =expl(test_id, 7)
 
             if correct_answer7 == answer7:
                 result = result+1
@@ -232,7 +226,7 @@ def egetest(request, test_id):
                 color7 = True
 ##########################################
             correct_answer8 = cor_answ(test_id, 8)
-            explanation_text8, explanation_video8 =expl(test_id, 8)
+            access_level8, explanation_video8 =expl(test_id, 8)
 
             if correct_answer8 == answer8:
                 result = result+1
@@ -241,7 +235,7 @@ def egetest(request, test_id):
                 color8 = True
 ##########################################
             correct_answer9 = cor_answ(test_id, 9)
-            explanation_text9, explanation_video9 =expl(test_id, 9)
+            access_level9, explanation_video9 =expl(test_id, 9)
 
             if correct_answer9 == answer9:
                 result = result+1
@@ -250,7 +244,7 @@ def egetest(request, test_id):
                 color9 = True
 ##########################################
             correct_answer10 = cor_answ(test_id, 10)
-            explanation_text10, explanation_video10 =expl(test_id, 10)
+            access_level10, explanation_video10 =expl(test_id, 10)
 
             if correct_answer10 == answer10:
                 result = result+1
@@ -259,7 +253,7 @@ def egetest(request, test_id):
                 color10 = True
 ##########################################
             correct_answer11 = cor_answ(test_id, 11)
-            explanation_text11, explanation_video11 =expl(test_id, 11)
+            access_level11, explanation_video11 =expl(test_id, 11)
 
             if correct_answer11 == answer11:
                 result = result+1
@@ -268,7 +262,7 @@ def egetest(request, test_id):
                 color11 = True
 ##########################################
             correct_answer12 = cor_answ(test_id, 12)
-            explanation_text12, explanation_video12 =expl(test_id, 12)
+            access_level12, explanation_video12 =expl(test_id, 12)
 
             if correct_answer12 == answer12:
                 result = result+1
@@ -277,7 +271,7 @@ def egetest(request, test_id):
                 color12 = True
 ##########################################
             correct_answer13 = cor_answ(test_id, 13)
-            explanation_text13, explanation_video13 =expl(test_id, 13)
+            access_level13, explanation_video13 =expl(test_id, 13)
 
             if correct_answer13 == answer13:
                 result = result+1
@@ -286,7 +280,7 @@ def egetest(request, test_id):
                 color13 = True
 ##########################################
             correct_answer14 = cor_answ(test_id, 14)
-            explanation_text14, explanation_video14 =expl(test_id, 14)
+            access_level14, explanation_video14 =expl(test_id, 14)
 
             if correct_answer14 == answer14:
                 result = result+1
@@ -295,7 +289,7 @@ def egetest(request, test_id):
                 color14 = True
 ##########################################
             correct_answer15 = cor_answ(test_id, 15)
-            explanation_text15, explanation_video15 =expl(test_id, 15)
+            access_level15, explanation_video15 =expl(test_id, 15)
 
             if correct_answer15 == answer15:
                 result = result+1
@@ -304,7 +298,7 @@ def egetest(request, test_id):
                 color15 = True
 ##########################################
             correct_answer16 = cor_answ(test_id, 16)
-            explanation_text16, explanation_video16 =expl(test_id, 16)
+            access_level16, explanation_video16 =expl(test_id, 16)
 
             if correct_answer16 == answer16:
                 result = result+1
@@ -313,7 +307,7 @@ def egetest(request, test_id):
                 color16 = True
 ##########################################
             correct_answer17 = cor_answ(test_id, 17)
-            explanation_text17, explanation_video17 =expl(test_id, 17)
+            access_level17, explanation_video17 =expl(test_id, 17)
 
             if correct_answer17 == answer17:
                 result = result+1
@@ -322,7 +316,7 @@ def egetest(request, test_id):
                 color17 = True
 ##########################################
             correct_answer18 = cor_answ(test_id, 18)
-            explanation_text18, explanation_video18 =expl(test_id, 18)
+            access_level18, explanation_video18 =expl(test_id, 18)
 
             if correct_answer18 == answer18:
                 result = result+1
@@ -331,7 +325,7 @@ def egetest(request, test_id):
                 color18 = True
 ##########################################
             correct_answer19 = cor_answ(test_id, 19)
-            explanation_text19, explanation_video19 =expl(test_id, 19)
+            access_level19, explanation_video19 =expl(test_id, 19)
 
             if correct_answer19 == answer19:
                 result = result+1
@@ -346,120 +340,120 @@ def egetest(request, test_id):
             'answer1': answer1,
             'correct_answer1' : correct_answer1,
             'color1' : color1,
-            'explanation_text1' : explanation_text1,
+            'access_level1' : access_level1,
             'explanation_video1' : explanation_video1,
 
             'answer2' : answer2,
             'correct_answer2' : correct_answer2,
             'color2': color2,
-            'explanation_text2' : explanation_text2,
+            'access_level2' : access_level2,
             'explanation_video2' : explanation_video2,
 
             'answer3': answer3,
             'correct_answer3' : correct_answer3,
             'color3': color3,
-            'explanation_text3' : explanation_text3,
+            'access_level3' : access_level3,
             'explanation_video3' : explanation_video3,
 
             'answer4': answer4,
             'correct_answer4' : correct_answer4,
             'color4': color4,
-            'explanation_text4' : explanation_text4,
+            'access_level4' : access_level4,
             'explanation_video4' : explanation_video4,
 
             'answer5': answer5,
             'correct_answer5' : correct_answer5,
             'color5': color5,
-            'explanation_text5' : explanation_text5,
+            'access_level5' : access_level5,
             'explanation_video5' : explanation_video5,
 
             'answer6': answer6,
             'correct_answer6' : correct_answer6,
             'color6': color6,
-            'explanation_text6' : explanation_text6,
+            'access_level6' : access_level6,
             'explanation_video6' : explanation_video6,
 
             'answer7': answer7,
             'correct_answer7' : correct_answer7,
             'color7': color7,
-            'explanation_text7' : explanation_text7,
+            'access_level7' : access_level7,
             'explanation_video7' : explanation_video7,
 
             'answer8': answer8,
             'correct_answer8' : correct_answer8,
             'color8': color8,
-            'explanation_text8' : explanation_text8,
+            'access_level8' : access_level8,
             'explanation_video8' : explanation_video8,
 
             'answer9': answer9,
             'correct_answer9' : correct_answer9,
             'color9': color9,
-            'explanation_text9' : explanation_text9,
+            'access_level9' : access_level9,
             'explanation_video9' : explanation_video9,
 
             'answer10': answer10,
             'correct_answer10' : correct_answer10,
             'color10': color10,
-            'explanation_text10' : explanation_text10,
+            'access_level10' : access_level10,
             'explanation_video10' : explanation_video10,
 
             'answer11': answer11,
             'correct_answer11' : correct_answer11,
             'color11': color11,
-            'explanation_text11' : explanation_text11,
+            'access_level11' : access_level11,
             'explanation_video11' : explanation_video11,
 
             'answer12': answer12,
             'correct_answer12' : correct_answer12,
             'color12': color12,
-            'explanation_text12' : explanation_text12,
+            'access_level12' : access_level12,
             'explanation_video12' : explanation_video12,
 
             'answer13': answer13,
             'correct_answer13' : correct_answer13,
             'color13': color13,
-            'explanation_text13' : explanation_text13,
+            'access_level13' : access_level13,
             'explanation_video13' : explanation_video13,
 
             'answer14': answer14,
             'correct_answer14' : correct_answer14,
             'color14': color14,
-            'explanation_text14' : explanation_text14,
+            'access_level14' : access_level14,
             'explanation_video14' : explanation_video14,
 
             'answer15': answer15,
             'correct_answer15' : correct_answer15,
             'color15': color15,
-            'explanation_text15' : explanation_text15,
+            'access_level15' : access_level15,
             'explanation_video15' : explanation_video15,
 
             'answer16': answer16,
             'correct_answer16' : correct_answer16,
             'color16': color16,
-            'explanation_text16' : explanation_text16,
+            'access_level16' : access_level16,
             'explanation_video16' : explanation_video16,
 
             'answer17': answer17,
             'correct_answer17' : correct_answer17,
             'color17': color17,
-            'explanation_text17' : explanation_text17,
+            'access_level17' : access_level17,
             'explanation_video17' : explanation_video17,
 
             'answer18': answer18,
             'correct_answer18' : correct_answer18,
             'color18': color18,
-            'explanation_text18' : explanation_text18,
+            'access_level18' : access_level18,
             'explanation_video18' : explanation_video18,
 
             'answer19': answer19,
             'correct_answer19' : correct_answer19,
             'color19': color19,
-            'explanation_text19' : explanation_text19,
+            'access_level19' : access_level19,
             'explanation_video19' : explanation_video19,
 
             'result': result,
-            'user_access_level' : user_access_level,
-            'test_id' : test_id,
+            'user_access_level_ege' : user_access_level_ege,
+            'test_id': test_id,
 
              })
 

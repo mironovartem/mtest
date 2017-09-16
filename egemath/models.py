@@ -21,8 +21,7 @@ class EgeMathTest(models.Model):
     answer_text4 = models.TextField(blank=True, null=True)
     correct_answer = models.CharField(max_length=20)
     explanation_video = models.TextField(blank=True, null=True)
-    explanation_text = models.TextField(blank=True, null=True)
-    access_level = models.TextField(blank=True, null=True)
+    access_level = models.PositiveIntegerField(blank=True, null=True)
 
     def publish(self):
         self.save()
@@ -30,7 +29,7 @@ class EgeMathTest(models.Model):
 class UserAccessLevel(models.Model):
     """Модель уровень доступа юзера к дополнительному контенту"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_access_level = models.PositiveIntegerField(blank=True, null=True)
+    user_access_level_ege = models.PositiveIntegerField(blank=True, null=True)
 
 
 
