@@ -922,7 +922,8 @@ def todo(request):
     return render(request, 'egemath/todo.html', {'form': form})
 
 def administrator(request):
-    if request.method == 'POST':
+    username = str(request.user)
+    if request.method == 'POST' and username == 'artem':
         # create a form instance and populate it with data from the request:
         form = AdmistratorForm(request.POST)
         # check whether it's valid:
@@ -945,8 +946,10 @@ def administrator(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = AdmistratorForm()
-
-    return render(request, 'egemath/admistrator.html', {'form': form})
+        if username == 'artem':
+            return render(request, 'egemath/admistrator.html', {'form': form})
+        else:
+            return redirect('ege_math')
 
 
 
