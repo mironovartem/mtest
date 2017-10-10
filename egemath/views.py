@@ -1,28 +1,27 @@
-import urllib
-from urllib import request
-import json
-from django.shortcuts import get_object_or_404, render, render_to_response #
-from django.shortcuts import redirect #
-from django.http import Http404
-from django.http import HttpResponseRedirect #
-from django.http import HttpResponse, HttpResponseServerError # для передачи ответото
-from .forms import TestAnswerForm # импорт формы
-from .forms import SignUpForm #импорт формы
+from .forms import AdmistratorForm #импорт формы
 from .forms import CustomerApplicationForm #импорт формы
 from .forms import EgeTestInputForm #импорт формы
-from .forms import AdmistratorForm #импорт формы
-from django.forms import ModelForm
+from .forms import LoginForm #форма для авторизации
+from .forms import SignUpForm #импорт формы
+from .forms import TestAnswerForm # импорт формы
 from .models import EgeMathTest # импорт модели
 from .models import UserAccessLevel # импорт модели
-from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
-from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
 from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
-from .forms import LoginForm #форма для авторизации
 from django.contrib.auth import logout
-from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
+from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
+from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
 from django.core.mail import send_mail
-
+from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
+from django.forms import ModelForm
+from django.http import Http404
+from django.http import HttpResponse, HttpResponseServerError # для передачи ответото
+from django.http import HttpResponseRedirect #
+from django.shortcuts import get_object_or_404, render, render_to_response #
+from django.shortcuts import redirect #
 from local_settings import GOOGLE_RECAPTCHA_SECRET_KEY
+from urllib import request
+import json
+import urllib
 #from django.contrib import messages
 
 
@@ -904,7 +903,6 @@ def todo(request):
 
 
             if сontact_email or contact_phone:
-                #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
                 send_mail('Заявка',
                 ' Email: ' + сontact_email + ', '+ ' Имя: '+ сontact_name+','+' Subscribe: ' + str(email_subscribe),
                 'astruslux@gmail.com',
@@ -934,14 +932,8 @@ def administrator(request):
             test_num = form.cleaned_data['test_num']
             task_num = form.cleaned_data['task_num']
 
-
-                #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-
-
-
             # redirect to a new URL:
             return redirect('ege_test_input', test_num = test_num, task_num = task_num)
-
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -981,8 +973,6 @@ def ege_test_input(request, test_num, task_num):
                 # ...
                      form.save()
                      return redirect('administrator')
-
-
 
     # if a GET (or any other method) we'll create a blank form
         else:

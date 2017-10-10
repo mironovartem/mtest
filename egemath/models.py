@@ -31,7 +31,5 @@ class UserAccessLevel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_access_level_ege = models.PositiveIntegerField(blank=True, null=True)
 
-
-
     def check_it(self):
         self.save()
