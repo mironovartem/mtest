@@ -1,56 +1,154 @@
-{% extends 'egemath/base.html' %}
-{% block title %}TestEge.com{% endblock %}
-{% block content %}
 {% load staticfiles %}
+<!DOCTYPE html>
+<html>
 
-    <div id="promo">
-        <div class="jumbotron">
-            <h1>Тесты ЕГЭ и ОГЭ по математике </h1>
-            <p> для самоподготовки с объяснениями </p>
-            <div id="promo1"><a class="btn btn-default" role="button" href="{% url 'ege_math' %}">Начать</a></div>
-        </div>
-    </div>
-    <div id="ln1">
-        <hr>
-    </div>
-    <div id="tre">
-        <div class="row">
-            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/ege.jpg' %}">
-                <p class="text-success" id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="{% url 'ege_math' %}"><span>ЕГЭ </span></a></p>
-                <p class="lead text-center" style="margin:10px;">Тесты, объяснения и лекции для подготовки к экзамену ЕГЭ по математике.</p>
-            </div>
-            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/oge.jpg' %}">
-                <p id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="#"><span>ОГЭ </span></a></p>
-                <p class="lead text-center" style="padding:0px;margin:10px;">Тесты, объяснения и лекции для подготовки к экзамену ОГЭ по математике.</p>
-            </div>
-            <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{% static 'assets/img/gdz.jpg' %}">
-                <p id="butn"><a class="btn btn-default btn-block btn-lg" role="button" href="#"><span>ГДЗ </span></a></p>
-                <p class="lead text-center" style="margin:10px;">Примеры решений задач из учебника по геометрии в видео формате.</p>
-            </div>
-        </div>
-    </div>
-    <div class="preim">
-        <div class="row" id="rw1">
-            <div class="col-md-12 bg_preim">
-                <h2 id="rw1_h1">Содержание </h2></div>
-        </div>
-        <div id="ln1">
-            <hr>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-search"></i>
-                <h3>Тематические задания</h3>
-                <p class="text-left"> Для тренировки опреденного номера из теста ЕГЭ или ОГЭ по математике.</p>
-            </div>
-            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-cog"></i>
-                <h3 class="text-left">Стандартные тесты </h3>
-                <p class="text-left">Тесты как на экзамене для проверки своих знаний.</p>
-            </div>
-            <div class="col-md-4 col-sm-4 bg_preim"><i class="glyphicon glyphicon-signal"></i>
-                <h3 class="text-left">Разные уровни сложности</h3>
-                <p class="text-left">Развивающие упражения. Двигайтесь от легкого уровня к следующим уровням.&nbsp; </p>
-            </div>
-        </div>
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
 
-{% endblock content %}
+<body style="background-image:url({% static 'assets/img/bgtype_dark.png' %});">
+    <div id="block_1">
+        <div class="container" style="background-color:rgba(255,255,255,0.15);">
+            <div class="row">
+                <div class="col-md-12">
+                    <hgroup>
+                        <h1 class="text-center">Подготовка к ЕГЭ </h1>
+                        <h2 class="text-center">по математике</h2>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center mx-auto">
+                    <p class="text-center">Привет, на связи репетитор по математике Артём Миронов. </p>
+                </div>
+                <div class="col-auto align-self-center mx-auto"><img class="rounded-circle img-fluid" src="{% static 'assets/img/myphoto.png' %}" width="300"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center">Специально для учеников 11 класса </h4>
+                    <p class="text-center"> Готовится к выходу долгожданный курс</p>
+                    <p class="text-center" id="kurs_ege">«Избранные задачи ЕГЭ по математике 2018» </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto align-self-center m-auto"><img class="rounded-circle img-fluid" src="{% static 'assets/img/wtf2.png' %}" width="200"></div>
+                <div class="col align-self-center mx-auto">
+                    <!h4 class="text-center">Временно открыто</h4>
+                    <p>Работа над проектом подходит к завершению, и мне нужны ваши советы и комментарии. Пожалуйста, поучаствуйте в предварительном тестировании моего курса подготовки к ЕГЭ по математике.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center"> <i class="fa fa-cloud-download"></i> Что внутри </h4>
+                    <p>Вы будете получать видео лекции, тесты для самостоятельного решения и видео с разбором тестовых заданий, с задачами из легкой и сложной части профильного ЕГЭ по математике.</p>
+                    <p>При выборе задач я руководствовался опытом, это типовые для экзамена, но в то же время оригинальные и проблемные примеры. Короткие задания будут приходить пару раз в неделю, чтобы вы успели справиться, и не успели заскучать. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center my-auto">
+                    <h4 class="text-center"> Получение доступа</h4>
+                    <p>Для получения уроков укажите e-mail, так как задания высылаю по электронной почте. После того как укажите адрес, на почту придёт уведомление.</p>
+                </div>
+                <div class="col-auto align-self-center m-auto"><img class="rounded-circle img-fluid" src="{% static 'assets/img/comp1.png' %}" width="200"></div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                <!-- Begin MailChimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+	               #mc_embed_signup{background: rgba(255,255,255,0.0); clear: left; text-align: center; font:14px Helvetica,Arial,sans-serif; margin: auto;}
+	                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                 </style>
+                <div id="mc_embed_signup">
+                  <form action="https://testege.us17.list-manage.com/subscribe/post?u=4177827642f0588b35ebecb31&amp;id=f8e84af37c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+
+                      <div class="mc-field-group">
+
+                        <p><input type="email" value="" name="EMAIL" placeholder="e-mail" class="required email" id="mce-EMAIL"></p>
+                        </div>
+                        <div class="mc-field-group">
+	                         <p><input type="text" value="" name="FNAME" placeholder="Ваше имя" class="required" id="mce-FNAME"></p>
+                          </div>
+	                         <div id="mce-responses" class="clear">
+		                           <div class="response" id="mce-error-response" style="display:none"></div>
+		                             <div class="response" id="mce-success-response" style="display:none"></div>
+	                              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4177827642f0588b35ebecb31_f8e84af37c" tabindex="-1" value=""></div>
+                                <div class="clear"><input type="submit" value="Отправить" name="subscribe" id="mc-embedded-subscribe" class="btn btn-outline-primary btn-sm"></div>
+                              </div>
+                            </form>
+                          </div>
+                          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text'; /*
+                          * Translated default messages for the $ validation plugin.
+                          * Locale: RU
+                          */
+                          $.extend($.validator.messages, {
+                            required: "Это поле необходимо заполнить.",
+                            remote: "Пожалуйста, введите правильное значение.",
+                            email: "Пожалуйста,   введите корректный адрес электронной почты.",
+                            url: "Пожалуйста, введите корректный URL.",
+                            date: "Пожалуйста, введите корректную дату.",
+                            dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
+                            number: "Пожалуйста, введите число.",
+                              digits: "Пожалуйста, вводите только цифры.",
+                              creditcard: "Пожалуйста, введите правильный номер кредитной карты.",
+                              equalTo: "Пожалуйста, введите такое же значение ещё раз.",
+                              accept: "Пожалуйста, выберите файл с правильным расширением.",
+                              maxlength: $.validator.format("Пожалуйста, введите не больше {0} символов."),
+                              minlength: $.validator.format("Пожалуйста, введите не меньше {0} символов."),
+                              rangelength: $.validator.format("Пожалуйста, введите значение длиной от {0} до {1} символов."),
+                              range: $.validator.format("Пожалуйста, введите число от {0} до {1}."),
+                              max: $.validator.format("Пожалуйста, введите число, меньшее или равное {0}."),
+                              min: $.validator.format("Пожалуйста, введите число, большее или равное {0}.")
+                              });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                              <!--End mc_embed_signup-->
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Там будет инструкция, как подтвердить своё желание получать мои сообщения. На следующий день после процедуры подтверждения придет первый урок. </p>
+                    <p>Зачем уроки получать в письмах, почему не сделать их на сайте, спросите вы.
+                      Хитрость заключается в том, что так я буду регулярно напоминать, что пришло время подтянуть математику. </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>На случай если передумаете, в каждом письме внизу присутствует гиперссылка unsubscribe, означает отписаться, кликните и наше общение завершится.
+                      Это культурный способ перестать получать нежелательную почту, применим к 99% спама в почтовом ящике. </p>
+                </div>
+            </div>
+
+
+            <div style="padding:10px 0 40px "class="row">
+                <div class="col">
+                  <p>Мне хочется чтобы о курсе узнало больше заинтересованных людей. Я буду благодарен за помощь, кликните на кнопку своей соц. сети и поделитесь страницей.</p>
+                  <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                  <script src="//yastatic.net/share2/share.js"></script>
+
+                  <div style="text-align : center;" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp,telegram" data-counter=""></div>
+                  <hr>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

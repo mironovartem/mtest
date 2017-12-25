@@ -1,0 +1,119 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репетитор по математике в Самаре</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/repetitor.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body style="background-color:rgba(255,255,255,0);background-image:url({% static 'assets/img/bgtype_dark.png' %});">
+    <div id="block_1">
+        <div class="container" style="background-color:rgba(255,255,255,0.15);">
+            <div class="row">
+                <div class="col">
+                    <h1 id="h1_1">Репетитор по математике</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-right" id="paragraph_1_0"> <a style="color: #ffffad;" href="tel:+79179551760">+7 917 955 17 60</a> Cамара </p>
+
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-auto align-self-center mx-auto"><img class="rounded-circle img-fluid" src="{% static 'assets/img/myphoto.png' %}" width="300"></div>
+                <div class="col align-self-center">
+                    <p id="paragraph_1_1"> Привет, на связи Артём Миронов. Я помогаю школьникам подтянуть уровень математики, готовлю к экзаменам ЕГЭ и ОГЭ.</p>
+                </div>
+            </div>
+            <div class="row" id="row_1">
+                <div class="col-md-12" id="column_1">
+                    <h4 id="Heading_2"> <i class="fa fa-graduation-cap"></i> Образование </h4>
+                    <p id="paragraph_1_3">После учёбы в медико-техническом лицее, получил 2 высших образования, закончил «Поволжскую государственную социально-педагогическую академию» с красным дипломом по специальности учитель информатики.</p>
+                </div>
+            </div>
+            <div class="row" id="row_collapse_1">
+                <div class="col">
+                    <div><a class="btn btn-outline-primary btn-sm" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1" id="button_1">Посмотреть диплом</a>
+                        <div class="collapse" id="collapse-1"><img class="img-fluid" src="{% static 'assets/img/mydiplom.png' %}" width="800"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="block_2">
+        <div class="container" style="background-color:rgba(255,255,255,0.15);">
+            <div class="row" id="row_2">
+                <div class="col-md-12">
+                    <h4 id="Heading_3"> <i class="fa fa-black-tie"></i> Опыт работы </h4>
+                    <p id="paragraph_1_4">Работаю репетитором с 2010 года, подготовил больше 100 учеников,
+                       которые сдали экзамены ЕГЭ и ОГЭ по математике и поступили в желаемые учебные заведения.</p>
+                </div>
+            </div>
+            <div class="row" id="row_3">
+                <div class="col">
+                    <h4 id="Heading_4"><i class="fa fa-hand-o-up"></i> Почему с репетитором становится понятно </h4><img class="img-fluid" src="{% static 'assets/img/lecture.jpg' %}" id="image_2">
+                    <p id="paragraph_1_2">Лекция в Университете Болоньи, вторая половина 14 века. </p>
+                    <p id="paragraph_1_2_1">Как видно из этой иллюстрации в классах ничего не изменилось с того времени, часть учеников слушает внимательно, а остальные заняты своими делами.
+                       На индивидуальных занятиях отвлекаться не получится, придётся учится, слушать и выполнять задания.</p>
+                </div>
+            </div>
+            <div class="row" id="row_4">
+                <div class="col-md-12">
+                  <h4 class="text-center" id="Heading_5">На моих уроках</h4>
+                  <div id="image_boy">
+                    <img class="rounded-circle img-fluid" src="{% static 'assets/img/comp1.png' %}" id="image_testege">
+                  </div>
+                </div>
+            </div>
+            <div class="row" id="row_5">
+                <div class="col-md-12">
+                  <p id="paragraph_1_6" class="noindent"><i class="fa fa-check"></i> Изучаем стандартные и оригинальные способы решения задач. </p>
+                  <p id="paragraph_1_7" class="noindent"> <i class="fa fa-check"></i> Тренируем логическую и ассоциативную память, запоминаем необходимые формулы и теоремы. </p>
+                  <p id="paragraph_1_8" class="noindent"> <i class="fa fa-check"></i> За счет правильно подбора заданий достигаем уверенного роста успеваемости. </p>
+                  <p id="paragraph_1_9" class="noindent"> <i class="fa fa-check"></i> В спокойной манере объясняю то, что не понятно. </p>
+                  <p id="paragraph_1_10" class="noindent"><i class="fa fa-check"></i> Тактично мотивирую к учебе. </p>
+                </div>
+            </div>
+            <div class="row" id="row_6">
+                <div class="col-md-12">
+                    <h4 id="Heading_6"><i class="fa fa-handshake-o"></i> Условия и цены </h4>
+                    <p id="paragraph_1_11">Я беру учеников с 7 по 11 классы, выезжаю в советский, кировский, промышленный, железнодорожный районы или принимаю у себя территориально метро Победа. </p>
+                    <p id="paragraph_1_12">Занятие с выездом к ученику стоит 700 за 60 минут. </p>
+                    <p id="paragraph_1_14">На пробное занятие записывайтесь по телефону <a style="color: #ffffad;" href="tel:+79179551760">+7 917 955 17 60</a> или используйте viber, whatsapp. </p>
+                    <p id="paragraph_1_13">Позвоню в течении часа, в дневное время, если оставите номер телефона ниже. </p>
+                </div>
+            </div>
+            <div class="row" id="row_7">
+                <div class="col-md-12">
+                      <div class="typeform-widget" data-url="https://metrica.typeform.com/to/ljRhku" data-transparency="100" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;" > </div>
+                      <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+                      <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;" > powered by <a href="https://www.typeform.com//?utm_campaign=ljRhku&amp;utm_source=typeform.com-11416677-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-poweredbytypeform&amp;utm_term=RU" style="color: #999" target="_blank">Typeform</a> </div>
+                </div>
+
+            </div>
+            <div style="padding:10px 0 40px "class="row">
+                <div class="col">
+                  <p class="text-center">Я буду благодарен за помощь, кликните на кнопку своей соц. сети и поделитесь страницей.</p>
+                  <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                  <script src="//yastatic.net/share2/share.js"></script>
+
+                  <div style="text-align : center;" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp,telegram" data-counter=""></div>
+                  <hr>
+
+
+                </div>
+            </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -27,7 +27,11 @@ import urllib
 
 
 # Create your views here.
+def home(request):
+    return render(request, 'egemath/home.html', {})
 
+def repetitor(request):
+    return render(request, 'egemath/repetitor.html', {})
 
 def ege_math(request):
     #username = request.user
@@ -769,8 +773,7 @@ def logout_view(request):
     # Redirect to a success page.
     return redirect('ege_math')
 
-def home_page(request):
-    return render(request, 'egemath/home.html', {})
+
 
 def about(request):
             # if this is a POST request we need to process the form data
@@ -808,44 +811,6 @@ def about(request):
             return render(request, 'egemath/about.html', {'form': form})
 
 
-def about_me(request):
-    return render(request, 'egemath/about_me.html', {})
-
-def repetitor_math(request):
-        # if this is a POST request we need to process the form data
-
-        if request.method == 'POST':
-            # create a form instance and populate it with data from the request:
-            form = CustomerApplicationForm(request.POST)
-            # check whether it's valid:
-            if form.is_valid():
-                # process the data in form.cleaned_data as required
-                # ...
-
-                contact_phone = form.cleaned_data['сontact_phone']
-                сontact_email = form.cleaned_data['сontact_email']
-                сontact_name = form.cleaned_data['сontact_name']
-                offer_accepted = form.cleaned_data['offer_accepted']
-                email_subscribe = form.cleaned_data['email_subscribe']
-
-                if сontact_email or contact_phone:
-                    #send_mail('application', message, 'admin@testege.com', ['astruslux@gmail.com'])
-                    send_mail('Заявка',
-                    'Телефон :  ' + contact_phone +', '+ 'Email: ' + сontact_email + ', '+ 'Имя: '+ сontact_name+','+' Хочу начать заниматься: ' + str(offer_accepted) + ' Subscribe: ' + str(email_subscribe),
-                    'astruslux@gmail.com',
-                     ['creativerror@gmail.com'] )
-
-
-                # redirect to a new URL:
-                #subject_mail = ''
-                return HttpResponseRedirect('thanks')
-
-
-        # if a GET (or any other method) we'll create a blank form
-        else:
-            form = CustomerApplicationForm()
-
-        return render(request, 'egemath/repetitor_math.html', {'form': form})
 
 
 def subscribe(request):
@@ -882,42 +847,6 @@ def subscribe(request):
 
             return render(request, 'egemath/subscribe.html', {'form': form})
 
-def donate(request):
-    return render(request, 'egemath/donate.html', {})
-
-def copyright(request):
-    return render(request, 'egemath/copyright.html', {})
-
-def todo(request):
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = CustomerApplicationForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-
-            сontact_email = form.cleaned_data['сontact_email']
-            сontact_name = form.cleaned_data['сontact_name']
-            email_subscribe = form.cleaned_data['email_subscribe']
-
-
-            if сontact_email or contact_phone:
-                send_mail('Заявка',
-                ' Email: ' + сontact_email + ', '+ ' Имя: '+ сontact_name+','+' Subscribe: ' + str(email_subscribe),
-                'astruslux@gmail.com',
-                 ['creativerror@gmail.com'] )
-
-
-            # redirect to a new URL:
-            return HttpResponseRedirect('thanks')
-
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = CustomerApplicationForm()
-
-    return render(request, 'egemath/todo.html', {'form': form})
 
 def administrator(request):
     username = str(request.user)
@@ -983,14 +912,6 @@ def ege_test_input(request, test_num, task_num):
         return redirect('ege_math')
 
 
-def advertising(request):
-    return render(request, 'egemath/advertising.html', {})
-
-def website_development(request):
-    return render(request, 'egemath/website_development.html', {})
-
-def contacts(request):
-    return render(request, 'egemath/contacts.html', {})
 
 def thanks(request):
     return render(request, 'egemath/thanks.html', {})

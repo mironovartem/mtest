@@ -12,9 +12,11 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <ul class="list-group" style="margin:-15px;">
 
-                    <li class="list-group-item"  {% if color1 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">1 задание - правильный ответ:  {{correct_answer1}} Ваш ответ: {{answer1}} </p>
+                    <li class="list-group-item"  {% if color1 %} style="background-color:#f9bfc1;" {% endif %}><p class="lead text-center">
+                      1 задание - правильный ответ:  {{correct_answer1}} Ваш ответ: {{answer1}} </p>
                       {% if color1 %}
-                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">Объяснение к заданию № 1 </a>
+                      <div class="text-center"><a class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" role="button" href="#collapse-1">
+                        Объяснение к заданию № 1 </a>
                           <div class="collapse" id="collapse-1">
                               <p class="lead text-center">Здесь можно будет увидеть объяснение к первому заданию.</p>
                               <div class="text-center">
@@ -30,5 +32,31 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <div class="container">
+            <div class="row" id="rw3">
+                <div class="col-md-12 egetestanswer">
+                    <nav>
+                        <ul class="pagination">
+                            <li><a aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li><a>1</a></li>
+                            <li><a>2</a></li>
+                            <li><a>3</a></li>
+                            <li><a>4</a></li>
+                            <li><a>5</a></li>
+                            <li><a aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 
   {% endblock content %}
