@@ -8,9 +8,9 @@ h4 {
   color:#ffffff;
 }
 
-#block_1 {
-  max-width:800px;
-  margin:50px auto 0px;
+h3 {
+  font-size:36px;
+  color:#ffffff;
 }
 
 #h1_1 {
@@ -21,9 +21,8 @@ h4 {
   padding:30px 0 0;
 }
 
-#row_collapse_1 {
+.img {
   text-align:center;
-  font-size:24px;
 }
 
 #button_1 {
@@ -60,5 +59,14 @@ p {
 
 .noindent {
   text-indent:0%;
+}
+
+#paragraph_1_2 {
+  font-size:16px;
+}
+
+#block_1 {
+  max-width:800px;
+  margin:50px auto 0;
 }
 

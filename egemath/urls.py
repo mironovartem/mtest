@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^vue/$', views.vue, name='vue'),# тестирование vue.js
+    url(r'^less/$', views.less, name='less'),# тестирование vue.js
     url(r'^egemath/$', views.ege_math, name='ege_math'),
     url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),
     url(r'^repetitor/$', views.repetitor, name='repetitor'),

@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'assets/css/less.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body style="background-image:url({% static 'assets/img/bgtype_dark.png' %});">
+    <div>
+        <div class="container" style="background-color:rgba(255,255,255,0.15);">
+            <div class="row">
+                <div class="col-md-12">
+
+                        <h3 class="text-center">Избранные задачи ЕГЭ по математике</h3>
+                        <h4 class="text-center">Урок 1 </h4>
+                        <h3 class="text-center">Задачи на клеточках </h3>
+
+                        <p id="p1" v-if="seen" class="noindent">Найдите площадь четырехугольника.</p>
+                        <div id="img1"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/t2_q3.png' %}" style="background-color:#ffffff;"></div>
+                        <div id="video1" v-if="seen" class="inptext"><iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/tcWniWvcVlg?showinfo=0&amp;rel=0"></iframe></div>
+                        <div id="inpt1" v-if="seen"  class="inptext"><input type="text"></div>
+                        <p id="p2" v-if="seen" class="noindent">правильный ответ: {% verbatim %}  {{ message }} {% endverbatim %} </p>
+                        <p id="p3" v-if="seen" class="noindent"> <button  v-on:click="chek_it1" class="btn btn-primary" type="button">Проверить </button></p>
+                        <p id="p4" v-if="seen" class="noindent"> <button v-on:click="chek_it2"  class="btn btn-primary" type="button">Дальше </button></p>
+
+
+
+
+                        <p id="p5" v-if="seen" class="noindent">Найдите площадь четырехугольника.</p>
+                        <div id="img2"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/t2_q3.png' %}" style="background-color:#ffffff;"></div>
+                        <div id="video2" v-if="seen" class="inptext"><iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/17m-FkvbRRc?showinfo=0&amp;rel=0"></iframe></div>
+                        <div id="inpt2" v-if="seen"  class="inptext"><input type="text"></div>
+                        <p id="p6" v-if="seen" class="noindent">правильный ответ:  {% verbatim %}  {{ message1 }} {% endverbatim %} </p>
+                        <p id="p7" v-if="seen" class="noindent"> <button  v-on:click="chek_it3"  class="btn btn-primary" type="button">Проверить </button></p>
+                        <p id="p8" v-if="seen" class="noindent"> <button  v-on:click="chek_it4"  class="btn btn-primary" type="button">Дальше </button></p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/less.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

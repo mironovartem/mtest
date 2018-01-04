@@ -29,6 +29,11 @@ import urllib
 # Create your views here.
 def home(request):
     return render(request, 'egemath/home.html', {})
+def vue(request):
+        return render(request, 'egemath/vue.html', {})
+
+def less(request):
+        return render(request, 'egemath/less.html', {})
 
 def repetitor(request):
     return render(request, 'egemath/repetitor.html', {})

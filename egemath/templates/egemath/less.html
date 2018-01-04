@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/less.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body style="background-image:url({% static 'assets/img/bgtype_dark.png' %});">
+    <div>
+        <div class="container" style="background-color:rgba(255,255,255,0.15);">
+            <div class="row">
+                <div class="col-md-12">
+                        <h3 class="text-center">Избранные задачи ЕГЭ по математике</h3>
+                        <h4 class="text-center">Задание 3 </h4>
+                        <h3 class="text-center">Задачи на клеточках</h3>
+                        <p class="text-left">Мне нравится решать задачи о нахождении площади многоугольника, способом вычитания из прямоугольника. Преимущество этого способа заключается в том, что для решения, нужны только формулы площадей <span style="color:#feabab;">прямоугольника </span>                        и <span style="color:#89cb89;">прямоугольного треугольника </span> и длины сторон <span style="color:#feefab;">натуральные числа</span>, т.е. никаких корней.&nbsp;</p>
+                        <p class="text-left">На первом рисунке сторона клеточки равна 1, требуется узнать площадь треугольника. </p>
+                        <div class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk1.png' %}"></div>
+                        <p class="text-left">Решение начинаю с того, что вписываю треугольник в соответствующий прямоугольник, чтобы максимум вершин треугольника касались его сторон, как на втором рисунке. </p>
+                        <div class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk1_0.png' %}"></div>
+                        <p class="text-left">Прямоугольник который получился - квадрат со сторонами 5 клеточек, умножаю длину на ширину и получаю его площадь. </p>
+                        <p class="text-center" style="color:#c2b78f;">\( \displaystyle {5} \times {5} = 25 \) </p>
+                        <p class="text-left">Затем ищу площади прямоугольных треугольников, умножаю катеты - стороны треугольника, которыми образован прямой угол, и делю пополам.</p>
+                        <div class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk1_1.png' %}"></div>
+                        <p style="color:#f4e7b8;">Желтый треугольник \( \displaystyle \frac { {5} \times {5} } {2} = 12,5 \)</p>
+                        <p style="color:#599a5b;">Зеленый треугольник \( \displaystyle \frac { {4} \times {1} } {2} = 2 \) </p>
+                        <p style="color:#b56164;">Красный треугольник \( \displaystyle \frac { {4} \times {1} } {2} = 2 \) </p>
+                        <p class="text-left">В нижнем правом углу образовалась одна клеточка её площадь 1, надеюсь это понятно. </p>
+                        <p class="text-left">Далее найду площадь исходной фигуры, для это из площади квадрата вычту площади треугольников и одной клеточки</p>
+                        <h4 class="text-center"><span style="color:#c2b78f;">25</span><span style="color:#f4e7b8;">-12,5</span><span style="color:#599a5b;">-2</span><span style="color:#b56164;">-2</span><span style="color:#f4e7b8;">-1</span><span>=7,5</span></h4>
+                        <p class="text-light">Ответ: \( \displaystyle 7,5 \) </p>
+                        <br>
+                        <h3 class="text-center" style="font-size:43px;color:#feefab;">Тест </h3>
+                        <p class="text-left">Теперь попробуйте самостоятельно решить тестовые задания. В ответ пишите целое или десятичное число, если будет дробная часть отделяйте её запятой. </p>
+
+
+
+                        <p class="noindent">Задание 1. Найдите площадь четырехугольника.</p>
+                        <div id="img1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2.png' %}"></div>
+                        <div id="img1_1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
+                        <div class="inptext"><input type="text"></div>
+                        <p id="p1" v-if="seen" class="noindent">правильный ответ: {% verbatim %}  {{ message }} {% endverbatim %} </p>
+                        <p id="p2" class="noindent"> <button id="btn1" v-on:click="chek_it1" class="btn btn-primary" type="button">Проверить </button></p>
+
+
+
+
+
+
+                        <p id="p5" v-if="seen" class="noindent">Найдите площадь четырехугольника.</p>
+                        <div id="img2"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2.png' %}"></div>
+                        <div id="img2_1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
+                        <div id="inpt2" v-if="seen"  class="inptext"><input type="text"></div>
+                        <p id="p6" v-if="seen" class="noindent">правильный ответ:  {% verbatim %}  {{ message1 }} {% endverbatim %} </p>
+                        <p id="p7" v-if="seen" class="noindent"> <button  v-on:click="chek_it3"  class="btn btn-primary" type="button">Проверить </button></p>
+                        <p id="p8" v-if="seen" class="noindent"> <button  v-on:click="chek_it4"  class="btn btn-primary" type="button">Дальше </button></p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/less.js' %}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

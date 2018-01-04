@@ -1,0 +1,46 @@
+h1 {
+  font-size:54px;
+  color:#ffffff;
+}
+
+h4 {
+  font-size:32px;
+  color:#ffffff;
+}
+
+h3 {
+  font-size:43px;
+  color:#ffffff;
+}
+
+.row {
+  padding:20px 0 0;
+}
+
+p {
+  font-size:24px;
+  color:rgba(255, 255, 255, 0.85);
+  text-indent:5%;
+  text-align:center;
+  padding:10px 0 10px;
+}
+
+.noindent {
+  text-indent:0%;
+}
+
+.inptext {
+  text-align:center;
+  padding:10px 0 10px;
+}
+
+.img-fluid {
+  padding:10px 0 10px;
+  margin:10px auto 10px;
+}
+
+#block_1 {
+  max-width:800px;
+  margin:50px auto 0;
+}
+
