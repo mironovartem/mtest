@@ -5,11 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^repetitor/$', views.repetitor, name='repetitor'),
     url(r'^vue/$', views.vue, name='vue'),# тестирование vue.js
     url(r'^less/$', views.less, name='less'),# тестирование vue.js
     url(r'^egemath/$', views.ege_math, name='ege_math'),
-    url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),
-    url(r'^repetitor/$', views.repetitor, name='repetitor'),
+    url(r'^egetest/(?P<test_id>[0-9]+)/$', views.egetest, name='egetest'),    
     url(r'^administrator/$', views.administrator, name='administrator'),
     url(r'^ege_test_input/(?P<test_num>[0-9]+)/(?P<task_num>[0-9]+)/$', views.ege_test_input, name='ege_test_input'),
     url(r'^signup/$', views.signup, name='signup'),

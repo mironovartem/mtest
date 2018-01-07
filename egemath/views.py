@@ -1,18 +1,18 @@
-from .forms import AdmistratorForm #импорт формы
-from .forms import CustomerApplicationForm #импорт формы
-from .forms import EgeTestInputForm #импорт формы
-from .forms import LoginForm #форма для авторизации
-from .forms import SignUpForm #импорт формы
-from .forms import TestAnswerForm # импорт формы
-from .models import EgeMathTest # импорт модели
-from .models import UserAccessLevel # импорт модели
-from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
-from django.contrib.auth import logout
-from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
-from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
+#from .forms import AdmistratorForm #импорт формы
+#from .forms import CustomerApplicationForm #импорт формы
+#from .forms import EgeTestInputForm #импорт формы
+#from .forms import LoginForm #форма для авторизации
+#from .forms import SignUpForm #импорт формы
+#from .forms import TestAnswerForm # импорт формы
+#from .models import EgeMathTest # импорт модели
+#from .models import UserAccessLevel # импорт модели
+#from django.contrib.auth import authenticate, login #нужно для аутентификации пользователей
+#from django.contrib.auth import logout
+#from django.contrib.auth.models import User, UserManager #нужно для регистрации пользователей
+#from django.core.files.uploadedfile import SimpleUploadedFile # нужно для загрузки изображений
 from django.core.mail import send_mail
-from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
-from django.forms import ModelForm
+#from django.db.utils import IntegrityError #обработка исключения совпадения username при регистрации
+#from django.forms import ModelForm
 from django.http import Http404
 from django.http import HttpResponse, HttpResponseServerError # для передачи ответото
 from django.http import HttpResponseRedirect #
@@ -29,14 +29,17 @@ import urllib
 # Create your views here.
 def home(request):
     return render(request, 'egemath/home.html', {})
+    
+def repetitor(request):
+    return render(request, 'egemath/repetitor.html', {})
+
 def vue(request):
         return render(request, 'egemath/vue.html', {})
 
 def less(request):
         return render(request, 'egemath/less.html', {})
 
-def repetitor(request):
-    return render(request, 'egemath/repetitor.html', {})
+
 
 def ege_math(request):
     #username = request.user
