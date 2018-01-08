@@ -54,7 +54,7 @@
                         <h4 class="text-center test yllw"> Задание 1. Найдите площадь четырехугольника.</h4>
                         <p>Сторона одной клеточки равна 1.</p>
                         <div id="img1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2.png' %}"></div>
-                        <div id="img1_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
+                        <div id="img1_1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
                         <div id="inpt_1" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_1" ></div>
                         <div id="p0" v-if="seen" class="animated bounceInUp">
                           <p class="noindent grn" style="font-size:36px;">Верно <i class="fa fa-thumbs-o-up grn"></i></p>
@@ -66,16 +66,16 @@
                         <p id="p2" v-if="seen" class="noindent"> <button v-on:click="chek_it1" class="btn btn-primary" type="button">Проверить </button></p>
 
                         <div id="ob1" v-show="seen">
-                          <p class="animated bounceInUp">Сначала вписываю исходный четырехугольник в прямоугольник со сторонами 4 на 5 и считаю его площадь</p>
-                          <p class="animated bounceInUp yllw">4 * 5 = 20</p>
-                          <p class="animated bounceInUp">Потом считаю площади треугольников:</p>
-                          <p class="animated bounceInUp grn">Зеленый треугольник</p>
-                          <p class="animated bounceInUp grn"> \( \displaystyle \frac { {4} \times {2} } {2} = 4 \) </p>
-                          <p class="animated bounceInUp red">Красный треугольник </p>
-                          <p class="animated bounceInUp red">\( \displaystyle \frac { {2} \times {1} } {2} = 1 \) </p>
+                          <p>Сначала вписываю исходный четырехугольник в прямоугольник со сторонами 4 на 5 и считаю его площадь</p>
+                          <p class="yllw">4 * 5 = 20</p>
+                          <p>Потом считаю площади треугольников:</p>
+                          <p class="grn">Зеленый треугольник</p>
+                          <p class="grn"> \( \displaystyle \frac { {4} \times {2} } {2} = 4 \) </p>
+                          <p class="red">Красный треугольник </p>
+                          <p class="red">\( \displaystyle \frac { {2} \times {1} } {2} = 1 \) </p>
                           <p class="animated bounceInUp">Так как красных и зеленых треугольников по 2 одинаковых, то умножаю их площади на 2.
                           Затем нахожу площадь искомой фигуры </p>
-                          <p class="animated bounceInUp"><span class="yllw">20</span> - 2 * <span class="grn">4</span> - 2 * <span class="red">1</span> =
+                          <p><span class="yllw">20</span> - 2 * <span class="grn">4</span> - 2 * <span class="red">1</span> =
                           <span class="yllw">20</span> - <span class="grn">8</span> - <span class="red">2</span> = {% verbatim %}  {{ p1.message }} {% endverbatim %} </p>
                         </div>
                         <br>
@@ -84,7 +84,7 @@
                         <h4 class="text-center test yllw"> Задание 2. Найдите площадь четырехугольника</h4>
                         <p>Сторона одной клеточки равна 1.</p>
                         <div id="img2"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk3.png' %}"></div>
-                        <div id="img2_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk3_1.png' %}"></div>
+                        <div id="img2_1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk3_1.png' %}"></div>
                         <div id="inpt_2" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_2" ></div>
 
                         <div id="p3" v-if="seen" class="animated bounceInUp">
@@ -98,7 +98,7 @@
 
                         <p id="p5" v-if="seen" class="noindent"> <button v-on:click="chek_it2" class="btn btn-primary" type="button">Проверить </button></p>
                         <div id="ob2" v-show="seen">
-                          <div class="animated bounceInUp">
+
                             <p>Сначала вписываю исходный четырехугольник в прямоугольник со сторонами 4 на 4 и считаю его площадь</p>
                             <p><span class="yllw">4 * 4 = 16</span></p>
                             <p>Теперь считаю площадь одного зеленого треугольника с катетами 3 и 1.</p>
@@ -106,7 +106,7 @@
                             <p>Потом найду площадь исходной фигуры, вычту из площади прямоугольника четыре площади треугольников зеленого цвета и двух единичных клеток красного цвета</p>
                             <p><span class="yllw"> 16 </span> - 4 * <span class="grn">1,5</span> - 2 * <span class="red">1</span> =
                              <span class="yllw"> 16 </span> - <span class="grn">6</span> - <span class="red">2</span> = {% verbatim %}  {{ p4.message2 }} {% endverbatim %} </p>
-                          </div>
+                          
                         </div>
                         <br>
 
