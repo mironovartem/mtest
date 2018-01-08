@@ -299,7 +299,7 @@
                         </div>
 
                         <p id="p23" v-if="seen" class="noindent"> <button v-on:click="chek_it8" class="btn btn-primary" type="button">Проверить </button></p>
-                        <div id="ob8" v-show="seen">
+                        <div id="ob8" v-if="seen">
                           <div class="animated bounceInUp">
                             <div class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk9_0.png' %}"></div>
                             <p class="noindent red" style="font-size:36px;">Неверно <i class="fa fa-thumbs-o-down red"></i></p>
@@ -339,6 +339,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="{% static 'assets/js/less.js' %}"></script>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
