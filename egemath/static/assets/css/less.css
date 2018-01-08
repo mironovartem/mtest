@@ -44,3 +44,24 @@ p {
   margin:50px auto 0;
 }
 
+.yllw {
+  color:#f4e7b8;
+}
+
+.grn {
+  color:#89cb89;
+}
+
+.red {
+  color:#feabab;
+}
+
+.text-center.test {
+  margin-top:40px;
+}
+
+hr {
+  background-color:#ffffff;
+  height:1px;
+}
+

@@ -246,7 +246,7 @@ var p10 = new Vue({
   el: '#p10',
   data: {
     seen:false,
-    message4: '8'
+    message4: '4,5'
   }
 })
 
@@ -320,7 +320,7 @@ var p13 = new Vue({
   el: '#p13',
   data: {
     seen:false,
-    message5: '8'
+    message5: '10'
   }
 })
 
@@ -448,13 +448,6 @@ var img7 = new Vue({
   }
 })
 
-var img7_1 = new Vue({
-  el: '#img7_1',
-  data: {
-    seen: false
-  }
-})
-
 var p18 = new Vue({
   el: '#p18',
   data: {
@@ -462,18 +455,11 @@ var p18 = new Vue({
   }
 })
 
-var p19 = new Vue({
-  el: '#p19',
-  data: {
-    seen:false,
-    message7: '8'
-  }
-})
-
 var ob7 = new Vue({
   el: '#ob7',
   data: {
-    seen:false
+    seen:false,
+    message7: '5'
   }
 })
 
@@ -492,19 +478,17 @@ var p20 = new Vue({
   },
   methods: {
     chek_it7: function (event) {
-      if (inpt_7.user_answer_7 == p19.message7) {
+      if (inpt_7.user_answer_7 == ob7.message7) {
         p18.seen = true,
-        p19.seen = false,
+
         p20.seen = false,
         img7.seen = true,
-        img7_1.seen = false,
         inpt_7.seen = false
       } else {
         p18.seen = false,
-        p19.seen = true,
+
         p20.seen = false,
         img7.seen = false,
-        img7_1.seen = true,
         inpt_7.seen = false,
         ob7.seen = true
       }
@@ -522,13 +506,6 @@ var img8 = new Vue({
   }
 })
 
-var img8_1 = new Vue({
-  el: '#img8_1',
-  data: {
-    seen: false
-  }
-})
-
 var p21 = new Vue({
   el: '#p21',
   data: {
@@ -536,18 +513,11 @@ var p21 = new Vue({
   }
 })
 
-var p22 = new Vue({
-  el: '#p22',
-  data: {
-    seen:false,
-    message8: '8'
-  }
-})
-
 var ob8 = new Vue({
   el: '#ob8',
   data: {
-    seen:false
+    seen:false,
+    message8: '10,5'
   }
 })
 
@@ -566,19 +536,15 @@ var p23 = new Vue({
   },
   methods: {
     chek_it8: function (event) {
-      if (inpt_8.user_answer_8 == p22.message8) {
+      if (inpt_8.user_answer_8 == ob8.message8) {
         p21.seen = true,
-        p22.seen = false,
         p23.seen = false,
         img8.seen = true,
-        img8_1.seen = false,
         inpt_8.seen = false
       } else {
         p21.seen = false,
-        p22.seen = true,
         p23.seen = false,
         img8.seen = false,
-        img8_1.seen = true,
         inpt_8.seen = false,
         ob8.seen = true
       }
