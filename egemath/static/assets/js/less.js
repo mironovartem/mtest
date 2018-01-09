@@ -41,6 +41,12 @@ var inpt_1 = new Vue({
     seen: true
   }
 })
+var z1 = new Vue({
+  el: '#z1',
+  data: {
+
+  }
+})
 
 var p2 = new Vue({
   el: '#p2',
@@ -55,7 +61,8 @@ var p2 = new Vue({
           p2.seen = false,
           img1.seen = true,
           img1_1.seen = false,
-          inpt_1.seen = false
+          inpt_1.seen = false          
+
        } else {
          p0.seen = false,
          p1.seen = true,
