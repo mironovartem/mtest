@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>less</title>
+    <title>Урок 1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'assets/css/less.css' %}">
@@ -51,9 +51,10 @@
 
 
 
-                        <h4 id="z1" class="text-center test yllw"> Задание 1. Найдите площадь четырехугольника.</h4>
+                        <h4 class="text-center test yllw"> Задание 1. Найдите площадь четырехугольника.</h4>
                         <p>Сторона одной клеточки равна 1.</p>
                         <div id="img1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2.png' %}"></div>
+                        <div id="z1" ></div>
                         <div id="img1_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
                         <div id="inpt_1" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_1" ></div>
                         <div id="p0" v-if="seen" class="animated bounceInUp">
@@ -83,9 +84,10 @@
                         <br>
 
 
-                        <h4 id="z2" class="text-center test yllw"> Задание 2. Найдите площадь четырехугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 2. Найдите площадь четырехугольника</h4>
                         <p>Сторона одной клеточки равна 1.</p>
                         <div id="img2"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk3.png' %}"></div>
+                        <div id="z2" ></div>
                         <div id="img2_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk3_1.png' %}"></div>
                         <div id="inpt_2" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_2" ></div>
 
@@ -113,10 +115,12 @@
                         <br>
 
 
-                        <h4 id="z3" class="text-center test yllw"> Задание 3. Найдите площадь четырехугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 3. Найдите площадь четырехугольника</h4>
                         <p>Сторона одной клеточки равна 1.</p>
                         <div id="img3"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk4.png' %}"></div>
+                        <div id="z3" ></div>
                         <div id="img3_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk4_1.png' %}"></div>
+
                         <div id="inpt_3" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_3" ></div>
 
                         <div id="p6" v-if="seen" class="animated bounceInUp">
@@ -147,9 +151,10 @@
 
 
 
-                        <h4 id="z4" class="text-center test yllw"> Задание 4. Найдите площадь четырехугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 4. Найдите площадь четырехугольника</h4>
                         <p class="text-center">Задание без клеточек решается тем же способом.</p>
                         <div id="img5"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk6.png' %}"></div>
+                        <div id="z4" ></div>
                         <div id="img5_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk6_1.png' %}"></div>
                         <div id="inpt_5" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_5" ></div>
 
@@ -180,9 +185,10 @@
                         <br>
 
 
-                        <h4 id="z5" class="text-center test yllw"> Задание 5. Найдите площадь трехугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 5. Найдите площадь трехугольника</h4>
                         <p>Ещё одно задание без клеточек.</p>
                         <div id="img4"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk5.png' %}"></div>
+                        <div id="z5" ></div>
                         <div id="img4_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk5_1.png' %}"></div>
                         <div id="inpt_4" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_4" ></div>
 
@@ -213,9 +219,10 @@
                         <br>
 
 
-                        <h4 id="z6" class="text-center test yllw"> Задание 6. Найдите площадь многоугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 6. Найдите площадь многоугольника</h4>
                         <p>Это задание выглядит сложнее, но легко решается тем же способом.</p>
                         <div id="img6"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk7.png' %}"></div>
+                        <div id="z6" ></div>
                         <div id="img6_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk7_1.png' %}"></div>
                         <div id="inpt_6" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_6" ></div>
 
@@ -247,9 +254,10 @@
                         </div>
                         <br>
 
-                        <h4 id="z7" class="text-center test yllw"> Задание 7. Найдите площадь многоугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 7. Найдите площадь многоугольника</h4>
                         <p>Под конец покажу сложное задание которое встречается на экзаменах, решается тем же способом.</p>
                         <div id="img7"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk8.png' %}"></div>
+                        <div id="z7" ></div>
                         <div id="inpt_7" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_7" ></div>
 
                         <div id="p18" v-if="seen" class="animated bounceInUp">
@@ -260,6 +268,7 @@
                         <p id="p20" v-if="seen" class="noindent"> <a v-on:click="chek_it7" class="btn btn-primary" role="button" href="#z7">Проверить </a></p>
                         <div id="ob7" v-show="seen">
                           <div class="animated bounceInUp">
+
 
                             <div class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk8_0.png' %}"></div>
                             <p class="noindent red" style="font-size:36px;">Неверно <i class="fa fa-thumbs-o-down red"></i></p>
@@ -294,9 +303,10 @@
                         <br>
 
 
-                        <h4 id="z8" class="text-center test yllw"> Задание 8. Найдите площадь многоугольника</h4>
+                        <h4 class="text-center test yllw"> Задание 8. Найдите площадь многоугольника</h4>
                         <p ></p>
                         <div id="img8"  v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk9.png' %}"></div>
+                        <div id="z8" ></div>
                         <div id="inpt_8" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_8" ></div>
 
                         <div id="p21" v-if="seen" class="animated bounceInUp">
@@ -337,6 +347,24 @@
                           </div>
                         </div>
                         <br>
+
+                        <div id="hypercomments_widget"></div>
+                          <script type="text/javascript">
+                          _hcwp = window._hcwp || [];
+                          _hcwp.push({widget:"Stream", widget_id: 99924});
+                          (function() {
+                          if("HC_LOAD_INIT" in window)return;
+                          HC_LOAD_INIT = true;
+                          var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+                          var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                          hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/99924/"+lang+"/widget.js";
+                          var s = document.getElementsByTagName("script")[0];
+                          s.parentNode.insertBefore(hcc, s.nextSibling);
+                          })();
+                          </script>
+                          <a href="http://hypercomments.com" rel = "nofollow" class="hc-link" title="comments widget">comments powered by HyperComments</a>
+
+
                 </div>
             </div>
         </div>
