@@ -52,9 +52,9 @@
 
 
                         <h4 class="text-center test yllw"> Задание 1. Найдите площадь четырехугольника.</h4>
-                        <p>Сторона одной клеточки равна 1.</p>
+                        <p id="z1">Сторона одной клеточки равна 1.</p>
                         <div id="img1" v-if="seen" class="inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2.png' %}"></div>
-                        <div id="z1" ></div>
+                        <div ></div>
                         <div id="img1_1" v-if="seen" class="animated bounceInUp inptext"><img class="img-fluid" src="{% static 'assets/img/tsk2_1.png' %}"></div>
                         <div id="inpt_1" v-if="seen" class="inptext"><input  type="text" v-model="user_answer_1" ></div>
                         <div id="p0" v-if="seen" class="animated bounceInUp">
@@ -347,6 +347,7 @@
                           </div>
                         </div>
                         <br>
+
                         <div class="row" style="background-color:#fffcee">
                             <div class="col">
                                 <div id="hypercomments_widget"></div>
