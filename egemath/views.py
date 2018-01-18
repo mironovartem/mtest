@@ -30,6 +30,9 @@ import urllib
 def home(request):
     return render(request, 'egemath/home.html', {})
     
+def e8fdf021d685(request):
+    return render(request, 'egemath/e8fdf021d685.html', {})
+
 def repetitor(request):
     return render(request, 'egemath/repetitor.html', {})
 
