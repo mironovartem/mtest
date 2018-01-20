@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^e8fdf021d685\.html$', views.e8fdf021d685, name='e8fdf021d685'),
+    url(r'^d6275cf8e6b8\.html$', views.d6275cf8e6b8, name='d6275cf8e6b8'),
 
     url(r'^repetitor/$', views.repetitor, name='repetitor'),
     url(r'^vue/$', views.vue, name='vue'),# тестирование vue.js

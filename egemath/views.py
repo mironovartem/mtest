@@ -29,9 +29,9 @@ import urllib
 # Create your views here.
 def home(request):
     return render(request, 'egemath/home.html', {})
-    
-def e8fdf021d685(request):
-    return render(request, 'egemath/e8fdf021d685.html', {})
+
+def d6275cf8e6b8(request):
+    return render(request, 'egemath/d6275cf8e6b8.html', {})
 
 def repetitor(request):
     return render(request, 'egemath/repetitor.html', {})
